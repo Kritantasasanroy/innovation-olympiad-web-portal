@@ -1,0 +1,808 @@
+# Innovation Olympiad Platform
+
+## UI/UX Design Brief for Web Application (MVP Phase 1)
+
+### Project Overview
+
+The **Innovation Olympiad Platform** is a multi-stakeholder ecosystem designed to assess, nurture, and promote innovation, creativity, problem-solving, and entrepreneurship among students aged 12–18 years.
+
+The platform serves four primary user groups:
+
+1. **Participant / Student**
+2. **School**
+3. **Partner**
+4. **Admin / Operations**
+
+The immediate objective is to create high-fidelity UI designs and design system assets for the MVP launch covering:
+
+1. Landing Page
+2. Student Registration Journey
+3. Admin Dashboard
+4. School Dashboard
+5. Partner Dashboard
+6. Exam Interface
+7. Results Interface
+
+The workflows and user journeys are derived from the product blueprints and process maps provided.  
+
+---
+
+# 1. Design Vision
+
+### Positioning
+
+The platform should feel like:
+
+**Apple + Modern EdTech + Startup India + Innovation Ecosystem**
+
+### Brand Attributes
+
+* Modern
+* Aspirational
+* Trustworthy
+* Youth-focused
+* Innovation-driven
+* National-scale
+* Data-rich but simple
+
+### Inspiration
+
+* Duolingo
+* Coursera
+* Stripe Dashboard
+* Notion
+* Apple Education
+* Khan Academy
+* Tesla Product Pages
+
+---
+
+# 2. User Roles
+
+## A. Student
+
+Primary user.
+
+Goals:
+
+* Register
+* Take Olympiad
+* View Rankings
+* Download Certificate
+* Access Innovation Ecosystem
+
+---
+
+## B. School
+
+Institution-level analytics consumer.
+
+Goals:
+
+* Track student participation
+* View school rankings
+* Download reports
+* Monitor performance
+
+---
+
+## C. Partner
+
+Channel partner / institution partner.
+
+Goals:
+
+* Drive registrations
+* Track conversions
+* View assigned schools
+* Monitor commissions
+
+---
+
+## D. Admin
+
+Platform operations team.
+
+Goals:
+
+* Manage exams
+* Manage students
+* Manage schools
+* Manage partners
+* Monitor exams
+* Publish results
+* Generate reports
+
+---
+
+# 3. Design System Requirements
+
+### Colors
+
+Primary Green:
+#1E9E48
+
+Innovation Yellow:
+#F5D000
+
+Royal Blue:
+#2563EB
+
+Orange:
+#F97316
+
+Purple:
+#7C3AED
+
+Dark Text:
+#111827
+
+Light Background:
+#F8FAFC
+
+---
+
+### Typography
+
+Headings:
+Poppins Extra Bold
+
+Body:
+Inter
+
+Statistics:
+Montserrat Bold
+
+---
+
+### UI Style
+
+* Large cards
+* Rounded corners (12–16px)
+* Clean shadows
+* Minimal borders
+* White backgrounds
+* Strong visual hierarchy
+* Responsive first
+
+---
+
+# 4. Landing Page
+
+### Objective
+
+Maximize registrations.
+
+### Primary CTA
+
+🚀 Register Now
+
+### Secondary CTA
+
+▶ Learn More
+
+---
+
+## Section 1 — Hero
+
+Headline:
+
+### India's Most Complete Innovation & Future Skills Ecosystem
+
+### One Registration. Four Powerful Benefits.
+
+Subheading:
+
+National Recognition • Innovation Challenges • Entrepreneurship Opportunities • Future Skills Development
+
+Buttons:
+
+* Register Now
+* Watch Video
+
+Hero Visual:
+
+Student Journey Illustration
+
+Innovation Olympiad
+↓
+Innovation Profile
+↓
+Innopreneurs
+↓
+Mentorship
+↓
+Future Innovator
+
+---
+
+## Section 2
+
+### Why This Olympiad Is Different
+
+Comparison Block:
+
+Traditional Olympiad vs Innovation Olympiad
+
+* Memory vs Creativity
+* Marks vs Innovation
+* Knowledge vs Problem Solving
+
+---
+
+## Section 3
+
+### Four Benefits Cards
+
+1. National Rankings
+2. Innopreneurs Advantage
+3. World Skill Challenge Benefits
+4. Entrepreneurship Bootcamp Benefits
+
+---
+
+## Section 4
+
+### Innovation Journey Roadmap
+
+Interactive timeline.
+
+---
+
+## Section 5
+
+### What Every Student Receives
+
+Grid Cards:
+
+* Rankings
+* Innovation Profile
+* Certificate
+* Opportunities
+* Mentorship
+* Entrepreneurship Exposure
+
+Reference concept from landing page blueprint. 
+
+---
+
+# 5. Student Registration Flow
+
+### Registration Options
+
+Register As:
+
+* Student
+* School
+* Partner
+
+Student is primary CTA.
+
+---
+
+## Student Onboarding
+
+### Step 1
+
+Mobile Number
+
+OTP Verification
+
+---
+
+### Step 2
+
+Student Profile
+
+Fields:
+
+* Full Name
+* Grade
+* School
+* City
+* State
+* Email
+
+---
+
+### Step 3
+
+Eligibility View
+
+Available Olympiads
+
+---
+
+### Step 4
+
+Registration
+
+Apply Coupon / Scholarship
+
+---
+
+### Step 5
+
+Payment
+
+Success Screen
+
+---
+
+### Step 6
+
+Slot Booking
+
+Exam Schedule
+
+---
+
+### Step 7
+
+Admit Card
+
+Instructions
+
+Mock Test
+
+---
+
+# 6. Student Dashboard
+
+After Login
+
+### Top Metrics
+
+* Registered Exams
+* Upcoming Exam Date
+* Innovation Score
+* Certificates Earned
+
+---
+
+### Dashboard Sections
+
+#### My Exams
+
+Upcoming & Completed
+
+#### Innovation Profile
+
+Performance Snapshot
+
+#### Rankings
+
+* National
+* State
+* City
+* School
+
+#### Certificates
+
+Download
+
+#### Notifications
+
+Updates
+
+---
+
+# 7. Exam UI
+
+Most critical screen.
+
+### Requirements
+
+Distraction-free.
+
+### Layout
+
+Header:
+
+* Olympiad Name
+* Timer
+* Student Name
+
+---
+
+### Left Panel
+
+Question Navigator
+
+Q1–Q50
+
+Color Indicators:
+
+* Answered
+* Not Answered
+* Review Later
+
+---
+
+### Center
+
+Question Area
+
+Question
+Options
+Image Support
+
+---
+
+### Right Panel
+
+Exam Information
+
+* Remaining Time
+* Questions Attempted
+* Progress %
+
+---
+
+### Footer
+
+Previous
+
+Next
+
+Mark for Review
+
+Submit
+
+---
+
+### Exam States
+
+* Auto Save
+* Network Reconnect
+* Resume Exam
+* Proctoring Alerts
+
+Based on participant workflow requirements.
+
+---
+
+# 8. Results UI
+
+## Student Results
+
+### Hero Card
+
+Innovation Olympiad Result
+
+Overall Score
+
+Percentile
+
+National Rank
+
+---
+
+### Ranking Cards
+
+* National Rank
+* State Rank
+* City Rank
+* School Rank
+
+---
+
+### Innovation Profile
+
+Spider/Radar Chart
+
+Skill Areas:
+
+* Creativity
+* Problem Solving
+* Critical Thinking
+* Innovation
+* Entrepreneurship Orientation
+
+---
+
+### Certificate Card
+
+Download Certificate
+
+---
+
+### Next Opportunities
+
+* Innopreneurs Contest
+* Innovation Challenges
+* Bootcamps
+
+---
+
+# 9. School Dashboard
+
+School dashboard is primarily an Analytics Platform. 
+
+### Dashboard Home
+
+KPIs:
+
+* Total Students
+* Registered Students
+* Participation %
+* Average Score
+* School Rank
+
+---
+
+### Navigation
+
+1. Dashboard
+2. Students
+3. Exam Schedule
+4. Results
+5. Analytics
+6. Reports
+7. Helpdesk
+
+---
+
+### Key Widgets
+
+#### Participation Summary
+
+Students Registered
+
+Students Appeared
+
+Students Completed
+
+---
+
+#### Performance Analytics
+
+Grade-wise Charts
+
+---
+
+#### Top Performers
+
+Student Leaderboard
+
+---
+
+#### Benchmarking
+
+Compare against:
+
+* City
+* State
+* National
+
+---
+
+### Reports
+
+Download:
+
+* Excel
+* PDF
+
+---
+
+# 10. Partner Dashboard
+
+Partner workflow focuses on institutions, registrations, and conversions. 
+
+### Dashboard Home
+
+KPIs
+
+* Assigned Schools
+* Total Registrations
+* Paid Registrations
+* Conversion Rate
+* Earnings
+
+---
+
+### Navigation
+
+1. Dashboard
+2. Institutions
+3. Campaign Links
+4. Registrations
+5. Analytics
+6. Payouts
+7. Support
+
+---
+
+### Key Screens
+
+#### Assigned Institutions
+
+Institution Cards
+
+---
+
+#### Campaign Management
+
+Referral Links
+
+QR Codes
+
+Tracking
+
+---
+
+#### Funnel View
+
+Clicks
+
+→ Registrations
+
+→ Payments
+
+---
+
+#### Payout Dashboard
+
+Pending
+
+Approved
+
+Paid
+
+---
+
+# 11. Admin Dashboard
+
+This is the command center of the platform.
+
+Based on the Admin workflow. (26-step operational journey)
+
+### Dashboard KPIs
+
+* Total Students
+* Total Schools
+* Total Partners
+* Registrations Today
+* Payments Today
+* Active Exams
+* Proctoring Alerts
+* Support Tickets
+
+---
+
+## Navigation Structure
+
+### Operations
+
+* Exams
+* Students
+* Schools
+* Partners
+
+### Monitoring
+
+* Live Exams
+* AI Proctoring
+* Fraud Queue
+
+### Finance
+
+* Payments
+* Refunds
+* Scholarships
+
+### Results
+
+* Normalization
+* Rankings
+* Certificates
+
+### Reports
+
+* Analytics
+* Audit Logs
+
+### Support
+
+* Grievances
+* Tickets
+
+---
+
+### Admin Homepage Widgets
+
+#### Live Exam Monitoring
+
+Real-time
+
+#### Registration Funnel
+
+Visitors → Registrations → Payments
+
+#### Alerts Center
+
+Fraud
+Network Issues
+Pending Reviews
+
+#### Revenue Summary
+
+Daily
+Weekly
+Monthly
+
+---
+
+# 12. Common Components
+
+The UI Designer should create reusable components:
+
+### Cards
+
+* KPI Card
+* Profile Card
+* School Card
+* Partner Card
+
+### Tables
+
+* Student Table
+* School Table
+* Results Table
+
+### Charts
+
+* Bar
+* Line
+* Donut
+* Radar
+
+### Status Chips
+
+* Active
+* Pending
+* Completed
+* Flagged
+* Under Review
+
+### Notification Center
+
+Universal across all dashboards.
+
+---
+
+# 13. Deliverables Expected from UI Designer
+
+### Phase 1 Wireframes
+
+1. Landing Page
+2. Student Registration
+3. Student Dashboard
+4. Exam UI
+5. Results UI
+6. School Dashboard
+7. Partner Dashboard
+8. Admin Dashboard
+
+### Phase 2 High Fidelity
+
+1. Design System
+2. Component Library
+3. Mobile Responsive Views
+4. Dark Mode (Optional)
+
+### Design Tool
+
+Preferred:
+**Figma**
+
+---
+
+# Key Product Principle
+
+### "The platform should not feel like an examination portal."
+
+It should feel like:
+
+**An Innovation Ecosystem where the Olympiad is only the starting point of a student's journey into innovation, entrepreneurship, mentorship, competitions, and future skills.**

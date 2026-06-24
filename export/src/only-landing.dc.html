@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" rx="20" fill="#16241A"/>
+  <g stroke="#7CC10C" stroke-width="2" fill="none">
+    <line x1="38" y1="42" x2="55" y2="33"/><line x1="55" y1="33" x2="66" y2="47"/>
+    <line x1="38" y1="42" x2="50" y2="56"/><line x1="50" y1="56" x2="66" y2="47"/>
+  </g>
+  <g fill="#7CC10C"><circle cx="38" cy="42" r="3.4"/><circle cx="55" cy="33" r="3.4"/><circle cx="66" cy="47" r="3.4"/><circle cx="50" cy="56" r="3.4"/></g>
+  <path d="M44 64 h12 v4 h-12 z" fill="#DDB20B"/>
+  <polygon fill="#DDB20B" points="50,22 52,28 58,30 52,32 50,38 48,32 42,30 48,28"/>
+</svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#16241A;background:#F5F8EF;-webkit-font-smoothing:antialiased;}
+  input,button,select{font-family:inherit;}
+  ::selection{background:#D6F0A8;}
+  @keyframes bioFade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  @keyframes bioPulse{0%,100%{box-shadow:0 0 0 0 rgba(124,193,12,.5);}50%{box-shadow:0 0 0 7px rgba(124,193,12,0);}}
+  @keyframes bioPop{0%{transform:scale(.6);opacity:0;}60%{transform:scale(1.08);}100%{transform:scale(1);opacity:1;}}
+  @keyframes bioSlide{from{transform:translateX(60px);opacity:0;}to{transform:none;opacity:1;}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F5F8EF;padding-bottom:90px;">
+
+<!-- ============ LANDING ============ -->
+<sc-if value="{{ isLanding }}" hint-placeholder-val="{{ true }}">
+<div style="background:#FFFFFF;">
+  <!-- top nav -->
+  <div style="position:sticky;top:0;z-index:30;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid #EAEFE0;">
+    <div style="max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;">
+      <img src="assets/logo-lockup.png" alt="Bharat Innovation Olympiad" style="height:38px;width:auto;display:block;">
+      <div style="display:flex;align-items:center;gap:5px;background:#F4F7EE;border:1px solid #E6ECDB;border-radius:14px;padding:5px;">
+        <button onClick="{{ goLanding }}" style="border:none;background:{{ sw.landing }};color:{{ swTL.landing }};font-weight:600;font-size:13px;padding:8px 14px;border-radius:10px;cursor:pointer;">Landing</button>
+        <button onClick="{{ goRegister }}" style="border:none;background:{{ sw.register }};color:{{ swTL.register }};font-weight:600;font-size:13px;padding:8px 14px;border-radius:10px;cursor:pointer;">Register</button>
+        <button onClick="{{ goDashboard }}" style="border:none;background:{{ sw.dashboard }};color:{{ swTL.dashboard }};font-weight:600;font-size:13px;padding:8px 14px;border-radius:10px;cursor:pointer;">Dashboard</button>
+        <button onClick="{{ goExam }}" style="border:none;background:{{ sw.exam }};color:{{ swTL.exam }};font-weight:600;font-size:13px;padding:8px 14px;border-radius:10px;cursor:pointer;">Exam</button>
+        <button onClick="{{ goResults }}" style="border:none;background:{{ sw.results }};color:{{ swTL.results }};font-weight:600;font-size:13px;padding:8px 14px;border-radius:10px;cursor:pointer;">Results</button>
+        <span style="width:1px;align-self:stretch;background:#DCE4CE;margin:2px 3px;"></span>
+        <button onClick="{{ goSchool }}" style="border:none;background:{{ sw.school }};color:{{ swTL.school }};font-weight:600;font-size:13px;padding:8px 14px;border-radius:10px;cursor:pointer;">School</button>
+        <button onClick="{{ goAdmin }}" style="border:none;background:{{ sw.admin }};color:{{ swTL.admin }};font-weight:600;font-size:13px;padding:8px 14px;border-radius:10px;cursor:pointer;">Admin</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- hero -->
+  <div style="position:relative;overflow:hidden;background:#FFFFFF;">
+    <svg viewBox="0 0 1200 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.6;">
+      <g stroke="#CFE6AE" stroke-width="1.4" fill="none">
+        <line x1="1000" y1="64" x2="1086" y2="38"></line>
+        <line x1="1086" y1="38" x2="1150" y2="104"></line>
+        <line x1="1000" y1="64" x2="1052" y2="132"></line>
+        <line x1="1052" y1="132" x2="1150" y2="104"></line>
+        <line x1="1052" y1="132" x2="1118" y2="196"></line>
+        <line x1="1118" y1="196" x2="1150" y2="104"></line>
+      </g>
+      <g fill="#BFE08A">
+        <circle cx="1000" cy="64" r="4.5"></circle><circle cx="1086" cy="38" r="4.5"></circle>
+        <circle cx="1150" cy="104" r="4.5"></circle><circle cx="1052" cy="132" r="4.5"></circle>
+        <circle cx="1118" cy="196" r="4.5"></circle>
+      </g>
+      <g stroke="#E7D08A" stroke-width="1.2" fill="none">
+        <line x1="70" y1="300" x2="150" y2="332"></line>
+        <line x1="150" y1="332" x2="210" y2="286"></line>
+        <line x1="210" y1="286" x2="282" y2="320"></line>
+      </g>
+      <g fill="#ECD98F">
+        <circle cx="70" cy="300" r="4"></circle><circle cx="150" cy="332" r="4"></circle><circle cx="210" cy="286" r="4"></circle><circle cx="282" cy="320" r="4"></circle>
+      </g>
+      <polygon fill="#E7D08A" points="172,118 178,136 196,142 178,148 172,166 166,148 148,142 166,136"></polygon>
+      <polygon fill="#BFE08A" points="912,300 917,314 931,319 917,324 912,338 907,324 893,319 907,314"></polygon>
+    </svg>
+  <div style="max-width:1200px;margin:0 auto;padding:64px 32px 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative;z-index:1;">
+    <div style="">
+      <div style="display:inline-flex;align-items:center;gap:9px;background:#EEF6E2;color:#3F7A0A;font-weight:600;font-size:13px;padding:7px 14px;border-radius:999px;margin-bottom:22px;">
+        <span style="width:7px;height:7px;border-radius:50%;background:#7CC10C;display:inline-block;"></span>
+        India's National Innovation & Future Skills Movement • Class 6–12
+      </div>
+      <h1 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:46px;line-height:1.08;letter-spacing:-1px;color:#16241A;margin:0 0 18px;">India's Most Complete <span style="color:#5AAE0E;">Innovation</span> &amp; Future Skills Ecosystem</h1>
+      <p style="font-family:'Poppins',sans-serif;font-weight:600;font-size:19px;color:#3F7A0A;margin:0 0 14px;">One Registration. Four Powerful Benefits.</p>
+      <p style="font-size:16px;line-height:1.6;color:#5C6B5A;margin:0 0 30px;max-width:480px;">National Recognition • Innovation Challenges • Entrepreneurship Opportunities • Future Skills Development</p>
+      <div style="display:flex;gap:14px;align-items:center;">
+        <button onClick="{{ goRegister }}" style="border:none;background:linear-gradient(135deg,#7CC10C,#5AAE0E);color:#fff;font-weight:700;font-size:16px;padding:15px 30px;border-radius:13px;cursor:pointer;box-shadow:0 12px 26px rgba(90,174,14,.32);display:inline-flex;align-items:center;gap:9px;">🚀 Register Now</button>
+        <button style="border:1px solid #D8E2C8;background:#fff;color:#16241A;font-weight:600;font-size:16px;padding:15px 26px;border-radius:13px;cursor:pointer;display:inline-flex;align-items:center;gap:9px;">
+          <span style="width:30px;height:30px;border-radius:50%;background:#EEF6E2;display:inline-flex;align-items:center;justify-content:center;color:#5AAE0E;">▶</span> Watch Video
+        </button>
+      </div>
+      <div style="display:flex;gap:34px;margin-top:42px;">
+        <div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;color:#16241A;">2,400+</div><div style="font-size:13px;color:#5C6B5A;">Partner Schools</div></div>
+        <div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;color:#16241A;">1.8L+</div><div style="font-size:13px;color:#5C6B5A;">Young Innovators</div></div>
+        <div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;color:#16241A;">28</div><div style="font-size:13px;color:#5C6B5A;">States & UTs</div></div>
+      </div>
+    </div>
+    <!-- journey visual -->
+    <div style="background:linear-gradient(160deg,#F3FAE9,#FFFFFF);border:1px solid #EAEFE0;border-radius:24px;padding:28px;box-shadow:0 20px 50px rgba(20,33,14,.08);">
+      <div style="font-size:12px;font-weight:700;letter-spacing:1.2px;color:#8AA17F;text-transform:uppercase;margin-bottom:18px;">The Student Journey</div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <div style="display:flex;align-items:center;gap:16px;padding:13px 16px;background:#fff;border:1px solid #EAEFE0;border-radius:14px;box-shadow:0 4px 12px rgba(20,33,14,.04);"><span style="width:42px;height:42px;border-radius:12px;background:#EEF6E2;display:flex;align-items:center;justify-content:center;font-size:20px;">🏆</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;">Innovation Olympiad</div><div style="font-size:12.5px;color:#5C6B5A;">Take the national assessment</div></div></div>
+        <div style="height:18px;width:2px;background:#CFE6AE;margin-left:36px;"></div>
+        <div style="display:flex;align-items:center;gap:16px;padding:13px 16px;background:#fff;border:1px solid #EAEFE0;border-radius:14px;box-shadow:0 4px 12px rgba(20,33,14,.04);"><span style="width:42px;height:42px;border-radius:12px;background:#FBF1C6;display:flex;align-items:center;justify-content:center;font-size:20px;">📊</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;">Innovation Profile</div><div style="font-size:12.5px;color:#5C6B5A;">Build your skill identity</div></div></div>
+        <div style="height:18px;width:2px;background:#CFE6AE;margin-left:36px;"></div>
+        <div style="display:flex;align-items:center;gap:16px;padding:13px 16px;background:#fff;border:1px solid #EAEFE0;border-radius:14px;box-shadow:0 4px 12px rgba(20,33,14,.04);"><span style="width:42px;height:42px;border-radius:12px;background:#EEF6E2;display:flex;align-items:center;justify-content:center;font-size:20px;">💡</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;">Innopreneurs</div><div style="font-size:12.5px;color:#5C6B5A;">Enter startup challenges</div></div></div>
+        <div style="height:18px;width:2px;background:#CFE6AE;margin-left:36px;"></div>
+        <div style="display:flex;align-items:center;gap:16px;padding:13px 16px;background:#fff;border:1px solid #EAEFE0;border-radius:14px;box-shadow:0 4px 12px rgba(20,33,14,.04);"><span style="width:42px;height:42px;border-radius:12px;background:#FBF1C6;display:flex;align-items:center;justify-content:center;font-size:20px;">🤝</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;">Mentorship</div><div style="font-size:12.5px;color:#5C6B5A;">Learn from innovators</div></div></div>
+        <div style="height:18px;width:2px;background:#CFE6AE;margin-left:36px;"></div>
+        <div style="display:flex;align-items:center;gap:16px;padding:13px 16px;background:linear-gradient(135deg,#7CC10C,#5AAE0E);border-radius:14px;box-shadow:0 10px 22px rgba(90,174,14,.28);"><span style="width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-size:20px;">🚀</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:#fff;">Future Innovator</div><div style="font-size:12.5px;color:#EAF6D8;">Your journey continues</div></div></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- ============ SUCCESS STORIES (promoted) ============ -->
+  <div style="position:relative;overflow:hidden;background:linear-gradient(180deg,#F4F9EC,#F5F8EF);padding:74px 32px 80px;">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.45;">
+      <g stroke="#CBE3A6" stroke-width="1.3" fill="none">
+        <line x1="60" y1="90" x2="150" y2="56"></line><line x1="150" y1="56" x2="120" y2="150"></line>
+        <line x1="60" y1="90" x2="120" y2="150"></line><line x1="150" y1="56" x2="232" y2="104"></line>
+      </g>
+      <g fill="#BAD988"><circle cx="60" cy="90" r="4"></circle><circle cx="150" cy="56" r="4"></circle><circle cx="120" cy="150" r="4"></circle><circle cx="232" cy="104" r="4"></circle></g>
+      <g stroke="#E7D08A" stroke-width="1.2" fill="none">
+        <line x1="1150" y1="470" x2="1070" y2="430"></line><line x1="1070" y1="430" x2="1110" y2="360"></line><line x1="1110" y1="360" x2="1180" y2="392"></line>
+      </g>
+      <g fill="#EAD68B"><circle cx="1150" cy="470" r="4"></circle><circle cx="1070" cy="430" r="4"></circle><circle cx="1110" cy="360" r="4"></circle><circle cx="1180" cy="392" r="4"></circle></g>
+      <polygon fill="#E7D08A" points="980,120 985,134 999,139 985,144 980,158 975,144 961,139 975,134"></polygon>
+      <polygon fill="#BAD988" points="120,420 125,434 139,439 125,444 120,458 115,444 101,439 115,434"></polygon>
+    </svg>
+
+    <div style="max-width:1080px;margin:0 auto;position:relative;z-index:1;">
+      <div style="text-align:center;max-width:720px;margin:0 auto 46px;">
+        <div style="display:inline-flex;align-items:center;gap:9px;background:#EEF6E2;color:#3F7A0A;font-weight:700;font-size:12px;letter-spacing:1.3px;text-transform:uppercase;padding:7px 15px;border-radius:999px;margin-bottom:18px;">★ Innovation Alumni · Where Are They Now</div>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:40px;color:#16241A;margin:0 0 14px;letter-spacing:-.8px;line-height:1.08;">Real Students. Real Ideas. Real Impact.</h2>
+        <p style="font-size:16.5px;color:#5C6B5A;margin:0 auto;max-width:600px;line-height:1.6;">Every one of them began with a single spark of curiosity — right where you are now. Here's how far that first step has taken them.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:22px;">
+
+        <!-- Guransh -->
+        <div style="display:flex;background:#fff;border:1px solid #EAEFE0;border-radius:22px;overflow:hidden;box-shadow:0 16px 40px rgba(20,33,14,.08);">
+          <div style="flex:none;width:300px;position:relative;background:repeating-linear-gradient(135deg,rgba(90,174,14,.13) 0 14px,rgba(90,174,14,.05) 14px 28px);display:flex;flex-direction:column;justify-content:space-between;padding:20px;">
+            <span style="align-self:flex-start;background:#5AAE0E;color:#fff;font-weight:700;font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;padding:6px 12px;border-radius:999px;box-shadow:0 8px 18px rgba(90,174,14,.35);">National Champion '26</span>
+            <div style="text-align:center;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:2px;color:#3F7A0A;opacity:.7;">⤢ DROP PHOTO</div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:1px;color:#3F7A0A;opacity:.6;">portrait · Guransh Singh</div>
+          </div>
+          <div style="flex:1;padding:28px 32px;display:flex;flex-direction:column;">
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:23px;color:#16241A;margin:0 0 3px;">Guransh Singh</h3>
+            <div style="font-size:13.5px;font-weight:600;color:#5AAE0E;margin-bottom:16px;">From Young Innovator to National Champion</div>
+            <div style="display:flex;gap:30px;flex-wrap:wrap;margin-bottom:14px;">
+              <div><div style="font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#9AA694;margin-bottom:4px;">Innovation</div><b style="font-size:14px;color:#16241A;font-weight:600;">Golden Years</b></div>
+              <div><div style="font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#9AA694;margin-bottom:4px;">School</div><b style="font-size:14px;color:#16241A;font-weight:600;">DAV Public School, Amritsar</b></div>
+            </div>
+            <p style="font-size:14px;color:#5C6B5A;line-height:1.6;margin:0 0 16px;max-width:560px;">He didn't stop after the contest. In 2026 he secured the 1st position nationally in Innopreneurs Junior Season 12 — competing against thousands of young innovators across India.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+              <span style="background:#EEF6E2;color:#3F7A0A;font-size:11px;font-weight:600;padding:5px 11px;border-radius:999px;">Innovation Mindset</span>
+              <span style="background:#EEF6E2;color:#3F7A0A;font-size:11px;font-weight:600;padding:5px 11px;border-radius:999px;">Problem Solving</span>
+            </div>
+            <div style="margin-top:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px dashed #E0E7D6;padding-top:16px;">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:9.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#9AA694;">Journey</span>
+              <b style="color:#3F7A0A;font-weight:600;font-size:12.5px;">Winner → Continued Innovator → National Champion Again</b>
+            </div>
+          </div>
+        </div>
+
+        <!-- Falak -->
+        <div style="display:flex;background:#fff;border:1px solid #EAEFE0;border-radius:22px;overflow:hidden;box-shadow:0 16px 40px rgba(20,33,14,.08);">
+          <div style="flex:none;width:300px;position:relative;background:repeating-linear-gradient(135deg,rgba(201,148,5,.14) 0 14px,rgba(201,148,5,.05) 14px 28px);display:flex;flex-direction:column;justify-content:space-between;padding:20px;">
+            <span style="align-self:flex-start;background:#C99405;color:#fff;font-weight:700;font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;padding:6px 12px;border-radius:999px;box-shadow:0 8px 18px rgba(201,148,5,.35);">Founder</span>
+            <div style="text-align:center;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:2px;color:#8A6D00;opacity:.7;">⤢ DROP PHOTO</div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:1px;color:#8A6D00;opacity:.6;">portrait · Falak Arora</div>
+          </div>
+          <div style="flex:1;padding:28px 32px;display:flex;flex-direction:column;">
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:23px;color:#16241A;margin:0 0 3px;">Falak Arora</h3>
+            <div style="font-size:13.5px;font-weight:600;color:#C99405;margin-bottom:16px;">Turning Sustainability into Entrepreneurship</div>
+            <div style="display:flex;gap:30px;flex-wrap:wrap;margin-bottom:14px;">
+              <div><div style="font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#9AA694;margin-bottom:4px;">Innovation</div><b style="font-size:14px;color:#16241A;font-weight:600;">Zedberrie</b></div>
+              <div><div style="font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#9AA694;margin-bottom:4px;">Field</div><b style="font-size:14px;color:#16241A;font-weight:600;">Sustainable fashion</b></div>
+            </div>
+            <p style="font-size:14px;color:#5C6B5A;line-height:1.6;margin:0 0 16px;max-width:560px;">She built fashion accessories from textile waste — turning an environmental challenge into a real business, and is now pursuing global opportunities with it.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+              <span style="background:#FBF1C6;color:#8A6D00;font-size:11px;font-weight:600;padding:5px 11px;border-radius:999px;">Sustainability</span>
+              <span style="background:#FBF1C6;color:#8A6D00;font-size:11px;font-weight:600;padding:5px 11px;border-radius:999px;">Circular Economy</span>
+            </div>
+            <div style="margin-top:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px dashed #E0E7D6;padding-top:16px;">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:9.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#9AA694;">Journey</span>
+              <b style="color:#8A6D00;font-weight:600;font-size:12.5px;">Student Innovator → Founder → Global Opportunities</b>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anay & Abeer -->
+        <div style="display:flex;background:#fff;border:1px solid #EAEFE0;border-radius:22px;overflow:hidden;box-shadow:0 16px 40px rgba(20,33,14,.08);">
+          <div style="flex:none;width:300px;position:relative;background:repeating-linear-gradient(135deg,rgba(59,111,224,.13) 0 14px,rgba(59,111,224,.05) 14px 28px);display:flex;flex-direction:column;justify-content:space-between;padding:20px;">
+            <span style="align-self:flex-start;background:#3B6FE0;color:#fff;font-weight:700;font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;padding:6px 12px;border-radius:999px;box-shadow:0 8px 18px rgba(59,111,224,.35);">AI Pioneers</span>
+            <div style="text-align:center;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:2px;color:#2C56B8;opacity:.7;">⤢ DROP PHOTO</div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:1px;color:#2C56B8;opacity:.6;">portrait · Anay &amp; Abeer</div>
+          </div>
+          <div style="flex:1;padding:28px 32px;display:flex;flex-direction:column;">
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:23px;color:#16241A;margin:0 0 3px;">Anay &amp; Abeer Ramakrishnan</h3>
+            <div style="font-size:13.5px;font-weight:600;color:#3B6FE0;margin-bottom:16px;">From Child Innovators to AI Pioneers</div>
+            <div style="display:flex;gap:30px;flex-wrap:wrap;margin-bottom:14px;">
+              <div><div style="font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#9AA694;margin-bottom:4px;">Innovation</div><b style="font-size:14px;color:#16241A;font-weight:600;">Immvers</b></div>
+              <div><div style="font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#9AA694;margin-bottom:4px;">Field</div><b style="font-size:14px;color:#16241A;font-weight:600;">Immersive &amp; AI tech</b></div>
+            </div>
+            <p style="font-size:14px;color:#5C6B5A;line-height:1.6;margin:0 0 16px;max-width:560px;">As kids the twins were already building technology. Immvers grew into a broader ecosystem at the intersection of AI, education and emerging technologies.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+              <span style="background:#E6EEFF;color:#2C56B8;font-size:11px;font-weight:600;padding:5px 11px;border-radius:999px;">Artificial Intelligence</span>
+              <span style="background:#E6EEFF;color:#2C56B8;font-size:11px;font-weight:600;padding:5px 11px;border-radius:999px;">Deep Tech</span>
+            </div>
+            <div style="margin-top:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px dashed #E0E7D6;padding-top:16px;">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:9.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#9AA694;">Journey</span>
+              <b style="color:#2C56B8;font-weight:600;font-size:12.5px;">Young Innovators → Technology Builders → AI Innovators</b>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aryak -->
+        <div style="display:flex;background:#fff;border:1px solid #EAEFE0;border-radius:22px;overflow:hidden;box-shadow:0 16px 40px rgba(20,33,14,.08);">
+          <div style="flex:none;width:300px;position:relative;background:repeating-linear-gradient(135deg,rgba(221,122,42,.14) 0 14px,rgba(221,122,42,.05) 14px 28px);display:flex;flex-direction:column;justify-content:space-between;padding:20px;">
+            <span style="align-self:flex-start;background:#DD7A2A;color:#fff;font-weight:700;font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;padding:6px 12px;border-radius:999px;box-shadow:0 8px 18px rgba(221,122,42,.35);">On National TV</span>
+            <div style="text-align:center;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:2px;color:#B5651F;opacity:.7;">⤢ DROP PHOTO</div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:1px;color:#B5651F;opacity:.6;">portrait · Aryak Sahai</div>
+          </div>
+          <div style="flex:1;padding:28px 32px;display:flex;flex-direction:column;">
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:23px;color:#16241A;margin:0 0 3px;">Aryak Sahai</h3>
+            <div style="font-size:13.5px;font-weight:600;color:#DD7A2A;margin-bottom:16px;">From the Classroom to National Television</div>
+            <div style="display:flex;gap:30px;flex-wrap:wrap;margin-bottom:14px;">
+              <div><div style="font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#9AA694;margin-bottom:4px;">Innovation</div><b style="font-size:14px;color:#16241A;font-weight:600;">DigiRakshak</b></div>
+              <div><div style="font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#9AA694;margin-bottom:4px;">Field</div><b style="font-size:14px;color:#16241A;font-weight:600;">Technology for good</b></div>
+            </div>
+            <p style="font-size:14px;color:#5C6B5A;line-height:1.6;margin:0 0 16px;max-width:560px;">He kept presenting his idea well beyond the contest — and was invited to showcase DigiRakshak on Doordarshan as a Junior Chief Guest.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+              <span style="background:#FCE9D6;color:#B5651F;font-size:11px;font-weight:600;padding:5px 11px;border-radius:999px;">Tech for Good</span>
+              <span style="background:#FCE9D6;color:#B5651F;font-size:11px;font-weight:600;padding:5px 11px;border-radius:999px;">Youth Leadership</span>
+            </div>
+            <div style="margin-top:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px dashed #E0E7D6;padding-top:16px;">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:9.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#9AA694;">Journey</span>
+              <b style="color:#B5651F;font-weight:600;font-size:12.5px;">Student Innovator → Public Recognition → National Visibility</b>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:46px;">
+        <p style="font-family:'Poppins',sans-serif;font-weight:700;font-size:23px;color:#16241A;margin:0 0 8px;letter-spacing:-.4px;">Today they are students. Tomorrow, they'll build the future of Bharat.</p>
+        <p style="font-size:14px;color:#5C6B5A;margin:0 0 24px;">Your innovation journey could be next · Powered by Lemon Ideas · Connected to Innopreneurs Junior</p>
+        <button onClick="{{ goRegister }}" style="border:none;background:linear-gradient(135deg,#7CC10C,#5AAE0E);color:#fff;font-weight:700;font-size:15px;padding:14px 30px;border-radius:13px;cursor:pointer;box-shadow:0 12px 26px rgba(90,174,14,.3);">Start your story →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- why different -->
+  <div style="background:#F5F8EF;padding:72px 32px;">
+    <div style="max-width:1100px;margin:0 auto;text-align:center;">
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:36px;color:#16241A;margin:0 0 10px;letter-spacing:-.6px;">Why This Olympiad Is Different</h2>
+      <p style="font-size:16px;color:#5C6B5A;margin:0 auto 44px;max-width:560px;">We don't test what students memorise. We measure how they think, create and solve.</p>
+      <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;max-width:880px;margin:0 auto;background:#fff;border:1px solid #EAEFE0;border-radius:20px;overflow:hidden;box-shadow:0 14px 40px rgba(20,33,14,.07);">
+        <div style="padding:34px 30px;text-align:left;">
+          <div style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#9AA694;margin-bottom:18px;">Traditional Olympiad</div>
+          <div style="display:flex;flex-direction:column;gap:16px;color:#6B7768;font-size:16px;">
+            <div style="display:flex;gap:10px;align-items:center;">✕ &nbsp;Rewards <b style="color:#16241A;font-weight:600;">Memory</b></div>
+            <div style="display:flex;gap:10px;align-items:center;">✕ &nbsp;Measures <b style="color:#16241A;font-weight:600;">Marks</b></div>
+            <div style="display:flex;gap:10px;align-items:center;">✕ &nbsp;Tests <b style="color:#16241A;font-weight:600;">Knowledge</b></div>
+          </div>
+        </div>
+        <div style="width:1px;background:#EAEFE0;"></div>
+        <div style="padding:34px 30px;text-align:left;background:linear-gradient(180deg,#F3FAE9,#fff);">
+          <div style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#5AAE0E;margin-bottom:18px;">Innovation Olympiad</div>
+          <div style="display:flex;flex-direction:column;gap:16px;color:#2E5510;font-size:16px;">
+            <div style="display:flex;gap:10px;align-items:center;">✓ &nbsp;Rewards <b style="font-weight:700;">Creativity</b></div>
+            <div style="display:flex;gap:10px;align-items:center;">✓ &nbsp;Measures <b style="font-weight:700;">Innovation</b></div>
+            <div style="display:flex;gap:10px;align-items:center;">✓ &nbsp;Builds <b style="font-weight:700;">Problem Solving</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- four benefits -->
+  <div style="background:#fff;padding:72px 32px;">
+    <div style="max-width:1160px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:48px;">
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:36px;color:#16241A;margin:0 0 10px;letter-spacing:-.6px;">One Registration. Four Powerful Benefits.</h2>
+        <p style="font-size:16px;color:#5C6B5A;margin:0;">Everything a young innovator needs to be recognised and grow.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;">
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:26px;box-shadow:0 10px 28px rgba(20,33,14,.05);">
+          <div style="width:52px;height:52px;border-radius:14px;background:#EEF6E2;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;">🏅</div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;margin-bottom:8px;">National Rankings</div>
+          <div style="font-size:14px;color:#5C6B5A;line-height:1.55;">Stand out with verified All-India, State, City & School ranks.</div>
+        </div>
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:26px;box-shadow:0 10px 28px rgba(20,33,14,.05);">
+          <div style="width:52px;height:52px;border-radius:14px;background:#FBF1C6;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;">💡</div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;margin-bottom:8px;">Innopreneurs Advantage</div>
+          <div style="font-size:14px;color:#5C6B5A;line-height:1.55;">A direct pathway into startup contests and innovation labs.</div>
+        </div>
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:26px;box-shadow:0 10px 28px rgba(20,33,14,.05);">
+          <div style="width:52px;height:52px;border-radius:14px;background:#E6EEFF;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;">🌐</div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;margin-bottom:8px;">World Skill Challenge</div>
+          <div style="font-size:14px;color:#5C6B5A;line-height:1.55;">Qualify for global future-skills challenges and exposure.</div>
+        </div>
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:26px;box-shadow:0 10px 28px rgba(20,33,14,.05);">
+          <div style="width:52px;height:52px;border-radius:14px;background:#FCE9D6;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;">🚀</div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;margin-bottom:8px;">Entrepreneurship Bootcamp</div>
+          <div style="font-size:14px;color:#5C6B5A;line-height:1.55;">Hands-on bootcamps to turn ideas into real ventures.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- roadmap -->
+  <div style="background:#16241A;padding:74px 32px;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:50px;">
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:34px;color:#fff;margin:0 0 10px;letter-spacing:-.5px;">The Innovation Journey Roadmap</h2>
+        <p style="font-size:16px;color:#9DB496;margin:0;">From your first Olympiad to becoming a recognised innovator.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative;">
+        <div style="text-align:center;"><div style="width:54px;height:54px;border-radius:50%;background:#7CC10C;color:#16241A;font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">01</div><div style="font-family:'Poppins',sans-serif;font-weight:700;color:#fff;font-size:15px;margin-bottom:6px;">Register & Assess</div><div style="font-size:13px;color:#9DB496;line-height:1.5;">Sign up and take the Olympiad</div></div>
+        <div style="text-align:center;"><div style="width:54px;height:54px;border-radius:50%;background:#DDB20B;color:#16241A;font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">02</div><div style="font-family:'Poppins',sans-serif;font-weight:700;color:#fff;font-size:15px;margin-bottom:6px;">Get Ranked</div><div style="font-size:13px;color:#9DB496;line-height:1.5;">National & school recognition</div></div>
+        <div style="text-align:center;"><div style="width:54px;height:54px;border-radius:50%;background:#7CC10C;color:#16241A;font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">03</div><div style="font-family:'Poppins',sans-serif;font-weight:700;color:#fff;font-size:15px;margin-bottom:6px;">Innopreneurs</div><div style="font-size:13px;color:#9DB496;line-height:1.5;">Compete in startup contests</div></div>
+        <div style="text-align:center;"><div style="width:54px;height:54px;border-radius:50%;background:#DDB20B;color:#16241A;font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">04</div><div style="font-family:'Poppins',sans-serif;font-weight:700;color:#fff;font-size:15px;margin-bottom:6px;">Mentorship</div><div style="font-size:13px;color:#9DB496;line-height:1.5;">Guidance from innovators</div></div>
+        <div style="text-align:center;"><div style="width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#7CC10C,#DDB20B);color:#16241A;font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">05</div><div style="font-family:'Poppins',sans-serif;font-weight:700;color:#fff;font-size:15px;margin-bottom:6px;">Future Innovator</div><div style="font-size:13px;color:#9DB496;line-height:1.5;">Build real ventures</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- what every student receives -->
+  <div style="background:#F5F8EF;padding:72px 32px;">
+    <div style="max-width:1160px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:48px;">
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:36px;color:#16241A;margin:0 0 10px;letter-spacing:-.6px;">What Every Student Receives</h2>
+        <p style="font-size:16px;color:#5C6B5A;margin:0;">Far more than a score — a complete innovation identity.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start;"><span style="font-size:24px;">🏆</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:5px;">Rankings</div><div style="font-size:13.5px;color:#5C6B5A;line-height:1.5;">National, State, City & School ranks.</div></div></div>
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start;"><span style="font-size:24px;">📊</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:5px;">Innovation Profile</div><div style="font-size:13.5px;color:#5C6B5A;line-height:1.5;">A skill radar across 5 dimensions.</div></div></div>
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start;"><span style="font-size:24px;">📜</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:5px;">Certificate</div><div style="font-size:13.5px;color:#5C6B5A;line-height:1.5;">Verifiable digital certificate.</div></div></div>
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start;"><span style="font-size:24px;">🎯</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:5px;">Opportunities</div><div style="font-size:13.5px;color:#5C6B5A;line-height:1.5;">Contests, challenges & events.</div></div></div>
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start;"><span style="font-size:24px;">🤝</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:5px;">Mentorship</div><div style="font-size:13.5px;color:#5C6B5A;line-height:1.5;">Access to expert innovators.</div></div></div>
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start;"><span style="font-size:24px;">🚀</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:5px;">Entrepreneurship Exposure</div><div style="font-size:13.5px;color:#5C6B5A;line-height:1.5;">Bootcamps to launch ventures.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- national stage gallery -->
+  <div style="background:#16241A;padding:76px 32px;">
+    <div style="max-width:1160px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:46px;">
+        <div style="display:inline-flex;align-items:center;gap:9px;background:rgba(124,193,12,.14);color:#A6E05A;font-weight:700;font-size:12px;letter-spacing:1.3px;text-transform:uppercase;padding:7px 15px;border-radius:999px;margin-bottom:18px;">Proven Legacy · Powered by Innopreneurs Junior</div>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:36px;color:#fff;margin:0 0 12px;letter-spacing:-.6px;">Real Students. Real Ideas. Real Impact.</h2>
+        <p style="font-size:16px;color:#9DB496;margin:0 auto;max-width:640px;line-height:1.6;">For over four years, Innopreneurs Junior has helped school students across India identify problems, build solutions and present their ideas on a national stage.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:14px;">
+        <div style="grid-column:span 7;position:relative;border-radius:18px;overflow:hidden;border:1px solid #284A2C;">
+          <img src="assets/hof-grand-finale-group.jpg" alt="Innopreneurs Junior Grand Finale cohort" style="width:100%;height:308px;object-fit:cover;display:block;">
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;background:linear-gradient(transparent,rgba(14,26,18,.88));color:#fff;font-size:13px;font-weight:600;">Grand Finale · The national cohort of young innovators</div>
+        </div>
+        <div style="grid-column:span 5;position:relative;border-radius:18px;overflow:hidden;border:1px solid #284A2C;">
+          <img src="assets/hof-winners.jpg" alt="National winners with certificate" style="width:100%;height:308px;object-fit:cover;display:block;">
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;background:linear-gradient(transparent,rgba(14,26,18,.88));color:#fff;font-size:13px;font-weight:600;">Winners felicitated on the main stage</div>
+        </div>
+        <div style="grid-column:span 4;position:relative;border-radius:18px;overflow:hidden;border:1px solid #284A2C;">
+          <img src="assets/hof-pitch-duo.jpg" alt="Students pitching their innovation" style="width:100%;height:232px;object-fit:cover;display:block;">
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:30px 16px 12px;background:linear-gradient(transparent,rgba(14,26,18,.88));color:#fff;font-size:12.5px;font-weight:600;">Pitching to a national jury</div>
+        </div>
+        <div style="grid-column:span 4;position:relative;border-radius:18px;overflow:hidden;border:1px solid #284A2C;">
+          <img src="assets/hof-national-stage.jpg" alt="National stage recognition" style="width:100%;height:232px;object-fit:cover;display:block;">
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:30px 16px 12px;background:linear-gradient(transparent,rgba(14,26,18,.88));color:#fff;font-size:12.5px;font-weight:600;">Recognised by national leaders</div>
+        </div>
+        <div style="grid-column:span 4;position:relative;border-radius:18px;overflow:hidden;border:1px solid #284A2C;">
+          <img src="assets/hof-certificates.jpg" alt="Regional round participants with certificates" style="width:100%;height:232px;object-fit:cover;display:block;">
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:30px 16px 12px;background:linear-gradient(transparent,rgba(14,26,18,.88));color:#fff;font-size:12.5px;font-weight:600;">City rounds across India</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA band -->
+  <div style="background:linear-gradient(135deg,#7CC10C,#5AAE0E);padding:64px 32px;text-align:center;">
+    <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:34px;color:#fff;margin:0 0 12px;letter-spacing:-.5px;">Every idea starts small. Every innovator starts somewhere.</h2>
+    <p style="font-size:17px;color:#EAF6D8;margin:0 0 28px;">Join India's most complete innovation ecosystem today.</p>
+    <button onClick="{{ goRegister }}" style="border:none;background:#fff;color:#3F7A0A;font-weight:700;font-size:17px;padding:16px 36px;border-radius:13px;cursor:pointer;box-shadow:0 14px 30px rgba(20,33,14,.18);">🚀 Register Now</button>
+  </div>
+
+  <!-- footer -->
+  <div style="background:#16241A;padding:34px 32px;text-align:center;color:#8DA386;font-size:13px;">
+    <img src="assets/logo-mark.png" alt="" style="height:36px;width:auto;display:block;margin:0 auto 12px;filter:brightness(1.05);">
+    © 2026 Bharat Innovation Olympiad · An Innovation & Future Skills Ecosystem
+  </div>
+</div>
+</sc-if>
+
+<!-- ============ REGISTRATION ============ -->
+
+
+<!-- ============ DASHBOARD ============ -->
+
+
+<!-- ============ EXAM ============ -->
+
+
+<!-- ============ RESULTS ============ -->
+
+
+<!-- ============ SCHOOL PARTNER PORTAL ============ -->
+
+
+<!-- ============ ADMIN CONSOLE ============ -->
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    screen: 'landing',
+    regStep: 0,
+    examQ: 0,
+    answers: {},
+    flagged: {},
+    timeLeft: 45 * 60,
+    showProctor: false,
+  };
+
+  QUESTIONS = [
+    { text: "A city faces severe traffic congestion every morning. Which approach best reflects innovative problem-solving rather than a conventional fix?", tag: "Problem Solving", img: false, options: ["Build more roads everywhere", "Design a dynamic, demand-based smart signal & incentive system", "Ban all private vehicles", "Increase fuel prices sharply"] },
+    { text: "Look at the pattern of connected nodes shown. Which shape logically completes the innovation network?", tag: "Critical Thinking", img: true, options: ["A closed triangle", "A branching hexagonal mesh", "A single straight line", "An isolated dot"] },
+    { text: "A young innovator wants to reduce food waste in school canteens. What is the strongest first step in design thinking?", tag: "Innovation", img: false, options: ["Immediately build an app", "Empathise and observe how students actually waste food", "Fine students who waste food", "Reduce the menu options"] },
+    { text: "Which of these best describes 'entrepreneurial thinking' for a student team?", tag: "Entrepreneurship", img: false, options: ["Avoiding all risks", "Spotting a real need and testing a small solution quickly", "Copying an existing business exactly", "Waiting for perfect conditions"] },
+    { text: "You have ₹500 and 1 week to validate a new product idea. What demonstrates the most creative resourcefulness?", tag: "Creativity", img: false, options: ["Spend it all on advertising", "Build a quick prototype and get 20 people to try it", "Save the money for later", "Write a 50-page business plan"] },
+    { text: "A prototype fails during testing. What mindset best supports innovation?", tag: "Problem Solving", img: false, options: ["Abandon the idea completely", "Treat the failure as data and iterate", "Hide the failure", "Blame the materials"] },
+    { text: "Which combination most strongly signals a scalable innovation?", tag: "Innovation", img: false, options: ["High cost, few users", "Solves a common problem cheaply and repeatably", "Works only once", "Needs constant manual effort"] },
+    { text: "What is the best way to measure if an idea creates real impact?", tag: "Critical Thinking", img: false, options: ["Number of likes online", "A clear before/after change for real users", "How complex it looks", "How much it costs to build"] },
+  ];
+
+  componentDidMount() {
+    this._t = setInterval(() => {
+      if (this.state.screen === 'exam' && this.state.timeLeft > 0) {
+        this.setState(s => ({ timeLeft: s.timeLeft - 1 }));
+      }
+    }, 1000);
+  }
+  componentWillUnmount() { clearInterval(this._t); if (this._pt) clearTimeout(this._pt); }
+
+  go(screen) {
+    this.setState({ screen });
+    if (typeof window !== 'undefined') window.scrollTo(0, 0);
+    if (screen === 'exam') {
+      if (this._pt) clearTimeout(this._pt);
+      this._pt = setTimeout(() => {
+        this.setState({ showProctor: true });
+        setTimeout(() => this.setState({ showProctor: false }), 5200);
+      }, 3500);
+    }
+  }
+
+  fmtTime(s) {
+    const m = Math.floor(s / 60), ss = s % 60;
+    return m + ':' + String(ss).padStart(2, '0');
+  }
+
+  renderVals() {
+    const { screen, regStep, examQ, answers, flagged, timeLeft, showProctor } = this.state;
+    const Q = this.QUESTIONS;
+    const cur = Q[examQ % Q.length];
+
+    // switcher styles
+    const screens = ['landing', 'register', 'dashboard', 'exam', 'results', 'school', 'admin'];
+    const sw = {}, swT = {}, swTL = {};
+    screens.forEach(s => {
+      const active = screen === s;
+      sw[s] = active ? 'linear-gradient(135deg,#7CC10C,#5AAE0E)' : 'transparent';
+      swT[s] = active ? '#fff' : '#9DB496';
+      swTL[s] = active ? '#fff' : '#4A5A48';
+    });
+
+    // registration steps
+    const stepNames = ['Mobile & OTP', 'Profile', 'Eligibility', 'Coupon', 'Payment', 'Slot Booking', 'Admit Card'];
+    const regSteps = stepNames.map((name, i) => {
+      const done = i < regStep, active = i === regStep;
+      return {
+        name, label: done ? '✓' : String(i + 1),
+        bg: done ? '#7CC10C' : active ? '#fff' : '#F2F5EC',
+        fg: done ? '#fff' : active ? '#3F7A0A' : '#9AA694',
+        border: active ? '2px solid #7CC10C' : done ? 'none' : '1px solid #E0E7D6',
+        weight: active ? 700 : 500,
+        tColor: active ? '#16241A' : done ? '#3F7A0A' : '#8AA17F',
+      };
+    });
+    const regProgress = Math.round((regStep / (stepNames.length - 1)) * 100) + '%';
+
+    // exam navigator
+    const nav = Array.from({ length: 50 }, (_, i) => {
+      const isAns = answers[i] != null;
+      const isFlag = flagged[i];
+      const isCur = i === examQ;
+      let bg = '#0E1A12', color = '#9DB496', border = '1px solid #2C5232';
+      if (isFlag) { bg = '#DDB20B'; color = '#16241A'; border = 'none'; }
+      else if (isAns) { bg = '#7CC10C'; color = '#16241A'; border = 'none'; }
+      if (isCur) border = '2px solid #fff';
+      return { num: i + 1, bg, color, border, onClick: () => this.setState({ examQ: i }) };
+    });
+
+    // current options
+    const keys = ['A', 'B', 'C', 'D'];
+    const options = cur.options.map((text, i) => {
+      const sel = answers[examQ] === i;
+      return {
+        key: keys[i], text,
+        bg: sel ? '#F7FCEF' : '#fff',
+        border: sel ? '2px solid #7CC10C' : '1.5px solid #E6EBDE',
+        keyBg: sel ? '#7CC10C' : '#F2F5EC',
+        keyColor: sel ? '#fff' : '#5C6B5A',
+        onPick: () => this.setState(st => ({ answers: { ...st.answers, [examQ]: i } })),
+      };
+    });
+
+    const attempted = Object.keys(answers).length;
+    const flaggedCount = Object.keys(flagged).filter(k => flagged[k]).length;
+    const progress = Math.round((attempted / 50) * 100);
+
+    // radar
+    const skills = [88, 82, 90, 80, 74];
+    const cx = 130, cy = 120, R = 92;
+    const poly = (scale) => skills.map((v, i) => {
+      const ang = -Math.PI / 2 + i * 2 * Math.PI / 5;
+      const r = R * scale;
+      return (cx + r * Math.cos(ang)).toFixed(1) + ',' + (cy + r * Math.sin(ang)).toFixed(1);
+    }).join(' ');
+    const dataPoly = skills.map((v, i) => {
+      const ang = -Math.PI / 2 + i * 2 * Math.PI / 5;
+      const r = R * v / 100;
+      return (cx + r * Math.cos(ang)).toFixed(1) + ',' + (cy + r * Math.sin(ang)).toFixed(1);
+    }).join(' ');
+
+    const lowTime = timeLeft < 5 * 60;
+
+    return {
+      isLanding: screen === 'landing',
+      isRegister: screen === 'register',
+      isDashboard: screen === 'dashboard',
+      isExam: screen === 'exam',
+      isResults: screen === 'results',
+      isSchool: screen === 'school',
+      isAdmin: screen === 'admin',
+
+      goLanding: () => this.go('landing'),
+      goRegister: () => this.go('register'),
+      goDashboard: () => this.go('dashboard'),
+      goExam: () => this.go('exam'),
+      goResults: () => this.go('results'),
+      goSchool: () => this.go('school'),
+      goAdmin: () => this.go('admin'),
+
+      sw, swT, swTL,
+
+      // registration
+      regSteps, regProgress,
+      rs0: regStep === 0, rs1: regStep === 1, rs2: regStep === 2, rs3: regStep === 3,
+      rs4: regStep === 4, rs5: regStep === 5, rs6: regStep === 6,
+      regNextLabel: regStep >= 6 ? 'Go to Dashboard →' : regStep === 3 ? 'Pay ₹374 →' : 'Continue →',
+      regNext: () => {
+        if (regStep >= 6) { this.go('dashboard'); this.setState({ regStep: 0 }); }
+        else this.setState({ regStep: regStep + 1 });
+      },
+      regBack: () => { if (regStep > 0) this.setState({ regStep: regStep - 1 }); else this.go('landing'); },
+
+      // exam
+      nav,
+      qNum: examQ + 1,
+      qText: cur.text,
+      qTag: cur.tag,
+      qHasImage: cur.img,
+      options,
+      timer: this.fmtTime(timeLeft),
+      timerColor: lowTime ? '#F97316' : '#fff',
+      attempted, flaggedCount, progress,
+      progressW: progress + '%',
+      showProctor,
+      examPrev: () => this.setState({ examQ: Math.max(0, examQ - 1) }),
+      examNext: () => this.setState({ examQ: Math.min(49, examQ + 1) }),
+      examFlag: () => this.setState(st => ({ flagged: { ...st.flagged, [examQ]: !st.flagged[examQ] } })),
+      examSubmit: () => this.go('results'),
+
+      // results radar
+      ring1: poly(0.25), ring2: poly(0.5), ring3: poly(0.75), ring4: poly(1),
+      dataPoly,
+    };
+  }
+}
+</script>
+</body>
+</html>

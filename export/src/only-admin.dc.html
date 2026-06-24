@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" rx="20" fill="#16241A"/>
+  <g stroke="#7CC10C" stroke-width="2" fill="none">
+    <line x1="38" y1="42" x2="55" y2="33"/><line x1="55" y1="33" x2="66" y2="47"/>
+    <line x1="38" y1="42" x2="50" y2="56"/><line x1="50" y1="56" x2="66" y2="47"/>
+  </g>
+  <g fill="#7CC10C"><circle cx="38" cy="42" r="3.4"/><circle cx="55" cy="33" r="3.4"/><circle cx="66" cy="47" r="3.4"/><circle cx="50" cy="56" r="3.4"/></g>
+  <path d="M44 64 h12 v4 h-12 z" fill="#DDB20B"/>
+  <polygon fill="#DDB20B" points="50,22 52,28 58,30 52,32 50,38 48,32 42,30 48,28"/>
+</svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#16241A;background:#F5F8EF;-webkit-font-smoothing:antialiased;}
+  input,button,select{font-family:inherit;}
+  ::selection{background:#D6F0A8;}
+  @keyframes bioFade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  @keyframes bioPulse{0%,100%{box-shadow:0 0 0 0 rgba(124,193,12,.5);}50%{box-shadow:0 0 0 7px rgba(124,193,12,0);}}
+  @keyframes bioPop{0%{transform:scale(.6);opacity:0;}60%{transform:scale(1.08);}100%{transform:scale(1);opacity:1;}}
+  @keyframes bioSlide{from{transform:translateX(60px);opacity:0;}to{transform:none;opacity:1;}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F5F8EF;padding-bottom:90px;">
+
+<!-- ============ LANDING ============ -->
+
+
+<!-- ============ REGISTRATION ============ -->
+
+
+<!-- ============ DASHBOARD ============ -->
+
+
+<!-- ============ EXAM ============ -->
+
+
+<!-- ============ RESULTS ============ -->
+
+
+<!-- ============ SCHOOL PARTNER PORTAL ============ -->
+
+
+<!-- ============ ADMIN CONSOLE ============ -->
+<sc-if value="{{ isAdmin }}" hint-placeholder-val="{{ true }}">
+<div style="display:grid;grid-template-columns:252px 1fr;min-height:100vh;background:#F5F8EF;">
+  <!-- sidebar -->
+  <div style="background:#16241A;padding:26px 18px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;">
+    <img src="assets/logo-mark.png" alt="" style="height:42px;width:auto;margin:0 6px 6px;">
+    <div style="font-family:'Poppins',sans-serif;color:#DDB20B;font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;margin:0 6px 24px;">Admin Console</div>
+    <div style="display:flex;flex-direction:column;gap:4px;">
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;background:#284A2C;color:#fff;font-weight:600;font-size:14px;">📊 Dashboard</div>
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;color:#9DB496;font-weight:500;font-size:14px;">🏫 Schools</div>
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;color:#9DB496;font-weight:500;font-size:14px;">👥 Students</div>
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;color:#9DB496;font-weight:500;font-size:14px;">🏆 Olympiads</div>
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;color:#9DB496;font-weight:500;font-size:14px;">🛡 Live Proctoring</div>
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;color:#9DB496;font-weight:500;font-size:14px;">📈 Results</div>
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;color:#9DB496;font-weight:500;font-size:14px;">💳 Payments</div>
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;color:#9DB496;font-weight:500;font-size:14px;">⚙ Settings</div>
+    </div>
+    <div style="margin-top:auto;background:#1F3826;border-radius:14px;padding:16px;">
+      <div style="display:flex;gap:11px;align-items:center;"><span style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#DDB20B,#7CC10C);display:flex;align-items:center;justify-content:center;font-weight:700;color:#16241A;font-family:'Montserrat',sans-serif;">OP</span><div><div style="color:#fff;font-weight:600;font-size:13.5px;">Ops Admin</div><div style="color:#8DA386;font-size:12px;">Lemon Ideas</div></div></div>
+    </div>
+  </div>
+
+  <!-- main -->
+  <div style="padding:30px 36px;">
+    <!-- admin banner -->
+    <div style="position:relative;overflow:hidden;background:linear-gradient(135deg,#16241A,#1F3826);border-radius:20px;padding:28px 32px;color:#fff;margin-bottom:22px;">
+      <svg viewBox="0 0 520 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position:absolute;top:0;right:0;width:360px;height:100%;z-index:0;pointer-events:none;opacity:.5;">
+        <g stroke="#5A5230" stroke-width="1.4" fill="none">
+          <line x1="350" y1="50" x2="430" y2="26"></line><line x1="430" y1="26" x2="492" y2="86"></line>
+          <line x1="350" y1="50" x2="404" y2="110"></line><line x1="404" y1="110" x2="492" y2="86"></line><line x1="404" y1="110" x2="466" y2="168"></line>
+        </g>
+        <g fill="#DDB20B"><circle cx="350" cy="50" r="4.5"></circle><circle cx="430" cy="26" r="4.5"></circle><circle cx="492" cy="86" r="4.5"></circle><circle cx="404" cy="110" r="4.5"></circle><circle cx="466" cy="168" r="4.5"></circle></g>
+        <polygon fill="#7CC10C" points="312,150 317,164 331,169 317,174 312,188 307,174 293,169 307,164"></polygon>
+      </svg>
+      <div style="position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(221,178,11,.18);color:#F0CE5A;font-weight:600;font-size:12px;padding:6px 13px;border-radius:99px;margin-bottom:14px;">National Admin Console · Live</div>
+          <h1 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:28px;margin:0 0 6px;letter-spacing:-.4px;">Bharat Innovation Olympiad 2026</h1>
+          <div style="font-size:14px;color:#9DB496;">Season control center · Data as of <b style="color:#fff;">15 Jun 2026, 11:42 AM</b></div>
+        </div>
+        <div style="display:flex;gap:12px;">
+          <button style="border:1px solid #2C5232;background:transparent;color:#fff;font-weight:600;font-size:13.5px;padding:11px 18px;border-radius:11px;cursor:pointer;">⬇ Export</button>
+          <button style="border:none;background:linear-gradient(135deg,#DDB20B,#C99405);color:#16241A;font-weight:700;font-size:13.5px;padding:11px 20px;border-radius:11px;cursor:pointer;box-shadow:0 10px 22px rgba(221,178,11,.3);">Publish Results</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:22px;">
+      <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(20,33,14,.04);"><div style="font-size:13px;color:#5C6B5A;margin-bottom:10px;">Partner Schools</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px;color:#16241A;">2,418</div><div style="font-size:12px;color:#5AAE0E;margin-top:2px;">▲ 36 pending approval</div></div>
+      <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(20,33,14,.04);"><div style="font-size:13px;color:#5C6B5A;margin-bottom:10px;">Registered Students</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px;color:#5AAE0E;">1.84L</div><div style="font-size:12px;color:#5AAE0E;margin-top:2px;">▲ 4,210 this week</div></div>
+      <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(20,33,14,.04);"><div style="font-size:13px;color:#5C6B5A;margin-bottom:10px;">Live Exams Today</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px;color:#DDB20B;">142</div><div style="font-size:12px;color:#8AA17F;margin-top:2px;">across 38 cities</div></div>
+      <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(20,33,14,.04);"><div style="font-size:13px;color:#5C6B5A;margin-bottom:10px;">Pending Approvals</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px;color:#C98A00;">36</div><div style="font-size:12px;color:#8AA17F;margin-top:2px;">schools awaiting review</div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:20px;">
+      <!-- left column -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <!-- registrations chart -->
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:24px;box-shadow:0 8px 22px rgba(20,33,14,.04);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;">Registrations Trend</div><span style="font-size:12px;color:#8AA17F;">Last 12 days</span></div>
+          <div style="font-size:13px;color:#5C6B5A;margin-bottom:22px;">Daily new student registrations nationwide</div>
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:9px;height:150px;">
+            <div style="flex:1;height:52px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:6px 6px 3px 3px;"></div>
+            <div style="flex:1;height:66px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:6px 6px 3px 3px;"></div>
+            <div style="flex:1;height:58px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:6px 6px 3px 3px;"></div>
+            <div style="flex:1;height:80px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:6px 6px 3px 3px;"></div>
+            <div style="flex:1;height:74px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:6px 6px 3px 3px;"></div>
+            <div style="flex:1;height:94px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:6px 6px 3px 3px;"></div>
+            <div style="flex:1;height:86px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:6px 6px 3px 3px;"></div>
+            <div style="flex:1;height:110px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:6px 6px 3px 3px;"></div>
+            <div style="flex:1;height:98px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:6px 6px 3px 3px;"></div>
+            <div style="flex:1;height:122px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:6px 6px 3px 3px;"></div>
+            <div style="flex:1;height:114px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:6px 6px 3px 3px;"></div>
+            <div style="flex:1;height:142px;background:linear-gradient(180deg,#DDB20B,#C99405);border-radius:6px 6px 3px 3px;"></div>
+          </div>
+        </div>
+        <!-- pending approvals -->
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:24px;box-shadow:0 8px 22px rgba(20,33,14,.04);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;">Schools Pending Approval</div><span style="font-size:13px;color:#5AAE0E;font-weight:600;">View all 36 →</span></div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;align-items:center;gap:14px;padding:13px 15px;border:1px solid #EEF1E6;border-radius:13px;"><span style="width:40px;height:40px;border-radius:11px;background:#EEF6E2;display:flex;align-items:center;justify-content:center;font-size:19px;flex:none;">🏫</span><div style="flex:1;"><div style="font-size:14px;font-weight:600;color:#16241A;">Greenwood High</div><div style="font-size:12px;color:#8AA17F;">Bengaluru · 420 students</div></div><div style="display:flex;gap:8px;"><button style="border:none;background:#7CC10C;color:#fff;font-weight:600;font-size:12px;padding:8px 14px;border-radius:9px;cursor:pointer;">Approve</button><button style="border:1px solid #E0E7D6;background:#fff;color:#8A6D6D;font-weight:600;font-size:12px;padding:8px 12px;border-radius:9px;cursor:pointer;">Reject</button></div></div>
+            <div style="display:flex;align-items:center;gap:14px;padding:13px 15px;border:1px solid #EEF1E6;border-radius:13px;"><span style="width:40px;height:40px;border-radius:11px;background:#FBF1C6;display:flex;align-items:center;justify-content:center;font-size:19px;flex:none;">🏫</span><div style="flex:1;"><div style="font-size:14px;font-weight:600;color:#16241A;">St. Xavier's School</div><div style="font-size:12px;color:#8AA17F;">Mumbai · 610 students</div></div><div style="display:flex;gap:8px;"><button style="border:none;background:#7CC10C;color:#fff;font-weight:600;font-size:12px;padding:8px 14px;border-radius:9px;cursor:pointer;">Approve</button><button style="border:1px solid #E0E7D6;background:#fff;color:#8A6D6D;font-weight:600;font-size:12px;padding:8px 12px;border-radius:9px;cursor:pointer;">Reject</button></div></div>
+            <div style="display:flex;align-items:center;gap:14px;padding:13px 15px;border:1px solid #EEF1E6;border-radius:13px;"><span style="width:40px;height:40px;border-radius:11px;background:#E6EEFF;display:flex;align-items:center;justify-content:center;font-size:19px;flex:none;">🏫</span><div style="flex:1;"><div style="font-size:14px;font-weight:600;color:#16241A;">Modern School</div><div style="font-size:12px;color:#8AA17F;">Delhi · 540 students</div></div><div style="display:flex;gap:8px;"><button style="border:none;background:#7CC10C;color:#fff;font-weight:600;font-size:12px;padding:8px 14px;border-radius:9px;cursor:pointer;">Approve</button><button style="border:1px solid #E0E7D6;background:#fff;color:#8A6D6D;font-weight:600;font-size:12px;padding:8px 12px;border-radius:9px;cursor:pointer;">Reject</button></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right column -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <!-- live proctoring -->
+        <div style="background:#16241A;border:1px solid #284A2C;border-radius:18px;padding:24px;color:#fff;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;">Live Proctoring</div><span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#7CC10C;font-weight:600;"><span style="width:8px;height:8px;border-radius:50%;background:#7CC10C;animation:bioPulse 1.8s infinite;"></span>Live</span></div>
+          <div style="display:flex;gap:16px;margin-bottom:18px;">
+            <div style="flex:1;background:#1F3826;border-radius:13px;padding:16px;"><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;color:#7CC10C;">142</div><div style="font-size:12px;color:#9DB496;margin-top:2px;">Active sessions</div></div>
+            <div style="flex:1;background:#1F3826;border-radius:13px;padding:16px;"><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;color:#F0A24B;">7</div><div style="font-size:12px;color:#9DB496;margin-top:2px;">Flagged events</div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:11px;">
+            <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:8px;height:8px;border-radius:50%;background:#F0A24B;margin-top:5px;flex:none;"></span><div><div style="font-size:13px;color:#fff;">Tab switch · Roll BIO-2231</div><div style="font-size:11.5px;color:#8DA386;">2 min ago · Mumbai</div></div></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:8px;height:8px;border-radius:50%;background:#F0A24B;margin-top:5px;flex:none;"></span><div><div style="font-size:13px;color:#fff;">Multiple faces · Roll BIO-1904</div><div style="font-size:11.5px;color:#8DA386;">5 min ago · Pune</div></div></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:8px;height:8px;border-radius:50%;background:#DDB20B;margin-top:5px;flex:none;"></span><div><div style="font-size:13px;color:#fff;">Network drop · Roll BIO-3320</div><div style="font-size:11.5px;color:#8DA386;">8 min ago · Indore</div></div></div>
+          </div>
+        </div>
+        <!-- top states -->
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:24px;box-shadow:0 8px 22px rgba(20,33,14,.04);">
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:18px;">Top States by Participation</div>
+          <div style="display:flex;flex-direction:column;gap:15px;">
+            <div><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span style="color:#3F4A3A;font-weight:500;">Maharashtra</span><b style="font-family:'Montserrat',sans-serif;color:#16241A;">312</b></div><div style="height:8px;background:#EEF1E6;border-radius:99px;"><div style="height:100%;width:100%;background:#7CC10C;border-radius:99px;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span style="color:#3F4A3A;font-weight:500;">Karnataka</span><b style="font-family:'Montserrat',sans-serif;color:#16241A;">286</b></div><div style="height:8px;background:#EEF1E6;border-radius:99px;"><div style="height:100%;width:92%;background:#7CC10C;border-radius:99px;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span style="color:#3F4A3A;font-weight:500;">Delhi NCR</span><b style="font-family:'Montserrat',sans-serif;color:#16241A;">254</b></div><div style="height:8px;background:#EEF1E6;border-radius:99px;"><div style="height:100%;width:81%;background:#DDB20B;border-radius:99px;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span style="color:#3F4A3A;font-weight:500;">Tamil Nadu</span><b style="font-family:'Montserrat',sans-serif;color:#16241A;">231</b></div><div style="height:8px;background:#EEF1E6;border-radius:99px;"><div style="height:100%;width:74%;background:#DDB20B;border-radius:99px;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span style="color:#3F4A3A;font-weight:500;">Gujarat</span><b style="font-family:'Montserrat',sans-serif;color:#16241A;">198</b></div><div style="height:8px;background:#EEF1E6;border-radius:99px;"><div style="height:100%;width:63%;background:#9FD45F;border-radius:99px;"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    screen: 'admin',
+    regStep: 0,
+    examQ: 0,
+    answers: {},
+    flagged: {},
+    timeLeft: 45 * 60,
+    showProctor: false,
+  };
+
+  QUESTIONS = [
+    { text: "A city faces severe traffic congestion every morning. Which approach best reflects innovative problem-solving rather than a conventional fix?", tag: "Problem Solving", img: false, options: ["Build more roads everywhere", "Design a dynamic, demand-based smart signal & incentive system", "Ban all private vehicles", "Increase fuel prices sharply"] },
+    { text: "Look at the pattern of connected nodes shown. Which shape logically completes the innovation network?", tag: "Critical Thinking", img: true, options: ["A closed triangle", "A branching hexagonal mesh", "A single straight line", "An isolated dot"] },
+    { text: "A young innovator wants to reduce food waste in school canteens. What is the strongest first step in design thinking?", tag: "Innovation", img: false, options: ["Immediately build an app", "Empathise and observe how students actually waste food", "Fine students who waste food", "Reduce the menu options"] },
+    { text: "Which of these best describes 'entrepreneurial thinking' for a student team?", tag: "Entrepreneurship", img: false, options: ["Avoiding all risks", "Spotting a real need and testing a small solution quickly", "Copying an existing business exactly", "Waiting for perfect conditions"] },
+    { text: "You have ₹500 and 1 week to validate a new product idea. What demonstrates the most creative resourcefulness?", tag: "Creativity", img: false, options: ["Spend it all on advertising", "Build a quick prototype and get 20 people to try it", "Save the money for later", "Write a 50-page business plan"] },
+    { text: "A prototype fails during testing. What mindset best supports innovation?", tag: "Problem Solving", img: false, options: ["Abandon the idea completely", "Treat the failure as data and iterate", "Hide the failure", "Blame the materials"] },
+    { text: "Which combination most strongly signals a scalable innovation?", tag: "Innovation", img: false, options: ["High cost, few users", "Solves a common problem cheaply and repeatably", "Works only once", "Needs constant manual effort"] },
+    { text: "What is the best way to measure if an idea creates real impact?", tag: "Critical Thinking", img: false, options: ["Number of likes online", "A clear before/after change for real users", "How complex it looks", "How much it costs to build"] },
+  ];
+
+  componentDidMount() {
+    this._t = setInterval(() => {
+      if (this.state.screen === 'exam' && this.state.timeLeft > 0) {
+        this.setState(s => ({ timeLeft: s.timeLeft - 1 }));
+      }
+    }, 1000);
+  }
+  componentWillUnmount() { clearInterval(this._t); if (this._pt) clearTimeout(this._pt); }
+
+  go(screen) {
+    this.setState({ screen });
+    if (typeof window !== 'undefined') window.scrollTo(0, 0);
+    if (screen === 'exam') {
+      if (this._pt) clearTimeout(this._pt);
+      this._pt = setTimeout(() => {
+        this.setState({ showProctor: true });
+        setTimeout(() => this.setState({ showProctor: false }), 5200);
+      }, 3500);
+    }
+  }
+
+  fmtTime(s) {
+    const m = Math.floor(s / 60), ss = s % 60;
+    return m + ':' + String(ss).padStart(2, '0');
+  }
+
+  renderVals() {
+    const { screen, regStep, examQ, answers, flagged, timeLeft, showProctor } = this.state;
+    const Q = this.QUESTIONS;
+    const cur = Q[examQ % Q.length];
+
+    // switcher styles
+    const screens = ['landing', 'register', 'dashboard', 'exam', 'results', 'school', 'admin'];
+    const sw = {}, swT = {}, swTL = {};
+    screens.forEach(s => {
+      const active = screen === s;
+      sw[s] = active ? 'linear-gradient(135deg,#7CC10C,#5AAE0E)' : 'transparent';
+      swT[s] = active ? '#fff' : '#9DB496';
+      swTL[s] = active ? '#fff' : '#4A5A48';
+    });
+
+    // registration steps
+    const stepNames = ['Mobile & OTP', 'Profile', 'Eligibility', 'Coupon', 'Payment', 'Slot Booking', 'Admit Card'];
+    const regSteps = stepNames.map((name, i) => {
+      const done = i < regStep, active = i === regStep;
+      return {
+        name, label: done ? '✓' : String(i + 1),
+        bg: done ? '#7CC10C' : active ? '#fff' : '#F2F5EC',
+        fg: done ? '#fff' : active ? '#3F7A0A' : '#9AA694',
+        border: active ? '2px solid #7CC10C' : done ? 'none' : '1px solid #E0E7D6',
+        weight: active ? 700 : 500,
+        tColor: active ? '#16241A' : done ? '#3F7A0A' : '#8AA17F',
+      };
+    });
+    const regProgress = Math.round((regStep / (stepNames.length - 1)) * 100) + '%';
+
+    // exam navigator
+    const nav = Array.from({ length: 50 }, (_, i) => {
+      const isAns = answers[i] != null;
+      const isFlag = flagged[i];
+      const isCur = i === examQ;
+      let bg = '#0E1A12', color = '#9DB496', border = '1px solid #2C5232';
+      if (isFlag) { bg = '#DDB20B'; color = '#16241A'; border = 'none'; }
+      else if (isAns) { bg = '#7CC10C'; color = '#16241A'; border = 'none'; }
+      if (isCur) border = '2px solid #fff';
+      return { num: i + 1, bg, color, border, onClick: () => this.setState({ examQ: i }) };
+    });
+
+    // current options
+    const keys = ['A', 'B', 'C', 'D'];
+    const options = cur.options.map((text, i) => {
+      const sel = answers[examQ] === i;
+      return {
+        key: keys[i], text,
+        bg: sel ? '#F7FCEF' : '#fff',
+        border: sel ? '2px solid #7CC10C' : '1.5px solid #E6EBDE',
+        keyBg: sel ? '#7CC10C' : '#F2F5EC',
+        keyColor: sel ? '#fff' : '#5C6B5A',
+        onPick: () => this.setState(st => ({ answers: { ...st.answers, [examQ]: i } })),
+      };
+    });
+
+    const attempted = Object.keys(answers).length;
+    const flaggedCount = Object.keys(flagged).filter(k => flagged[k]).length;
+    const progress = Math.round((attempted / 50) * 100);
+
+    // radar
+    const skills = [88, 82, 90, 80, 74];
+    const cx = 130, cy = 120, R = 92;
+    const poly = (scale) => skills.map((v, i) => {
+      const ang = -Math.PI / 2 + i * 2 * Math.PI / 5;
+      const r = R * scale;
+      return (cx + r * Math.cos(ang)).toFixed(1) + ',' + (cy + r * Math.sin(ang)).toFixed(1);
+    }).join(' ');
+    const dataPoly = skills.map((v, i) => {
+      const ang = -Math.PI / 2 + i * 2 * Math.PI / 5;
+      const r = R * v / 100;
+      return (cx + r * Math.cos(ang)).toFixed(1) + ',' + (cy + r * Math.sin(ang)).toFixed(1);
+    }).join(' ');
+
+    const lowTime = timeLeft < 5 * 60;
+
+    return {
+      isLanding: screen === 'landing',
+      isRegister: screen === 'register',
+      isDashboard: screen === 'dashboard',
+      isExam: screen === 'exam',
+      isResults: screen === 'results',
+      isSchool: screen === 'school',
+      isAdmin: screen === 'admin',
+
+      goLanding: () => this.go('landing'),
+      goRegister: () => this.go('register'),
+      goDashboard: () => this.go('dashboard'),
+      goExam: () => this.go('exam'),
+      goResults: () => this.go('results'),
+      goSchool: () => this.go('school'),
+      goAdmin: () => this.go('admin'),
+
+      sw, swT, swTL,
+
+      // registration
+      regSteps, regProgress,
+      rs0: regStep === 0, rs1: regStep === 1, rs2: regStep === 2, rs3: regStep === 3,
+      rs4: regStep === 4, rs5: regStep === 5, rs6: regStep === 6,
+      regNextLabel: regStep >= 6 ? 'Go to Dashboard →' : regStep === 3 ? 'Pay ₹374 →' : 'Continue →',
+      regNext: () => {
+        if (regStep >= 6) { this.go('dashboard'); this.setState({ regStep: 0 }); }
+        else this.setState({ regStep: regStep + 1 });
+      },
+      regBack: () => { if (regStep > 0) this.setState({ regStep: regStep - 1 }); else this.go('landing'); },
+
+      // exam
+      nav,
+      qNum: examQ + 1,
+      qText: cur.text,
+      qTag: cur.tag,
+      qHasImage: cur.img,
+      options,
+      timer: this.fmtTime(timeLeft),
+      timerColor: lowTime ? '#F97316' : '#fff',
+      attempted, flaggedCount, progress,
+      progressW: progress + '%',
+      showProctor,
+      examPrev: () => this.setState({ examQ: Math.max(0, examQ - 1) }),
+      examNext: () => this.setState({ examQ: Math.min(49, examQ + 1) }),
+      examFlag: () => this.setState(st => ({ flagged: { ...st.flagged, [examQ]: !st.flagged[examQ] } })),
+      examSubmit: () => this.go('results'),
+
+      // results radar
+      ring1: poly(0.25), ring2: poly(0.5), ring3: poly(0.75), ring4: poly(1),
+      dataPoly,
+    };
+  }
+}
+</script>
+</body>
+</html>

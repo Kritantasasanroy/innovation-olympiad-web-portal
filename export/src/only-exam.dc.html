@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" rx="20" fill="#16241A"/>
+  <g stroke="#7CC10C" stroke-width="2" fill="none">
+    <line x1="38" y1="42" x2="55" y2="33"/><line x1="55" y1="33" x2="66" y2="47"/>
+    <line x1="38" y1="42" x2="50" y2="56"/><line x1="50" y1="56" x2="66" y2="47"/>
+  </g>
+  <g fill="#7CC10C"><circle cx="38" cy="42" r="3.4"/><circle cx="55" cy="33" r="3.4"/><circle cx="66" cy="47" r="3.4"/><circle cx="50" cy="56" r="3.4"/></g>
+  <path d="M44 64 h12 v4 h-12 z" fill="#DDB20B"/>
+  <polygon fill="#DDB20B" points="50,22 52,28 58,30 52,32 50,38 48,32 42,30 48,28"/>
+</svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#16241A;background:#F5F8EF;-webkit-font-smoothing:antialiased;}
+  input,button,select{font-family:inherit;}
+  ::selection{background:#D6F0A8;}
+  @keyframes bioFade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  @keyframes bioPulse{0%,100%{box-shadow:0 0 0 0 rgba(124,193,12,.5);}50%{box-shadow:0 0 0 7px rgba(124,193,12,0);}}
+  @keyframes bioPop{0%{transform:scale(.6);opacity:0;}60%{transform:scale(1.08);}100%{transform:scale(1);opacity:1;}}
+  @keyframes bioSlide{from{transform:translateX(60px);opacity:0;}to{transform:none;opacity:1;}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F5F8EF;padding-bottom:90px;">
+
+<!-- ============ LANDING ============ -->
+
+
+<!-- ============ REGISTRATION ============ -->
+
+
+<!-- ============ DASHBOARD ============ -->
+
+
+<!-- ============ EXAM ============ -->
+<sc-if value="{{ isExam }}" hint-placeholder-val="{{ true }}">
+<div style="min-height:100vh;background:#0E1A12;">
+  <!-- exam header -->
+  <div style="background:#16241A;border-bottom:1px solid #284A2C;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:20;">
+    <div style="display:flex;align-items:center;gap:14px;"><img src="assets/logo-mark.png" alt="" style="height:30px;width:auto;"><div style="color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;">Innovation Olympiad 2026</div></div>
+    <div style="display:flex;align-items:center;gap:10px;background:#0E1A12;border:1px solid #2C5232;border-radius:12px;padding:8px 18px;"><span style="font-size:13px;color:#9DB496;">Time left</span><span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;color:{{ timerColor }};letter-spacing:.5px;">{{ timer }}</span></div>
+    <div style="display:flex;align-items:center;gap:16px;"><span style="display:inline-flex;align-items:center;gap:7px;color:#7CC10C;font-size:12.5px;font-weight:600;"><span style="width:8px;height:8px;border-radius:50%;background:#7CC10C;animation:bioPulse 1.8s infinite;"></span>Proctoring active</span><div style="display:flex;align-items:center;gap:9px;"><span style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#7CC10C,#DDB20B);display:flex;align-items:center;justify-content:center;font-weight:700;color:#16241A;font-size:13px;">AS</span><span style="color:#fff;font-size:13.5px;font-weight:500;">Aarav Sharma</span></div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:230px 1fr 250px;gap:18px;padding:22px;max-width:1320px;margin:0 auto;">
+    <!-- navigator -->
+    <div style="background:#16241A;border:1px solid #284A2C;border-radius:16px;padding:18px;height:fit-content;">
+      <div style="color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;margin-bottom:14px;">Questions</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;">
+        <sc-for list="{{ nav }}" as="n" hint-placeholder-count="50">
+          <button onClick="{{ n.onClick }}" style="aspect-ratio:1;border-radius:9px;border:{{ n.border }};background:{{ n.bg }};color:{{ n.color }};font-family:'Montserrat',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:flex;align-items:center;justify-content:center;">{{ n.num }}</button>
+        </sc-for>
+      </div>
+      <div style="margin-top:18px;display:flex;flex-direction:column;gap:9px;font-size:12px;color:#9DB496;">
+        <div style="display:flex;gap:8px;align-items:center;"><span style="width:14px;height:14px;border-radius:4px;background:#7CC10C;"></span>Answered</div>
+        <div style="display:flex;gap:8px;align-items:center;"><span style="width:14px;height:14px;border-radius:4px;background:#DDB20B;"></span>Marked for review</div>
+        <div style="display:flex;gap:8px;align-items:center;"><span style="width:14px;height:14px;border-radius:4px;background:#0E1A12;border:1px solid #2C5232;"></span>Not answered</div>
+      </div>
+    </div>
+
+    <!-- question -->
+    <div style="background:#fff;border-radius:16px;padding:30px 32px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:#5AAE0E;">Question {{ qNum }} <span style="color:#9AA694;font-weight:500;">of 50</span></div>
+        <div style="font-size:12.5px;color:#9AA694;background:#F2F5EC;padding:5px 12px;border-radius:99px;">{{ qTag }}</div>
+      </div>
+      <div style="font-size:19px;line-height:1.55;color:#16241A;font-weight:500;margin-bottom:22px;">{{ qText }}</div>
+      <sc-if value="{{ qHasImage }}" hint-placeholder-val="{{ false }}">
+        <div style="height:170px;border-radius:13px;background:repeating-linear-gradient(45deg,#F2F5EC,#F2F5EC 10px,#ECF1E2 10px,#ECF1E2 20px);border:1px solid #E0E7D6;display:flex;align-items:center;justify-content:center;color:#9AA694;font-family:'Montserrat',monospace;font-size:12px;letter-spacing:1px;margin-bottom:22px;">[ FIGURE / DIAGRAM ]</div>
+      </sc-if>
+      <div style="display:flex;flex-direction:column;gap:13px;">
+        <sc-for list="{{ options }}" as="o" hint-placeholder-count="4">
+          <button onClick="{{ o.onPick }}" style="text-align:left;display:flex;gap:14px;align-items:center;padding:16px 18px;border-radius:13px;border:{{ o.border }};background:{{ o.bg }};cursor:pointer;transition:all .15s;">
+            <span style="width:30px;height:30px;flex:none;border-radius:8px;background:{{ o.keyBg }};color:{{ o.keyColor }};font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;">{{ o.key }}</span>
+            <span style="font-size:15px;color:#16241A;">{{ o.text }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- info panel -->
+    <div style="display:flex;flex-direction:column;gap:16px;height:fit-content;">
+      <div style="background:#16241A;border:1px solid #284A2C;border-radius:16px;padding:20px;text-align:center;">
+        <div style="font-size:12px;color:#9DB496;margin-bottom:6px;">Remaining Time</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px;color:{{ timerColor }};">{{ timer }}</div>
+      </div>
+      <div style="background:#fff;border-radius:16px;padding:20px;">
+        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:12px;"><span style="color:#5C6B5A;">Attempted</span><b style="font-family:'Montserrat',sans-serif;">{{ attempted }}/50</b></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:14px;"><span style="color:#5C6B5A;">Marked for review</span><b style="font-family:'Montserrat',sans-serif;color:#C98A00;">{{ flaggedCount }}</b></div>
+        <div style="font-size:12px;color:#5C6B5A;margin-bottom:7px;">Progress · {{ progress }}%</div>
+        <div style="height:9px;background:#EEF1E6;border-radius:99px;overflow:hidden;"><div style="height:100%;width:{{ progressW }};background:linear-gradient(90deg,#7CC10C,#DDB20B);border-radius:99px;transition:width .3s;"></div></div>
+      </div>
+      <div style="background:#FBF6E4;border:1px solid #F0E2B0;border-radius:14px;padding:14px;font-size:12.5px;color:#9A7A00;display:flex;gap:9px;">💾 <span>Answers auto-save every few seconds. You can safely reconnect and resume.</span></div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="position:sticky;bottom:0;background:#16241A;border-top:1px solid #284A2C;padding:14px 26px;display:flex;justify-content:space-between;align-items:center;">
+    <button onClick="{{ examPrev }}" style="border:1px solid #2C5232;background:transparent;color:#9DB496;font-weight:600;font-size:14px;padding:11px 22px;border-radius:11px;cursor:pointer;">← Previous</button>
+    <div style="display:flex;gap:12px;">
+      <button onClick="{{ examFlag }}" style="border:1px solid #DDB20B;background:transparent;color:#DDB20B;font-weight:600;font-size:14px;padding:11px 22px;border-radius:11px;cursor:pointer;">⚑ Mark for review</button>
+      <button onClick="{{ examSubmit }}" style="border:1px solid #2C5232;background:transparent;color:#fff;font-weight:600;font-size:14px;padding:11px 22px;border-radius:11px;cursor:pointer;">Submit exam</button>
+    </div>
+    <button onClick="{{ examNext }}" style="border:none;background:linear-gradient(135deg,#7CC10C,#5AAE0E);color:#fff;font-weight:700;font-size:14px;padding:11px 26px;border-radius:11px;cursor:pointer;">Next →</button>
+  </div>
+
+  <sc-if value="{{ showProctor }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;top:80px;right:26px;z-index:50;background:#fff;border-left:4px solid #F97316;border-radius:12px;padding:15px 18px;box-shadow:0 16px 40px rgba(0,0,0,.25);max-width:300px;">
+      <div style="font-weight:700;font-size:14px;color:#16241A;margin-bottom:4px;">⚠ Proctoring notice</div>
+      <div style="font-size:13px;color:#5C6B5A;line-height:1.5;">Tab switch detected. Please stay on the exam screen — repeated switches are flagged for review.</div>
+    </div>
+  </sc-if>
+</div>
+</sc-if>
+
+<!-- ============ RESULTS ============ -->
+
+
+<!-- ============ SCHOOL PARTNER PORTAL ============ -->
+
+
+<!-- ============ ADMIN CONSOLE ============ -->
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    screen: 'exam',
+    regStep: 0,
+    examQ: 0,
+    answers: {},
+    flagged: {},
+    timeLeft: 45 * 60,
+    showProctor: false,
+  };
+
+  QUESTIONS = [
+    { text: "A city faces severe traffic congestion every morning. Which approach best reflects innovative problem-solving rather than a conventional fix?", tag: "Problem Solving", img: false, options: ["Build more roads everywhere", "Design a dynamic, demand-based smart signal & incentive system", "Ban all private vehicles", "Increase fuel prices sharply"] },
+    { text: "Look at the pattern of connected nodes shown. Which shape logically completes the innovation network?", tag: "Critical Thinking", img: true, options: ["A closed triangle", "A branching hexagonal mesh", "A single straight line", "An isolated dot"] },
+    { text: "A young innovator wants to reduce food waste in school canteens. What is the strongest first step in design thinking?", tag: "Innovation", img: false, options: ["Immediately build an app", "Empathise and observe how students actually waste food", "Fine students who waste food", "Reduce the menu options"] },
+    { text: "Which of these best describes 'entrepreneurial thinking' for a student team?", tag: "Entrepreneurship", img: false, options: ["Avoiding all risks", "Spotting a real need and testing a small solution quickly", "Copying an existing business exactly", "Waiting for perfect conditions"] },
+    { text: "You have ₹500 and 1 week to validate a new product idea. What demonstrates the most creative resourcefulness?", tag: "Creativity", img: false, options: ["Spend it all on advertising", "Build a quick prototype and get 20 people to try it", "Save the money for later", "Write a 50-page business plan"] },
+    { text: "A prototype fails during testing. What mindset best supports innovation?", tag: "Problem Solving", img: false, options: ["Abandon the idea completely", "Treat the failure as data and iterate", "Hide the failure", "Blame the materials"] },
+    { text: "Which combination most strongly signals a scalable innovation?", tag: "Innovation", img: false, options: ["High cost, few users", "Solves a common problem cheaply and repeatably", "Works only once", "Needs constant manual effort"] },
+    { text: "What is the best way to measure if an idea creates real impact?", tag: "Critical Thinking", img: false, options: ["Number of likes online", "A clear before/after change for real users", "How complex it looks", "How much it costs to build"] },
+  ];
+
+  componentDidMount() {
+    this._t = setInterval(() => {
+      if (this.state.screen === 'exam' && this.state.timeLeft > 0) {
+        this.setState(s => ({ timeLeft: s.timeLeft - 1 }));
+      }
+    }, 1000);
+  }
+  componentWillUnmount() { clearInterval(this._t); if (this._pt) clearTimeout(this._pt); }
+
+  go(screen) {
+    this.setState({ screen });
+    if (typeof window !== 'undefined') window.scrollTo(0, 0);
+    if (screen === 'exam') {
+      if (this._pt) clearTimeout(this._pt);
+      this._pt = setTimeout(() => {
+        this.setState({ showProctor: true });
+        setTimeout(() => this.setState({ showProctor: false }), 5200);
+      }, 3500);
+    }
+  }
+
+  fmtTime(s) {
+    const m = Math.floor(s / 60), ss = s % 60;
+    return m + ':' + String(ss).padStart(2, '0');
+  }
+
+  renderVals() {
+    const { screen, regStep, examQ, answers, flagged, timeLeft, showProctor } = this.state;
+    const Q = this.QUESTIONS;
+    const cur = Q[examQ % Q.length];
+
+    // switcher styles
+    const screens = ['landing', 'register', 'dashboard', 'exam', 'results', 'school', 'admin'];
+    const sw = {}, swT = {}, swTL = {};
+    screens.forEach(s => {
+      const active = screen === s;
+      sw[s] = active ? 'linear-gradient(135deg,#7CC10C,#5AAE0E)' : 'transparent';
+      swT[s] = active ? '#fff' : '#9DB496';
+      swTL[s] = active ? '#fff' : '#4A5A48';
+    });
+
+    // registration steps
+    const stepNames = ['Mobile & OTP', 'Profile', 'Eligibility', 'Coupon', 'Payment', 'Slot Booking', 'Admit Card'];
+    const regSteps = stepNames.map((name, i) => {
+      const done = i < regStep, active = i === regStep;
+      return {
+        name, label: done ? '✓' : String(i + 1),
+        bg: done ? '#7CC10C' : active ? '#fff' : '#F2F5EC',
+        fg: done ? '#fff' : active ? '#3F7A0A' : '#9AA694',
+        border: active ? '2px solid #7CC10C' : done ? 'none' : '1px solid #E0E7D6',
+        weight: active ? 700 : 500,
+        tColor: active ? '#16241A' : done ? '#3F7A0A' : '#8AA17F',
+      };
+    });
+    const regProgress = Math.round((regStep / (stepNames.length - 1)) * 100) + '%';
+
+    // exam navigator
+    const nav = Array.from({ length: 50 }, (_, i) => {
+      const isAns = answers[i] != null;
+      const isFlag = flagged[i];
+      const isCur = i === examQ;
+      let bg = '#0E1A12', color = '#9DB496', border = '1px solid #2C5232';
+      if (isFlag) { bg = '#DDB20B'; color = '#16241A'; border = 'none'; }
+      else if (isAns) { bg = '#7CC10C'; color = '#16241A'; border = 'none'; }
+      if (isCur) border = '2px solid #fff';
+      return { num: i + 1, bg, color, border, onClick: () => this.setState({ examQ: i }) };
+    });
+
+    // current options
+    const keys = ['A', 'B', 'C', 'D'];
+    const options = cur.options.map((text, i) => {
+      const sel = answers[examQ] === i;
+      return {
+        key: keys[i], text,
+        bg: sel ? '#F7FCEF' : '#fff',
+        border: sel ? '2px solid #7CC10C' : '1.5px solid #E6EBDE',
+        keyBg: sel ? '#7CC10C' : '#F2F5EC',
+        keyColor: sel ? '#fff' : '#5C6B5A',
+        onPick: () => this.setState(st => ({ answers: { ...st.answers, [examQ]: i } })),
+      };
+    });
+
+    const attempted = Object.keys(answers).length;
+    const flaggedCount = Object.keys(flagged).filter(k => flagged[k]).length;
+    const progress = Math.round((attempted / 50) * 100);
+
+    // radar
+    const skills = [88, 82, 90, 80, 74];
+    const cx = 130, cy = 120, R = 92;
+    const poly = (scale) => skills.map((v, i) => {
+      const ang = -Math.PI / 2 + i * 2 * Math.PI / 5;
+      const r = R * scale;
+      return (cx + r * Math.cos(ang)).toFixed(1) + ',' + (cy + r * Math.sin(ang)).toFixed(1);
+    }).join(' ');
+    const dataPoly = skills.map((v, i) => {
+      const ang = -Math.PI / 2 + i * 2 * Math.PI / 5;
+      const r = R * v / 100;
+      return (cx + r * Math.cos(ang)).toFixed(1) + ',' + (cy + r * Math.sin(ang)).toFixed(1);
+    }).join(' ');
+
+    const lowTime = timeLeft < 5 * 60;
+
+    return {
+      isLanding: screen === 'landing',
+      isRegister: screen === 'register',
+      isDashboard: screen === 'dashboard',
+      isExam: screen === 'exam',
+      isResults: screen === 'results',
+      isSchool: screen === 'school',
+      isAdmin: screen === 'admin',
+
+      goLanding: () => this.go('landing'),
+      goRegister: () => this.go('register'),
+      goDashboard: () => this.go('dashboard'),
+      goExam: () => this.go('exam'),
+      goResults: () => this.go('results'),
+      goSchool: () => this.go('school'),
+      goAdmin: () => this.go('admin'),
+
+      sw, swT, swTL,
+
+      // registration
+      regSteps, regProgress,
+      rs0: regStep === 0, rs1: regStep === 1, rs2: regStep === 2, rs3: regStep === 3,
+      rs4: regStep === 4, rs5: regStep === 5, rs6: regStep === 6,
+      regNextLabel: regStep >= 6 ? 'Go to Dashboard →' : regStep === 3 ? 'Pay ₹374 →' : 'Continue →',
+      regNext: () => {
+        if (regStep >= 6) { this.go('dashboard'); this.setState({ regStep: 0 }); }
+        else this.setState({ regStep: regStep + 1 });
+      },
+      regBack: () => { if (regStep > 0) this.setState({ regStep: regStep - 1 }); else this.go('landing'); },
+
+      // exam
+      nav,
+      qNum: examQ + 1,
+      qText: cur.text,
+      qTag: cur.tag,
+      qHasImage: cur.img,
+      options,
+      timer: this.fmtTime(timeLeft),
+      timerColor: lowTime ? '#F97316' : '#fff',
+      attempted, flaggedCount, progress,
+      progressW: progress + '%',
+      showProctor,
+      examPrev: () => this.setState({ examQ: Math.max(0, examQ - 1) }),
+      examNext: () => this.setState({ examQ: Math.min(49, examQ + 1) }),
+      examFlag: () => this.setState(st => ({ flagged: { ...st.flagged, [examQ]: !st.flagged[examQ] } })),
+      examSubmit: () => this.go('results'),
+
+      // results radar
+      ring1: poly(0.25), ring2: poly(0.5), ring3: poly(0.75), ring4: poly(1),
+      dataPoly,
+    };
+  }
+}
+</script>
+</body>
+</html>

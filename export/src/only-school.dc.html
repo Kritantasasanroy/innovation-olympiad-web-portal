@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" rx="20" fill="#16241A"/>
+  <g stroke="#7CC10C" stroke-width="2" fill="none">
+    <line x1="38" y1="42" x2="55" y2="33"/><line x1="55" y1="33" x2="66" y2="47"/>
+    <line x1="38" y1="42" x2="50" y2="56"/><line x1="50" y1="56" x2="66" y2="47"/>
+  </g>
+  <g fill="#7CC10C"><circle cx="38" cy="42" r="3.4"/><circle cx="55" cy="33" r="3.4"/><circle cx="66" cy="47" r="3.4"/><circle cx="50" cy="56" r="3.4"/></g>
+  <path d="M44 64 h12 v4 h-12 z" fill="#DDB20B"/>
+  <polygon fill="#DDB20B" points="50,22 52,28 58,30 52,32 50,38 48,32 42,30 48,28"/>
+</svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#16241A;background:#F5F8EF;-webkit-font-smoothing:antialiased;}
+  input,button,select{font-family:inherit;}
+  ::selection{background:#D6F0A8;}
+  @keyframes bioFade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  @keyframes bioPulse{0%,100%{box-shadow:0 0 0 0 rgba(124,193,12,.5);}50%{box-shadow:0 0 0 7px rgba(124,193,12,0);}}
+  @keyframes bioPop{0%{transform:scale(.6);opacity:0;}60%{transform:scale(1.08);}100%{transform:scale(1);opacity:1;}}
+  @keyframes bioSlide{from{transform:translateX(60px);opacity:0;}to{transform:none;opacity:1;}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F5F8EF;padding-bottom:90px;">
+
+<!-- ============ LANDING ============ -->
+
+
+<!-- ============ REGISTRATION ============ -->
+
+
+<!-- ============ DASHBOARD ============ -->
+
+
+<!-- ============ EXAM ============ -->
+
+
+<!-- ============ RESULTS ============ -->
+
+
+<!-- ============ SCHOOL PARTNER PORTAL ============ -->
+<sc-if value="{{ isSchool }}" hint-placeholder-val="{{ true }}">
+<div style="display:grid;grid-template-columns:252px 1fr;min-height:100vh;background:#F5F8EF;">
+  <!-- sidebar -->
+  <div style="background:#16241A;padding:26px 18px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;">
+    <img src="assets/logo-mark.png" alt="" style="height:42px;width:auto;margin:0 6px 6px;">
+    <div style="font-family:'Poppins',sans-serif;color:#7CC10C;font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;margin:0 6px 24px;">School Partner</div>
+    <div style="display:flex;flex-direction:column;gap:4px;">
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;background:#284A2C;color:#fff;font-weight:600;font-size:14px;">🏫 School Overview</div>
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;color:#9DB496;font-weight:500;font-size:14px;">👥 Students</div>
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;color:#9DB496;font-weight:500;font-size:14px;">📝 Registrations</div>
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;color:#9DB496;font-weight:500;font-size:14px;">🗓 Exam Windows</div>
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;color:#9DB496;font-weight:500;font-size:14px;">🏅 Rankings</div>
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;color:#9DB496;font-weight:500;font-size:14px;">📄 Reports</div>
+      <div style="display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;color:#9DB496;font-weight:500;font-size:14px;">📚 Resources</div>
+    </div>
+    <div style="margin-top:auto;background:#1F3826;border-radius:14px;padding:16px;">
+      <div style="display:flex;gap:11px;align-items:center;"><span style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#7CC10C,#DDB20B);display:flex;align-items:center;justify-content:center;font-weight:700;color:#16241A;font-family:'Montserrat',sans-serif;">MN</span><div><div style="color:#fff;font-weight:600;font-size:13.5px;">Meera Nair</div><div style="color:#8DA386;font-size:12px;">Coordinator · DPS</div></div></div>
+    </div>
+  </div>
+
+  <!-- main -->
+  <div style="padding:30px 36px;">
+    <!-- school banner -->
+    <div style="position:relative;overflow:hidden;background:linear-gradient(135deg,#16241A,#1F3826);border-radius:20px;padding:28px 32px;color:#fff;margin-bottom:22px;">
+      <svg viewBox="0 0 520 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position:absolute;top:0;right:0;width:340px;height:100%;z-index:0;pointer-events:none;opacity:.5;">
+        <g stroke="#3D6B43" stroke-width="1.4" fill="none">
+          <line x1="360" y1="40" x2="440" y2="20"></line><line x1="440" y1="20" x2="490" y2="80"></line>
+          <line x1="360" y1="40" x2="410" y2="100"></line><line x1="410" y1="100" x2="490" y2="80"></line><line x1="410" y1="100" x2="470" y2="160"></line>
+        </g>
+        <g fill="#7CC10C"><circle cx="360" cy="40" r="4.5"></circle><circle cx="440" cy="20" r="4.5"></circle><circle cx="490" cy="80" r="4.5"></circle><circle cx="410" cy="100" r="4.5"></circle><circle cx="470" cy="160" r="4.5"></circle></g>
+        <polygon fill="#DDB20B" points="320,150 325,164 339,169 325,174 320,188 315,174 301,169 315,164"></polygon>
+      </svg>
+      <div style="position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(124,193,12,.16);color:#A6E552;font-weight:600;font-size:12px;padding:6px 13px;border-radius:99px;margin-bottom:14px;">School Partner Portal · Season 2026</div>
+          <h1 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:28px;margin:0 0 6px;letter-spacing:-.4px;">Delhi Public School</h1>
+          <div style="font-size:14px;color:#9DB496;">Bengaluru, Karnataka · School Code <b style="color:#fff;font-family:'Montserrat',sans-serif;">DPS-BLR-0421</b></div>
+        </div>
+        <div style="display:flex;gap:12px;">
+          <button style="border:1px solid #2C5232;background:transparent;color:#fff;font-weight:600;font-size:13.5px;padding:11px 18px;border-radius:11px;cursor:pointer;">⬇ Download Report</button>
+          <button style="border:none;background:linear-gradient(135deg,#7CC10C,#5AAE0E);color:#fff;font-weight:700;font-size:13.5px;padding:11px 20px;border-radius:11px;cursor:pointer;box-shadow:0 10px 22px rgba(90,174,14,.32);">＋ Invite Students</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:22px;">
+      <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(20,33,14,.04);"><div style="font-size:13px;color:#5C6B5A;margin-bottom:10px;">Students Registered</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px;color:#16241A;">312</div><div style="font-size:12px;color:#5AAE0E;margin-top:2px;">▲ 28 this week</div></div>
+      <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(20,33,14,.04);"><div style="font-size:13px;color:#5C6B5A;margin-bottom:10px;">Slot Completion</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px;color:#5AAE0E;">87%</div><div style="font-size:12px;color:#8AA17F;margin-top:2px;">286 of 312 booked</div></div>
+      <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(20,33,14,.04);"><div style="font-size:13px;color:#5C6B5A;margin-bottom:10px;">City Rank</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px;color:#DDB20B;">#1</div><div style="font-size:12px;color:#8AA17F;margin-top:2px;">Bengaluru · #18 national</div></div>
+      <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(20,33,14,.04);"><div style="font-size:13px;color:#5C6B5A;margin-bottom:10px;">Avg Innovation Score</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px;color:#16241A;">78</div><div style="font-size:12px;color:#8AA17F;margin-top:2px;">+6 vs city avg</div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:20px;">
+      <!-- left column -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <!-- registrations by class -->
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:24px;box-shadow:0 8px 22px rgba(20,33,14,.04);">
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:4px;">Registrations by Class</div>
+          <div style="font-size:13px;color:#5C6B5A;margin-bottom:22px;">Class 6–12 · Innovation Olympiad 2026</div>
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;height:140px;">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:#3F4A3A;">38</div><div style="width:100%;height:76px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:8px 8px 4px 4px;"></div><div style="font-size:11.5px;color:#8AA17F;">C6</div></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:#3F4A3A;">44</div><div style="width:100%;height:88px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:8px 8px 4px 4px;"></div><div style="font-size:11.5px;color:#8AA17F;">C7</div></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:#3F4A3A;">52</div><div style="width:100%;height:104px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:8px 8px 4px 4px;"></div><div style="font-size:11.5px;color:#8AA17F;">C8</div></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:#5AAE0E;">60</div><div style="width:100%;height:120px;background:linear-gradient(180deg,#DDB20B,#C99405);border-radius:8px 8px 4px 4px;"></div><div style="font-size:11.5px;color:#8AA17F;">C9</div></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:#3F4A3A;">49</div><div style="width:100%;height:98px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:8px 8px 4px 4px;"></div><div style="font-size:11.5px;color:#8AA17F;">C10</div></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:#3F4A3A;">40</div><div style="width:100%;height:80px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:8px 8px 4px 4px;"></div><div style="font-size:11.5px;color:#8AA17F;">C11</div></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:#3F4A3A;">29</div><div style="width:100%;height:58px;background:linear-gradient(180deg,#9FD45F,#7CC10C);border-radius:8px 8px 4px 4px;"></div><div style="font-size:11.5px;color:#8AA17F;">C12</div></div>
+          </div>
+        </div>
+        <!-- recent registrations -->
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:24px;box-shadow:0 8px 22px rgba(20,33,14,.04);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;">Recent Registrations</div><span style="font-size:13px;color:#5AAE0E;font-weight:600;">View all →</span></div>
+          <div style="display:flex;flex-direction:column;">
+            <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#9AA694;padding-bottom:11px;border-bottom:1px solid #EEF1E6;">
+              <span>Student</span><span>Class</span><span>Status</span><span style="text-align:right;">Date</span>
+            </div>
+            <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;align-items:center;font-size:13.5px;color:#16241A;padding:13px 0;border-bottom:1px solid #F2F5EC;"><span style="font-weight:600;">Aarav Sharma</span><span style="color:#5C6B5A;">Class 9</span><span><span style="background:#EEF6E2;color:#3F7A0A;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;">Paid</span></span><span style="text-align:right;color:#8AA17F;">Today</span></div>
+            <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;align-items:center;font-size:13.5px;color:#16241A;padding:13px 0;border-bottom:1px solid #F2F5EC;"><span style="font-weight:600;">Diya Menon</span><span style="color:#5C6B5A;">Class 7</span><span><span style="background:#EEF6E2;color:#3F7A0A;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;">Paid</span></span><span style="text-align:right;color:#8AA17F;">Today</span></div>
+            <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;align-items:center;font-size:13.5px;color:#16241A;padding:13px 0;border-bottom:1px solid #F2F5EC;"><span style="font-weight:600;">Kabir Rao</span><span style="color:#5C6B5A;">Class 11</span><span><span style="background:#FBF1C6;color:#9A7A00;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;">Pending</span></span><span style="text-align:right;color:#8AA17F;">Yesterday</span></div>
+            <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;align-items:center;font-size:13.5px;color:#16241A;padding:13px 0;border-bottom:1px solid #F2F5EC;"><span style="font-weight:600;">Sara Iqbal</span><span style="color:#5C6B5A;">Class 8</span><span><span style="background:#EEF6E2;color:#3F7A0A;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;">Paid</span></span><span style="text-align:right;color:#8AA17F;">Yesterday</span></div>
+            <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;align-items:center;font-size:13.5px;color:#16241A;padding:13px 0;"><span style="font-weight:600;">Vihaan Gupta</span><span style="color:#5C6B5A;">Class 10</span><span><span style="background:#EEF6E2;color:#3F7A0A;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;">Paid</span></span><span style="text-align:right;color:#8AA17F;">2 days ago</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right column -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <!-- exam window -->
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:24px;box-shadow:0 8px 22px rgba(20,33,14,.04);">
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:16px;">Exam Window</div>
+          <div style="border:1.5px solid #CFE6AE;background:#F7FCEF;border-radius:14px;padding:18px;">
+            <div style="display:flex;gap:13px;align-items:center;margin-bottom:14px;"><span style="width:46px;height:46px;border-radius:12px;background:#EEF6E2;display:flex;align-items:center;justify-content:center;font-size:22px;flex:none;">🏆</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;">Innovation Olympiad 2026</div><div style="font-size:12.5px;color:#5C6B5A;">12 – 18 Oct 2026 · 45 min</div></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#5C6B5A;margin-bottom:7px;">Slots booked <b style="font-family:'Montserrat',sans-serif;color:#3F7A0A;">286 / 312</b></div>
+            <div style="height:9px;background:#E4EFD3;border-radius:99px;overflow:hidden;margin-bottom:16px;"><div style="height:100%;width:92%;background:linear-gradient(90deg,#7CC10C,#DDB20B);border-radius:99px;"></div></div>
+            <button style="width:100%;border:none;background:#16241A;color:#fff;font-weight:600;font-size:13px;padding:11px;border-radius:11px;cursor:pointer;">Manage slots →</button>
+          </div>
+        </div>
+        <!-- top students -->
+        <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:24px;box-shadow:0 8px 22px rgba(20,33,14,.04);">
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:16px;">Top Students</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;align-items:center;gap:13px;"><span style="width:28px;height:28px;border-radius:8px;background:#7CC10C;color:#16241A;font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex:none;">1</span><div style="flex:1;"><div style="font-size:13.5px;font-weight:600;color:#16241A;">Aarav Sharma</div><div style="font-size:12px;color:#8AA17F;">Class 9</div></div><b style="font-family:'Montserrat',sans-serif;color:#5AAE0E;font-size:15px;">84</b></div>
+            <div style="display:flex;align-items:center;gap:13px;"><span style="width:28px;height:28px;border-radius:8px;background:#DDB20B;color:#16241A;font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex:none;">2</span><div style="flex:1;"><div style="font-size:13.5px;font-weight:600;color:#16241A;">Ananya Reddy</div><div style="font-size:12px;color:#8AA17F;">Class 11</div></div><b style="font-family:'Montserrat',sans-serif;color:#3F4A3A;font-size:15px;">81</b></div>
+            <div style="display:flex;align-items:center;gap:13px;"><span style="width:28px;height:28px;border-radius:8px;background:#EE9A4D;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex:none;">3</span><div style="flex:1;"><div style="font-size:13.5px;font-weight:600;color:#16241A;">Rohan Das</div><div style="font-size:12px;color:#8AA17F;">Class 10</div></div><b style="font-family:'Montserrat',sans-serif;color:#3F4A3A;font-size:15px;">79</b></div>
+            <div style="display:flex;align-items:center;gap:13px;"><span style="width:28px;height:28px;border-radius:8px;background:#F2F5EC;color:#5C6B5A;font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex:none;">4</span><div style="flex:1;"><div style="font-size:13.5px;font-weight:600;color:#16241A;">Ishita Jain</div><div style="font-size:12px;color:#8AA17F;">Class 8</div></div><b style="font-family:'Montserrat',sans-serif;color:#3F4A3A;font-size:15px;">77</b></div>
+            <div style="display:flex;align-items:center;gap:13px;"><span style="width:28px;height:28px;border-radius:8px;background:#F2F5EC;color:#5C6B5A;font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex:none;">5</span><div style="flex:1;"><div style="font-size:13.5px;font-weight:600;color:#16241A;">Veer Malhotra</div><div style="font-size:12px;color:#8AA17F;">Class 12</div></div><b style="font-family:'Montserrat',sans-serif;color:#3F4A3A;font-size:15px;">75</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<!-- ============ ADMIN CONSOLE ============ -->
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    screen: 'school',
+    regStep: 0,
+    examQ: 0,
+    answers: {},
+    flagged: {},
+    timeLeft: 45 * 60,
+    showProctor: false,
+  };
+
+  QUESTIONS = [
+    { text: "A city faces severe traffic congestion every morning. Which approach best reflects innovative problem-solving rather than a conventional fix?", tag: "Problem Solving", img: false, options: ["Build more roads everywhere", "Design a dynamic, demand-based smart signal & incentive system", "Ban all private vehicles", "Increase fuel prices sharply"] },
+    { text: "Look at the pattern of connected nodes shown. Which shape logically completes the innovation network?", tag: "Critical Thinking", img: true, options: ["A closed triangle", "A branching hexagonal mesh", "A single straight line", "An isolated dot"] },
+    { text: "A young innovator wants to reduce food waste in school canteens. What is the strongest first step in design thinking?", tag: "Innovation", img: false, options: ["Immediately build an app", "Empathise and observe how students actually waste food", "Fine students who waste food", "Reduce the menu options"] },
+    { text: "Which of these best describes 'entrepreneurial thinking' for a student team?", tag: "Entrepreneurship", img: false, options: ["Avoiding all risks", "Spotting a real need and testing a small solution quickly", "Copying an existing business exactly", "Waiting for perfect conditions"] },
+    { text: "You have ₹500 and 1 week to validate a new product idea. What demonstrates the most creative resourcefulness?", tag: "Creativity", img: false, options: ["Spend it all on advertising", "Build a quick prototype and get 20 people to try it", "Save the money for later", "Write a 50-page business plan"] },
+    { text: "A prototype fails during testing. What mindset best supports innovation?", tag: "Problem Solving", img: false, options: ["Abandon the idea completely", "Treat the failure as data and iterate", "Hide the failure", "Blame the materials"] },
+    { text: "Which combination most strongly signals a scalable innovation?", tag: "Innovation", img: false, options: ["High cost, few users", "Solves a common problem cheaply and repeatably", "Works only once", "Needs constant manual effort"] },
+    { text: "What is the best way to measure if an idea creates real impact?", tag: "Critical Thinking", img: false, options: ["Number of likes online", "A clear before/after change for real users", "How complex it looks", "How much it costs to build"] },
+  ];
+
+  componentDidMount() {
+    this._t = setInterval(() => {
+      if (this.state.screen === 'exam' && this.state.timeLeft > 0) {
+        this.setState(s => ({ timeLeft: s.timeLeft - 1 }));
+      }
+    }, 1000);
+  }
+  componentWillUnmount() { clearInterval(this._t); if (this._pt) clearTimeout(this._pt); }
+
+  go(screen) {
+    this.setState({ screen });
+    if (typeof window !== 'undefined') window.scrollTo(0, 0);
+    if (screen === 'exam') {
+      if (this._pt) clearTimeout(this._pt);
+      this._pt = setTimeout(() => {
+        this.setState({ showProctor: true });
+        setTimeout(() => this.setState({ showProctor: false }), 5200);
+      }, 3500);
+    }
+  }
+
+  fmtTime(s) {
+    const m = Math.floor(s / 60), ss = s % 60;
+    return m + ':' + String(ss).padStart(2, '0');
+  }
+
+  renderVals() {
+    const { screen, regStep, examQ, answers, flagged, timeLeft, showProctor } = this.state;
+    const Q = this.QUESTIONS;
+    const cur = Q[examQ % Q.length];
+
+    // switcher styles
+    const screens = ['landing', 'register', 'dashboard', 'exam', 'results', 'school', 'admin'];
+    const sw = {}, swT = {}, swTL = {};
+    screens.forEach(s => {
+      const active = screen === s;
+      sw[s] = active ? 'linear-gradient(135deg,#7CC10C,#5AAE0E)' : 'transparent';
+      swT[s] = active ? '#fff' : '#9DB496';
+      swTL[s] = active ? '#fff' : '#4A5A48';
+    });
+
+    // registration steps
+    const stepNames = ['Mobile & OTP', 'Profile', 'Eligibility', 'Coupon', 'Payment', 'Slot Booking', 'Admit Card'];
+    const regSteps = stepNames.map((name, i) => {
+      const done = i < regStep, active = i === regStep;
+      return {
+        name, label: done ? '✓' : String(i + 1),
+        bg: done ? '#7CC10C' : active ? '#fff' : '#F2F5EC',
+        fg: done ? '#fff' : active ? '#3F7A0A' : '#9AA694',
+        border: active ? '2px solid #7CC10C' : done ? 'none' : '1px solid #E0E7D6',
+        weight: active ? 700 : 500,
+        tColor: active ? '#16241A' : done ? '#3F7A0A' : '#8AA17F',
+      };
+    });
+    const regProgress = Math.round((regStep / (stepNames.length - 1)) * 100) + '%';
+
+    // exam navigator
+    const nav = Array.from({ length: 50 }, (_, i) => {
+      const isAns = answers[i] != null;
+      const isFlag = flagged[i];
+      const isCur = i === examQ;
+      let bg = '#0E1A12', color = '#9DB496', border = '1px solid #2C5232';
+      if (isFlag) { bg = '#DDB20B'; color = '#16241A'; border = 'none'; }
+      else if (isAns) { bg = '#7CC10C'; color = '#16241A'; border = 'none'; }
+      if (isCur) border = '2px solid #fff';
+      return { num: i + 1, bg, color, border, onClick: () => this.setState({ examQ: i }) };
+    });
+
+    // current options
+    const keys = ['A', 'B', 'C', 'D'];
+    const options = cur.options.map((text, i) => {
+      const sel = answers[examQ] === i;
+      return {
+        key: keys[i], text,
+        bg: sel ? '#F7FCEF' : '#fff',
+        border: sel ? '2px solid #7CC10C' : '1.5px solid #E6EBDE',
+        keyBg: sel ? '#7CC10C' : '#F2F5EC',
+        keyColor: sel ? '#fff' : '#5C6B5A',
+        onPick: () => this.setState(st => ({ answers: { ...st.answers, [examQ]: i } })),
+      };
+    });
+
+    const attempted = Object.keys(answers).length;
+    const flaggedCount = Object.keys(flagged).filter(k => flagged[k]).length;
+    const progress = Math.round((attempted / 50) * 100);
+
+    // radar
+    const skills = [88, 82, 90, 80, 74];
+    const cx = 130, cy = 120, R = 92;
+    const poly = (scale) => skills.map((v, i) => {
+      const ang = -Math.PI / 2 + i * 2 * Math.PI / 5;
+      const r = R * scale;
+      return (cx + r * Math.cos(ang)).toFixed(1) + ',' + (cy + r * Math.sin(ang)).toFixed(1);
+    }).join(' ');
+    const dataPoly = skills.map((v, i) => {
+      const ang = -Math.PI / 2 + i * 2 * Math.PI / 5;
+      const r = R * v / 100;
+      return (cx + r * Math.cos(ang)).toFixed(1) + ',' + (cy + r * Math.sin(ang)).toFixed(1);
+    }).join(' ');
+
+    const lowTime = timeLeft < 5 * 60;
+
+    return {
+      isLanding: screen === 'landing',
+      isRegister: screen === 'register',
+      isDashboard: screen === 'dashboard',
+      isExam: screen === 'exam',
+      isResults: screen === 'results',
+      isSchool: screen === 'school',
+      isAdmin: screen === 'admin',
+
+      goLanding: () => this.go('landing'),
+      goRegister: () => this.go('register'),
+      goDashboard: () => this.go('dashboard'),
+      goExam: () => this.go('exam'),
+      goResults: () => this.go('results'),
+      goSchool: () => this.go('school'),
+      goAdmin: () => this.go('admin'),
+
+      sw, swT, swTL,
+
+      // registration
+      regSteps, regProgress,
+      rs0: regStep === 0, rs1: regStep === 1, rs2: regStep === 2, rs3: regStep === 3,
+      rs4: regStep === 4, rs5: regStep === 5, rs6: regStep === 6,
+      regNextLabel: regStep >= 6 ? 'Go to Dashboard →' : regStep === 3 ? 'Pay ₹374 →' : 'Continue →',
+      regNext: () => {
+        if (regStep >= 6) { this.go('dashboard'); this.setState({ regStep: 0 }); }
+        else this.setState({ regStep: regStep + 1 });
+      },
+      regBack: () => { if (regStep > 0) this.setState({ regStep: regStep - 1 }); else this.go('landing'); },
+
+      // exam
+      nav,
+      qNum: examQ + 1,
+      qText: cur.text,
+      qTag: cur.tag,
+      qHasImage: cur.img,
+      options,
+      timer: this.fmtTime(timeLeft),
+      timerColor: lowTime ? '#F97316' : '#fff',
+      attempted, flaggedCount, progress,
+      progressW: progress + '%',
+      showProctor,
+      examPrev: () => this.setState({ examQ: Math.max(0, examQ - 1) }),
+      examNext: () => this.setState({ examQ: Math.min(49, examQ + 1) }),
+      examFlag: () => this.setState(st => ({ flagged: { ...st.flagged, [examQ]: !st.flagged[examQ] } })),
+      examSubmit: () => this.go('results'),
+
+      // results radar
+      ring1: poly(0.25), ring2: poly(0.5), ring3: poly(0.75), ring4: poly(1),
+      dataPoly,
+    };
+  }
+}
+</script>
+</body>
+</html>

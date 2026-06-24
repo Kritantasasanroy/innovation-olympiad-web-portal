@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" rx="20" fill="#16241A"/>
+  <g stroke="#7CC10C" stroke-width="2" fill="none">
+    <line x1="38" y1="42" x2="55" y2="33"/><line x1="55" y1="33" x2="66" y2="47"/>
+    <line x1="38" y1="42" x2="50" y2="56"/><line x1="50" y1="56" x2="66" y2="47"/>
+  </g>
+  <g fill="#7CC10C"><circle cx="38" cy="42" r="3.4"/><circle cx="55" cy="33" r="3.4"/><circle cx="66" cy="47" r="3.4"/><circle cx="50" cy="56" r="3.4"/></g>
+  <path d="M44 64 h12 v4 h-12 z" fill="#DDB20B"/>
+  <polygon fill="#DDB20B" points="50,22 52,28 58,30 52,32 50,38 48,32 42,30 48,28"/>
+</svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#16241A;background:#F5F8EF;-webkit-font-smoothing:antialiased;}
+  input,button,select{font-family:inherit;}
+  ::selection{background:#D6F0A8;}
+  @keyframes bioFade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  @keyframes bioPulse{0%,100%{box-shadow:0 0 0 0 rgba(124,193,12,.5);}50%{box-shadow:0 0 0 7px rgba(124,193,12,0);}}
+  @keyframes bioPop{0%{transform:scale(.6);opacity:0;}60%{transform:scale(1.08);}100%{transform:scale(1);opacity:1;}}
+  @keyframes bioSlide{from{transform:translateX(60px);opacity:0;}to{transform:none;opacity:1;}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F5F8EF;padding-bottom:90px;">
+
+<!-- ============ LANDING ============ -->
+
+
+<!-- ============ REGISTRATION ============ -->
+<sc-if value="{{ isRegister }}" hint-placeholder-val="{{ true }}">
+<div style="max-width:1040px;margin:0 auto;padding:32px;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+    <img src="assets/logo-lockup.png" alt="" style="height:34px;width:auto;">
+    <button onClick="{{ goLanding }}" style="border:1px solid #D8E2C8;background:#fff;color:#5C6B5A;font-weight:600;font-size:13px;padding:8px 14px;border-radius:9px;cursor:pointer;">← Back to home</button>
+  </div>
+  <div style="background:#fff;border:1px solid #EAEFE0;border-radius:22px;box-shadow:0 18px 50px rgba(20,33,14,.07);overflow:hidden;display:grid;grid-template-columns:280px 1fr;">
+    <!-- step rail -->
+    <div style="background:linear-gradient(180deg,#F3FAE9,#fff);border-right:1px solid #EAEFE0;padding:30px 24px;">
+      <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;margin-bottom:4px;">Register as Student</div>
+      <div style="font-size:13px;color:#5C6B5A;margin-bottom:26px;">7 quick steps</div>
+      <sc-for list="{{ regSteps }}" as="st" hint-placeholder-count="7">
+        <div style="display:flex;gap:13px;align-items:center;padding:9px 0;">
+          <span style="width:30px;height:30px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;font-family:'Montserrat',sans-serif;background:{{ st.bg }};color:{{ st.fg }};border:{{ st.border }};">{{ st.label }}</span>
+          <span style="font-size:14px;font-weight:{{ st.weight }};color:{{ st.tColor }};">{{ st.name }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <!-- step content -->
+    <div style="padding:38px 40px;min-height:480px;">
+      <div style="height:6px;background:#EEF1E6;border-radius:99px;margin-bottom:30px;overflow:hidden;"><div style="height:100%;background:linear-gradient(90deg,#7CC10C,#DDB20B);border-radius:99px;width:{{ regProgress }};transition:width .4s;"></div></div>
+
+      <sc-if value="{{ rs0 }}" hint-placeholder-val="{{ true }}">
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:26px;margin:0 0 8px;">Verify your mobile number</h2>
+        <p style="font-size:14.5px;color:#5C6B5A;margin:0 0 26px;">We'll send a one-time password via a compliant KYC provider.</p>
+        <label style="font-size:13px;font-weight:600;color:#3F4A3A;">Mobile number</label>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px;margin-bottom:24px;max-width:340px;"><span style="padding:13px 14px;background:#F2F5EC;border:1px solid #E0E7D6;border-radius:11px;font-weight:600;color:#3F4A3A;">+91</span><input value="98765 43210" style="flex:1;padding:13px 14px;border:1px solid #E0E7D6;border-radius:11px;font-size:15px;outline:none;"></div>
+        <label style="font-size:13px;font-weight:600;color:#3F4A3A;">Enter OTP</label>
+        <div style="display:flex;gap:12px;margin-top:8px;">
+          <input value="4" maxlength="1" style="width:54px;height:60px;text-align:center;font-size:24px;font-weight:700;border:1.5px solid #7CC10C;border-radius:13px;outline:none;color:#16241A;">
+          <input value="8" maxlength="1" style="width:54px;height:60px;text-align:center;font-size:24px;font-weight:700;border:1.5px solid #7CC10C;border-radius:13px;outline:none;color:#16241A;">
+          <input value="2" maxlength="1" style="width:54px;height:60px;text-align:center;font-size:24px;font-weight:700;border:1.5px solid #7CC10C;border-radius:13px;outline:none;color:#16241A;">
+          <input value="0" maxlength="1" style="width:54px;height:60px;text-align:center;font-size:24px;font-weight:700;border:1.5px solid #7CC10C;border-radius:13px;outline:none;color:#16241A;">
+        </div>
+        <div style="font-size:13px;color:#8AA17F;margin-top:14px;">Resend OTP in 0:24 · Same mobile will be used on retry</div>
+      </sc-if>
+
+      <sc-if value="{{ rs1 }}" hint-placeholder-val="{{ true }}">
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:26px;margin:0 0 8px;">Complete your profile</h2>
+        <p style="font-size:14.5px;color:#5C6B5A;margin:0 0 26px;">Tell us about yourself so we can match the right Olympiads.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;max-width:520px;">
+          <div><label style="font-size:13px;font-weight:600;color:#3F4A3A;">Full Name</label><input value="Aarav Sharma" style="width:100%;margin-top:7px;padding:12px 13px;border:1px solid #E0E7D6;border-radius:11px;font-size:14.5px;outline:none;"></div>
+          <div><label style="font-size:13px;font-weight:600;color:#3F4A3A;">Grade / Class</label><input value="Class 9" style="width:100%;margin-top:7px;padding:12px 13px;border:1px solid #E0E7D6;border-radius:11px;font-size:14.5px;outline:none;"></div>
+          <div><label style="font-size:13px;font-weight:600;color:#3F4A3A;">School Name</label><input value="Delhi Public School" style="width:100%;margin-top:7px;padding:12px 13px;border:1px solid #E0E7D6;border-radius:11px;font-size:14.5px;outline:none;"></div>
+          <div><label style="font-size:13px;font-weight:600;color:#3F4A3A;">Email</label><input value="aarav@email.com" style="width:100%;margin-top:7px;padding:12px 13px;border:1px solid #E0E7D6;border-radius:11px;font-size:14.5px;outline:none;"></div>
+          <div><label style="font-size:13px;font-weight:600;color:#3F4A3A;">City</label><input value="Bengaluru" style="width:100%;margin-top:7px;padding:12px 13px;border:1px solid #E0E7D6;border-radius:11px;font-size:14.5px;outline:none;"></div>
+          <div><label style="font-size:13px;font-weight:600;color:#3F4A3A;">State</label><input value="Karnataka" style="width:100%;margin-top:7px;padding:12px 13px;border:1px solid #E0E7D6;border-radius:11px;font-size:14.5px;outline:none;"></div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ rs2 }}" hint-placeholder-val="{{ true }}">
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:26px;margin:0 0 8px;">Eligible Olympiads</h2>
+        <p style="font-size:14.5px;color:#5C6B5A;margin:0 0 24px;">Based on Class 9, you can register for these assessments.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;max-width:560px;">
+          <div style="border:1.5px solid #7CC10C;border-radius:15px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;background:#F7FCEF;">
+            <div style="display:flex;gap:15px;align-items:center;"><span style="width:46px;height:46px;border-radius:12px;background:#EEF6E2;display:flex;align-items:center;justify-content:center;font-size:22px;">🏆</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;">Innovation Olympiad 2026</div><div style="font-size:13px;color:#5C6B5A;">National Round · 50 questions · 45 mins</div></div></div>
+            <span style="background:#7CC10C;color:#fff;font-weight:600;font-size:12.5px;padding:6px 12px;border-radius:99px;">Selected</span>
+          </div>
+          <div style="border:1px solid #E0E7D6;border-radius:15px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;background:#fff;">
+            <div style="display:flex;gap:15px;align-items:center;"><span style="width:46px;height:46px;border-radius:12px;background:#FBF1C6;display:flex;align-items:center;justify-content:center;font-size:22px;">💡</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;">Innopreneurs Junior Contest</div><div style="font-size:13px;color:#5C6B5A;">Theme round · Idea submission</div></div></div>
+            <span style="border:1px solid #D8E2C8;color:#5C6B5A;font-weight:600;font-size:12.5px;padding:6px 12px;border-radius:99px;">Add</span>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ rs3 }}" hint-placeholder-val="{{ true }}">
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:26px;margin:0 0 8px;">Apply coupon or scholarship</h2>
+        <p style="font-size:14.5px;color:#5C6B5A;margin:0 0 24px;">Optional — add a referral code or scholarship voucher.</p>
+        <div style="display:flex;gap:10px;max-width:420px;margin-bottom:22px;"><input value="INNOV25" style="flex:1;padding:13px 14px;border:1px solid #E0E7D6;border-radius:11px;font-size:15px;outline:none;font-weight:600;letter-spacing:.5px;"><button style="border:none;background:#16241A;color:#fff;font-weight:600;padding:0 20px;border-radius:11px;cursor:pointer;">Apply</button></div>
+        <div style="max-width:420px;background:#F7FCEF;border:1px dashed #9FD45F;border-radius:14px;padding:18px 20px;">
+          <div style="display:flex;justify-content:space-between;font-size:14px;color:#3F4A3A;margin-bottom:10px;">Registration fee <span>₹499</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;color:#5AAE0E;font-weight:600;margin-bottom:10px;">Coupon INNOV25 (−25%) <span>−₹125</span></div>
+          <div style="height:1px;background:#D8E7C2;margin:6px 0 12px;"></div>
+          <div style="display:flex;justify-content:space-between;font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;">Total <span>₹374</span></div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ rs4 }}" hint-placeholder-val="{{ true }}">
+        <div style="text-align:center;padding:30px 0;">
+          <div style="width:90px;height:90px;border-radius:50%;background:#EEF6E2;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;"><span style="font-size:44px;color:#5AAE0E;">✓</span></div>
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:28px;margin:0 0 8px;">Payment successful!</h2>
+          <p style="font-size:15px;color:#5C6B5A;margin:0 0 24px;">Your registration for Innovation Olympiad 2026 is confirmed.</p>
+          <div style="display:inline-block;text-align:left;background:#F7FCEF;border:1px solid #E0E7D6;border-radius:14px;padding:18px 26px;font-size:14px;color:#3F4A3A;">
+            <div style="margin-bottom:6px;">Amount paid · <b style="font-family:'Montserrat',sans-serif;">₹374</b></div>
+            <div style="margin-bottom:6px;">Transaction · <b>TXN-2026-884512</b></div>
+            <div>Registration ID · <b>BIO-2026-56821</b></div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ rs5 }}" hint-placeholder-val="{{ true }}">
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:26px;margin:0 0 8px;">Book your exam slot</h2>
+        <p style="font-size:14.5px;color:#5C6B5A;margin:0 0 24px;">Pick a slot within your school's exam window.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:560px;">
+          <div style="border:1px solid #E0E7D6;border-radius:14px;padding:18px;text-align:center;background:#fff;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;">Mon, 12 Oct</div><div style="font-size:13px;color:#5C6B5A;margin-top:4px;">10:00 AM</div></div>
+          <div style="border:1.5px solid #7CC10C;border-radius:14px;padding:18px;text-align:center;background:#F7FCEF;position:relative;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:#3F7A0A;">Sat, 17 Oct</div><div style="font-size:13px;color:#5AAE0E;margin-top:4px;">11:30 AM</div><div style="position:absolute;top:-9px;right:10px;background:#7CC10C;color:#fff;font-size:11px;font-weight:700;padding:2px 9px;border-radius:99px;">Chosen</div></div>
+          <div style="border:1px solid #E0E7D6;border-radius:14px;padding:18px;text-align:center;background:#fff;"><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;">Sun, 18 Oct</div><div style="font-size:13px;color:#5C6B5A;margin-top:4px;">9:00 AM</div></div>
+        </div>
+        <div style="font-size:13px;color:#C98A00;background:#FBF6E4;border:1px solid #F0E2B0;border-radius:11px;padding:12px 15px;margin-top:20px;max-width:560px;">⚠ No refund is applicable once a slot is booked.</div>
+      </sc-if>
+
+      <sc-if value="{{ rs6 }}" hint-placeholder-val="{{ true }}">
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:26px;margin:0 0 8px;">You're all set 🎉</h2>
+        <p style="font-size:14.5px;color:#5C6B5A;margin:0 0 24px;">Your admit card is ready. Try the mock test before exam day.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:560px;">
+          <div style="border:1px solid #E0E7D6;border-radius:16px;padding:22px;background:linear-gradient(160deg,#F3FAE9,#fff);">
+            <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8AA17F;margin-bottom:10px;">Admit Card</div>
+            <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;">Aarav Sharma</div>
+            <div style="font-size:13px;color:#5C6B5A;margin:6px 0 14px;">Roll · BIO-2026-56821 · Class 9</div>
+            <div style="font-size:13px;color:#3F4A3A;">📅 Sat, 17 Oct · 11:30 AM</div>
+            <button style="margin-top:16px;border:1px solid #D8E2C8;background:#fff;color:#3F7A0A;font-weight:600;font-size:13px;padding:9px 16px;border-radius:10px;cursor:pointer;">⬇ Download admit card</button>
+          </div>
+          <div style="border:1px solid #E0E7D6;border-radius:16px;padding:22px;background:#fff;">
+            <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8AA17F;margin-bottom:10px;">Get Ready</div>
+            <div style="font-size:14px;color:#3F4A3A;line-height:1.7;">✓ Take the mock test<br>✓ Run a device & network check<br>✓ Read exam instructions</div>
+            <button style="margin-top:16px;border:none;background:linear-gradient(135deg,#7CC10C,#5AAE0E);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:10px;cursor:pointer;">Start mock test</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- footer nav -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:38px;border-top:1px solid #EEF1E6;padding-top:22px;">
+        <button onClick="{{ regBack }}" style="border:1px solid #D8E2C8;background:#fff;color:#5C6B5A;font-weight:600;font-size:14px;padding:12px 22px;border-radius:11px;cursor:pointer;">← Back</button>
+        <button onClick="{{ regNext }}" style="border:none;background:linear-gradient(135deg,#7CC10C,#5AAE0E);color:#fff;font-weight:700;font-size:14px;padding:12px 26px;border-radius:11px;cursor:pointer;box-shadow:0 8px 20px rgba(90,174,14,.28);">{{ regNextLabel }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<!-- ============ DASHBOARD ============ -->
+
+
+<!-- ============ EXAM ============ -->
+
+
+<!-- ============ RESULTS ============ -->
+
+
+<!-- ============ SCHOOL PARTNER PORTAL ============ -->
+
+
+<!-- ============ ADMIN CONSOLE ============ -->
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    screen: 'register',
+    regStep: 0,
+    examQ: 0,
+    answers: {},
+    flagged: {},
+    timeLeft: 45 * 60,
+    showProctor: false,
+  };
+
+  QUESTIONS = [
+    { text: "A city faces severe traffic congestion every morning. Which approach best reflects innovative problem-solving rather than a conventional fix?", tag: "Problem Solving", img: false, options: ["Build more roads everywhere", "Design a dynamic, demand-based smart signal & incentive system", "Ban all private vehicles", "Increase fuel prices sharply"] },
+    { text: "Look at the pattern of connected nodes shown. Which shape logically completes the innovation network?", tag: "Critical Thinking", img: true, options: ["A closed triangle", "A branching hexagonal mesh", "A single straight line", "An isolated dot"] },
+    { text: "A young innovator wants to reduce food waste in school canteens. What is the strongest first step in design thinking?", tag: "Innovation", img: false, options: ["Immediately build an app", "Empathise and observe how students actually waste food", "Fine students who waste food", "Reduce the menu options"] },
+    { text: "Which of these best describes 'entrepreneurial thinking' for a student team?", tag: "Entrepreneurship", img: false, options: ["Avoiding all risks", "Spotting a real need and testing a small solution quickly", "Copying an existing business exactly", "Waiting for perfect conditions"] },
+    { text: "You have ₹500 and 1 week to validate a new product idea. What demonstrates the most creative resourcefulness?", tag: "Creativity", img: false, options: ["Spend it all on advertising", "Build a quick prototype and get 20 people to try it", "Save the money for later", "Write a 50-page business plan"] },
+    { text: "A prototype fails during testing. What mindset best supports innovation?", tag: "Problem Solving", img: false, options: ["Abandon the idea completely", "Treat the failure as data and iterate", "Hide the failure", "Blame the materials"] },
+    { text: "Which combination most strongly signals a scalable innovation?", tag: "Innovation", img: false, options: ["High cost, few users", "Solves a common problem cheaply and repeatably", "Works only once", "Needs constant manual effort"] },
+    { text: "What is the best way to measure if an idea creates real impact?", tag: "Critical Thinking", img: false, options: ["Number of likes online", "A clear before/after change for real users", "How complex it looks", "How much it costs to build"] },
+  ];
+
+  componentDidMount() {
+    this._t = setInterval(() => {
+      if (this.state.screen === 'exam' && this.state.timeLeft > 0) {
+        this.setState(s => ({ timeLeft: s.timeLeft - 1 }));
+      }
+    }, 1000);
+  }
+  componentWillUnmount() { clearInterval(this._t); if (this._pt) clearTimeout(this._pt); }
+
+  go(screen) {
+    this.setState({ screen });
+    if (typeof window !== 'undefined') window.scrollTo(0, 0);
+    if (screen === 'exam') {
+      if (this._pt) clearTimeout(this._pt);
+      this._pt = setTimeout(() => {
+        this.setState({ showProctor: true });
+        setTimeout(() => this.setState({ showProctor: false }), 5200);
+      }, 3500);
+    }
+  }
+
+  fmtTime(s) {
+    const m = Math.floor(s / 60), ss = s % 60;
+    return m + ':' + String(ss).padStart(2, '0');
+  }
+
+  renderVals() {
+    const { screen, regStep, examQ, answers, flagged, timeLeft, showProctor } = this.state;
+    const Q = this.QUESTIONS;
+    const cur = Q[examQ % Q.length];
+
+    // switcher styles
+    const screens = ['landing', 'register', 'dashboard', 'exam', 'results', 'school', 'admin'];
+    const sw = {}, swT = {}, swTL = {};
+    screens.forEach(s => {
+      const active = screen === s;
+      sw[s] = active ? 'linear-gradient(135deg,#7CC10C,#5AAE0E)' : 'transparent';
+      swT[s] = active ? '#fff' : '#9DB496';
+      swTL[s] = active ? '#fff' : '#4A5A48';
+    });
+
+    // registration steps
+    const stepNames = ['Mobile & OTP', 'Profile', 'Eligibility', 'Coupon', 'Payment', 'Slot Booking', 'Admit Card'];
+    const regSteps = stepNames.map((name, i) => {
+      const done = i < regStep, active = i === regStep;
+      return {
+        name, label: done ? '✓' : String(i + 1),
+        bg: done ? '#7CC10C' : active ? '#fff' : '#F2F5EC',
+        fg: done ? '#fff' : active ? '#3F7A0A' : '#9AA694',
+        border: active ? '2px solid #7CC10C' : done ? 'none' : '1px solid #E0E7D6',
+        weight: active ? 700 : 500,
+        tColor: active ? '#16241A' : done ? '#3F7A0A' : '#8AA17F',
+      };
+    });
+    const regProgress = Math.round((regStep / (stepNames.length - 1)) * 100) + '%';
+
+    // exam navigator
+    const nav = Array.from({ length: 50 }, (_, i) => {
+      const isAns = answers[i] != null;
+      const isFlag = flagged[i];
+      const isCur = i === examQ;
+      let bg = '#0E1A12', color = '#9DB496', border = '1px solid #2C5232';
+      if (isFlag) { bg = '#DDB20B'; color = '#16241A'; border = 'none'; }
+      else if (isAns) { bg = '#7CC10C'; color = '#16241A'; border = 'none'; }
+      if (isCur) border = '2px solid #fff';
+      return { num: i + 1, bg, color, border, onClick: () => this.setState({ examQ: i }) };
+    });
+
+    // current options
+    const keys = ['A', 'B', 'C', 'D'];
+    const options = cur.options.map((text, i) => {
+      const sel = answers[examQ] === i;
+      return {
+        key: keys[i], text,
+        bg: sel ? '#F7FCEF' : '#fff',
+        border: sel ? '2px solid #7CC10C' : '1.5px solid #E6EBDE',
+        keyBg: sel ? '#7CC10C' : '#F2F5EC',
+        keyColor: sel ? '#fff' : '#5C6B5A',
+        onPick: () => this.setState(st => ({ answers: { ...st.answers, [examQ]: i } })),
+      };
+    });
+
+    const attempted = Object.keys(answers).length;
+    const flaggedCount = Object.keys(flagged).filter(k => flagged[k]).length;
+    const progress = Math.round((attempted / 50) * 100);
+
+    // radar
+    const skills = [88, 82, 90, 80, 74];
+    const cx = 130, cy = 120, R = 92;
+    const poly = (scale) => skills.map((v, i) => {
+      const ang = -Math.PI / 2 + i * 2 * Math.PI / 5;
+      const r = R * scale;
+      return (cx + r * Math.cos(ang)).toFixed(1) + ',' + (cy + r * Math.sin(ang)).toFixed(1);
+    }).join(' ');
+    const dataPoly = skills.map((v, i) => {
+      const ang = -Math.PI / 2 + i * 2 * Math.PI / 5;
+      const r = R * v / 100;
+      return (cx + r * Math.cos(ang)).toFixed(1) + ',' + (cy + r * Math.sin(ang)).toFixed(1);
+    }).join(' ');
+
+    const lowTime = timeLeft < 5 * 60;
+
+    return {
+      isLanding: screen === 'landing',
+      isRegister: screen === 'register',
+      isDashboard: screen === 'dashboard',
+      isExam: screen === 'exam',
+      isResults: screen === 'results',
+      isSchool: screen === 'school',
+      isAdmin: screen === 'admin',
+
+      goLanding: () => this.go('landing'),
+      goRegister: () => this.go('register'),
+      goDashboard: () => this.go('dashboard'),
+      goExam: () => this.go('exam'),
+      goResults: () => this.go('results'),
+      goSchool: () => this.go('school'),
+      goAdmin: () => this.go('admin'),
+
+      sw, swT, swTL,
+
+      // registration
+      regSteps, regProgress,
+      rs0: regStep === 0, rs1: regStep === 1, rs2: regStep === 2, rs3: regStep === 3,
+      rs4: regStep === 4, rs5: regStep === 5, rs6: regStep === 6,
+      regNextLabel: regStep >= 6 ? 'Go to Dashboard →' : regStep === 3 ? 'Pay ₹374 →' : 'Continue →',
+      regNext: () => {
+        if (regStep >= 6) { this.go('dashboard'); this.setState({ regStep: 0 }); }
+        else this.setState({ regStep: regStep + 1 });
+      },
+      regBack: () => { if (regStep > 0) this.setState({ regStep: regStep - 1 }); else this.go('landing'); },
+
+      // exam
+      nav,
+      qNum: examQ + 1,
+      qText: cur.text,
+      qTag: cur.tag,
+      qHasImage: cur.img,
+      options,
+      timer: this.fmtTime(timeLeft),
+      timerColor: lowTime ? '#F97316' : '#fff',
+      attempted, flaggedCount, progress,
+      progressW: progress + '%',
+      showProctor,
+      examPrev: () => this.setState({ examQ: Math.max(0, examQ - 1) }),
+      examNext: () => this.setState({ examQ: Math.min(49, examQ + 1) }),
+      examFlag: () => this.setState(st => ({ flagged: { ...st.flagged, [examQ]: !st.flagged[examQ] } })),
+      examSubmit: () => this.go('results'),
+
+      // results radar
+      ring1: poly(0.25), ring2: poly(0.5), ring3: poly(0.75), ring4: poly(1),
+      dataPoly,
+    };
+  }
+}
+</script>
+</body>
+</html>

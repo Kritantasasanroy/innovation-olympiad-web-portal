@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>School Workflow & Requirements Blueprint — Online Olympiad / Talent Exam Portal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 32px 80px;
+        position: relative;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+        font-size: 11pt;
+        line-height: 1.6;
+        color: #000000;
+        background-color: #ffffff;
+        text-align: justify;
+      }
+      h1 {
+        font-size: 18pt;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 24px;
+        border-bottom: 2px solid #000000;
+        padding-bottom: 12px;
+        margin-top: 0;
+        line-height: 1.2;
+      }
+      h2 {
+        font-size: 14pt;
+        font-weight: bold;
+        margin-top: 24px;
+        margin-bottom: 12px;
+        border-bottom: 1px solid #000000;
+        padding-bottom: 4px;
+        color: #000000;
+      }
+      h3 {
+        font-size: 12pt;
+        font-weight: bold;
+        margin-top: 16px;
+        margin-bottom: 8px;
+        color: #000000;
+      }
+      h4 {
+        font-size: 11pt;
+        font-weight: bold;
+        font-style: italic;
+        margin-top: 12px;
+        margin-bottom: 6px;
+        color: #000000;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      ul,
+      ol {
+        margin-top: 0;
+        margin-bottom: 12px;
+        padding-left: 24px;
+      }
+      li {
+        margin-bottom: 6px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 16px;
+        margin-top: 8px;
+      }
+      th,
+      td {
+        border: 1px solid #000000;
+        padding: 8px 12px;
+        text-align: left;
+        vertical-align: top;
+        font-size: 10pt;
+      }
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+      .callout {
+        border: 1px solid #000000;
+        padding: 12px 16px;
+        background-color: #fdfdfd;
+        margin-bottom: 16px;
+        font-style: italic;
+      }
+      hr {
+        border: 0;
+        border-top: 1px solid #000000;
+        margin: 24px 0;
+      }
+      .workflow-stage {
+        margin-bottom: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>School Workflow & Requirements Blueprint<br />Online Olympiad / Talent Exam Portal</h1>
+
+    <h2>1. Executive Summary</h2>
+    <p>
+      This document serves as the foundational product-planning and UX-design blueprint for the School user journey
+      within the Online Olympiad / Talent Exam Portal. It explicitly details functional requirements, user workflows,
+      and structural dependencies required to facilitate school engagement. The scope focuses entirely on schools acting
+      as analytics, reporting, and coordination stakeholders, intentionally excluding direct exam operations and parent
+      workflows.
+    </p>
+
+    <h2>2. Role of School in the Portal Ecosystem</h2>
+    <p>
+      In the V1 ecosystem, the School is primarily an <strong>analytics and reporting consumer</strong> rather than an
+      exam administrator. The burden of registration, authentication, exam-taking, and proctoring lies directly with the
+      individual student. The school's role is to track student participation, review aggregated and individual
+      performance metrics, compare school-wide results against global percentiles, and optionally coordinate custom
+      examination windows or sponsor future payments. The school portal exists to validate the school's involvement and
+      reward them with actionable insights.
+    </p>
+
+    <h2>3. Key Assumptions and Scope Boundaries</h2>
+    <ul>
+      <li>
+        <strong>Exclusions:</strong> Parent workflows are entirely excluded from this document and the V1 school portal
+        scope.
+      </li>
+      <li>
+        <strong>Student Independence:</strong> Students perform direct individual signups using an Aadhaar-linked mobile
+        OTP (via a compliant KYC provider).
+      </li>
+      <li>
+        <strong>Exam Operations:</strong> Proctoring is AI-assisted for students. Schools do not manually proctor or
+        intervene in live exam sessions.
+      </li>
+      <li>
+        <strong>Result Timeline:</strong> Results are not instant; they are released to the school dashboard only after
+        rigorous review and normalization by portal administrators.
+      </li>
+      <li>
+        <strong>Language and Platform:</strong> English only. Accessible via a responsive web application (dedicated
+        school dashboard interface).
+      </li>
+      <li><strong>Support:</strong> Schools will have access to a dedicated helpdesk for institutional queries.</li>
+    </ul>
+
+    <h2>4. School User Roles and Permissions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Role Name</th>
+          <th>Description</th>
+          <th>Key Permissions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>School Coordinator</strong></td>
+          <td>
+            Primary administrative contact for the institution. Manages the school profile and coordinates with portal
+            admins.
+          </td>
+          <td>
+            Activate account, update profile, view participating students, track slots, request custom windows, download
+            all reports, handle future sponsorships.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Read-only Reporting User</strong></td>
+          <td>
+            Secondary user (e.g., specific teachers, principal) requiring access to performance data without
+            administrative capabilities.
+          </td>
+          <td>
+            View analytics dashboards, view participation summary, download exportable reports. Cannot modify profile or
+            request custom windows.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5. End-to-End School Journey Overview</h2>
+    <p>
+      The standard journey for a school engaging with the platform follows a distinct linear progression through the
+      exam lifecycle:
+    </p>
+    <ol>
+      <li>
+        <strong>Onboarding:</strong> School receives an official invitation link, activates the account, and sets up the
+        institution profile.
+      </li>
+      <li>
+        <strong>Pre-Exam Monitoring:</strong> School tracks which of its students have successfully registered via
+        direct signup and monitors their slot allocations.
+      </li>
+      <li>
+        <strong>Coordination (Optional):</strong> School Coordinator requests a custom exam window if standard slots do
+        not align with the academic calendar.
+      </li>
+      <li>
+        <strong>Post-Exam Consumption:</strong> Following exam normalization, the school accesses detailed analytics,
+        performance comparisons, and exportable reports.
+      </li>
+      <li>
+        <strong>Future Operations:</strong> School engages in bulk payment sponsorship for students (slated for Phase
+        2).
+      </li>
+    </ol>
+
+    <h2>6 & 7. Detailed School Workflow by Stage</h2>
+
+    <div class="workflow-stage">
+      <h3>Stage A: Invitation and Account Activation</h3>
+      <ul>
+        <li><strong>Objective:</strong> Securely onboard authorized school representatives onto the portal.</li>
+        <li>
+          <strong>Primary Actions:</strong> Click email invitation link, set password, agree to institutional terms of
+          service.
+        </li>
+        <li>
+          <strong>System Behavior:</strong> Validates invitation token, provisions school tenant space, assigns 'School
+          Coordinator' role to the inviter email.
+        </li>
+        <li><strong>Data Shown:</strong> Welcome screen, terms of service, password creation form.</li>
+        <li><strong>Notifications:</strong> Account activation success email.</li>
+        <li>
+          <strong>Edge Cases / Blind Spots:</strong> Invitation link expires; email filtered to spam; unauthorized staff
+          member attempts activation.
+        </li>
+        <li>
+          <strong>UX Notes:</strong> Use a clean, distraction-free landing page. Clearly state the security requirements
+          for the password.
+        </li>
+      </ul>
+    </div>
+
+    <div class="workflow-stage">
+      <h3>Stage B: Institution Profile Setup</h3>
+      <ul>
+        <li>
+          <strong>Objective:</strong> Capture accurate metadata about the school for proper categorization and
+          reporting.
+        </li>
+        <li>
+          <strong>Primary Actions:</strong> Input school details (board affiliation, address, total student count),
+          upload school logo.
+        </li>
+        <li><strong>System Behavior:</strong> Saves profile data, updates dashboard header with school branding.</li>
+        <li><strong>Data Shown:</strong> Forms for basic institutional data.</li>
+        <li><strong>Notifications:</strong> None.</li>
+        <li>
+          <strong>Edge Cases / Blind Spots:</strong> Mismatch between provided school name and the name students select
+          during their direct signup.
+        </li>
+        <li><strong>UX Notes:</strong> Make secondary fields optional to reduce onboarding friction.</li>
+      </ul>
+    </div>
+
+    <div class="workflow-stage">
+      <h3>Stage C: Dashboard Onboarding</h3>
+      <ul>
+        <li><strong>Objective:</strong> Orient the user to the portal's capabilities.</li>
+        <li><strong>Primary Actions:</strong> Dismiss welcome modal, navigate side menu.</li>
+        <li>
+          <strong>System Behavior:</strong> Displays blank-state or sample data if no students have registered yet.
+        </li>
+        <li>
+          <strong>Data Shown:</strong> Navigation menu, quick stats widgets (currently zeroed out), support helpdesk
+          widget.
+        </li>
+        <li><strong>Notifications:</strong> In-app tooltip tour (optional).</li>
+        <li>
+          <strong>Edge Cases / Blind Spots:</strong> Empty dashboard might confuse users; clear messaging needed
+          explaining that students must sign up independently.
+        </li>
+        <li>
+          <strong>UX Notes:</strong> Provide a "Share Registration Link" quick action to help schools distribute the
+          correct signup URL to their students.
+        </li>
+      </ul>
+    </div>
+
+    <div class="workflow-stage">
+      <h3>Stage D: Student Participation Monitoring</h3>
+      <ul>
+        <li>
+          <strong>Objective:</strong> Allow schools to track which students have registered for the Olympiad under their
+          institution.
+        </li>
+        <li><strong>Primary Actions:</strong> Filter student list by grade/class, search by student name.</li>
+        <li><strong>System Behavior:</strong> Queries student database where "School = [Institution ID]".</li>
+        <li>
+          <strong>Data Shown:</strong> Table containing Student Name, Grade, Registration Status, KYC verification
+          status (abstracted).
+        </li>
+        <li><strong>Notifications:</strong> Weekly summary email of new registrations.</li>
+        <li>
+          <strong>Edge Cases / Blind Spots:</strong> Students typo their school name during direct signup resulting in
+          missing records on the school dashboard.
+        </li>
+        <li>
+          <strong>UX Notes:</strong> Include an "Unrecognized Student" or "Claim Student" dispute mechanism if a student
+          is missing from the roster.
+        </li>
+      </ul>
+    </div>
+
+    <div class="workflow-stage">
+      <h3>Stage E: Slot Allocation Tracking</h3>
+      <ul>
+        <li><strong>Objective:</strong> Provide visibility into when students are scheduled to take the exam.</li>
+        <li><strong>Primary Actions:</strong> View calendar or list of upcoming exam slots for registered students.</li>
+        <li><strong>System Behavior:</strong> Aggregates exam schedules from the student database.</li>
+        <li><strong>Data Shown:</strong> Date, time, number of students scheduled per slot.</li>
+        <li><strong>Notifications:</strong> Alert if a large percentage of students miss their scheduled slot.</li>
+        <li>
+          <strong>Edge Cases / Blind Spots:</strong> Last-minute student rescheduling causing discrepancies in school
+          tracking.
+        </li>
+        <li><strong>UX Notes:</strong> Provide a simple aggregate view (e.g., "50 students scheduled for Oct 12").</li>
+      </ul>
+    </div>
+
+    <div class="workflow-stage">
+      <h3>Stage F: Custom Exam Window Request</h3>
+      <ul>
+        <li>
+          <strong>Objective:</strong> Accommodate schools that need a dedicated timeframe for their students to take the
+          exam from the school lab.
+        </li>
+        <li>
+          <strong>Primary Actions:</strong> Submit request form with preferred dates, time, and estimated student
+          volume.
+        </li>
+        <li>
+          <strong>System Behavior:</strong> Logs a ticket/request to the Portal Admin dashboard. Status marked as
+          'Pending'.
+        </li>
+        <li><strong>Data Shown:</strong> Form with date pickers; status tracker of past requests.</li>
+        <li>
+          <strong>Notifications:</strong> Confirmation of request submission; approval/rejection email from Admins.
+        </li>
+        <li>
+          <strong>Edge Cases / Blind Spots:</strong> Requesting a window that overlaps with platform maintenance;
+          requesting a window after the standard exam period ends.
+        </li>
+        <li>
+          <strong>UX Notes:</strong> Clearly state the SLA (Service Level Agreement) for request reviews (e.g., "Allow
+          48 hours for admin approval").
+        </li>
+      </ul>
+    </div>
+
+    <div class="workflow-stage">
+      <h3>Stage G: Results and Analytics Consumption</h3>
+      <ul>
+        <li><strong>Objective:</strong> Deliver actionable insights post-exam normalization.</li>
+        <li>
+          <strong>Primary Actions:</strong> View aggregate scores, percentile benchmarking, and school-comparison
+          charts.
+        </li>
+        <li>
+          <strong>System Behavior:</strong> Unlocks analytics module only after portal admins publish the normalized
+          results.
+        </li>
+        <li>
+          <strong>Data Shown:</strong> Participation summary, grade/class-wise performance, student-wise score details,
+          global vs. school percentile charts.
+        </li>
+        <li><strong>Notifications:</strong> Email notification: "Your School's Olympiad Results are Ready".</li>
+        <li>
+          <strong>Edge Cases / Blind Spots:</strong> Results withheld for specific students due to AI-proctoring flags,
+          leading to incomplete data for the school.
+        </li>
+        <li>
+          <strong>UX Notes:</strong> Clearly label any students whose results are "Pending Review" so the school
+          understands the data gap.
+        </li>
+      </ul>
+    </div>
+
+    <div class="workflow-stage">
+      <h3>Stage H: Report Download and Sharing</h3>
+      <ul>
+        <li><strong>Objective:</strong> Enable offline analysis and physical record-keeping.</li>
+        <li><strong>Primary Actions:</strong> Export data to CSV/Excel, download formatted PDF summary reports.</li>
+        <li><strong>System Behavior:</strong> Generates asynchronous file downloads for large datasets.</li>
+        <li><strong>Data Shown:</strong> Download history, file generation progress indicator.</li>
+        <li><strong>Notifications:</strong> In-app alert when a large report is ready for download.</li>
+        <li><strong>Edge Cases / Blind Spots:</strong> Extremely large datasets timing out during CSV generation.</li>
+        <li>
+          <strong>UX Notes:</strong> Use standard, widely accepted formats. Ensure PDF reports carry the portal's
+          official branding.
+        </li>
+      </ul>
+    </div>
+
+    <div class="workflow-stage">
+      <h3>Stage I: Future Sponsorship / Payment Workflow (Later Phase)</h3>
+      <ul>
+        <li><strong>Objective:</strong> Allow the school to pay for bulk student registrations via invoice.</li>
+        <li><strong>Primary Actions:</strong> Generate invoice based on student count, upload payment proof.</li>
+        <li><strong>System Behavior:</strong> Generates unique payment links or offline invoice PDFs.</li>
+        <li><strong>Data Shown:</strong> Financial ledger, invoice history, payment status.</li>
+        <li><strong>Notifications:</strong> Payment receipt confirmation.</li>
+        <li>
+          <strong>Edge Cases / Blind Spots:</strong> Partial payments; refunds for students who ultimately do not take
+          the exam.
+        </li>
+        <li><strong>UX Notes:</strong> Keep this section hidden or marked "Coming Soon" for MVP to avoid confusion.</li>
+      </ul>
+    </div>
+
+    <div class="workflow-stage">
+      <h3>Stage J: Support and Escalation</h3>
+      <ul>
+        <li><strong>Objective:</strong> Provide institutional support via a dedicated helpdesk.</li>
+        <li><strong>Primary Actions:</strong> Raise a support ticket, view ticket status, reply to helpdesk agent.</li>
+        <li><strong>System Behavior:</strong> Integrates with internal Admin support ticketing system.</li>
+        <li><strong>Data Shown:</strong> Ticket ID, Subject, Status (Open/Closed), Message thread.</li>
+        <li><strong>Notifications:</strong> Email updates when an agent replies to a ticket.</li>
+        <li>
+          <strong>Edge Cases / Blind Spots:</strong> Schools raising tickets for individual student technical issues
+          (which students should handle directly).
+        </li>
+        <li>
+          <strong>UX Notes:</strong> Include a disclaimer before ticket submission reminding schools that student
+          Aadhaar/OTP issues must be handled by the student portal.
+        </li>
+      </ul>
+    </div>
+
+    <h2>8. Page / Screen Inventory for the School Dashboard</h2>
+    <ul>
+      <li><strong>Authentication:</strong> Login Page, Set Password Page, Forgot Password.</li>
+      <li><strong>Setup:</strong> Institution Profile Settings, User Management (add Read-only users).</li>
+      <li><strong>Dashboard Home:</strong> Overview metrics, quick links, recent notifications.</li>
+      <li><strong>Students Tracker:</strong> Paginated list of registered students with search and filters.</li>
+      <li><strong>Exam Schedule:</strong> Calendar/List view of student slot allocations.</li>
+      <li><strong>Window Requests:</strong> Form to request custom dates, list of past requests.</li>
+      <li><strong>Analytics - Overview:</strong> School-wide performance graphs and benchmarking.</li>
+      <li><strong>Analytics - Class/Grade:</strong> Drill-down views by specific cohorts.</li>
+      <li><strong>Analytics - Student Detail:</strong> Individual performance scorecards.</li>
+      <li><strong>Reports Center:</strong> Interface for generating and downloading CSV/PDF exports.</li>
+      <li><strong>Helpdesk:</strong> Ticket creation form and active ticket list.</li>
+    </ul>
+
+    <h2>9. Functional Requirements List (Grouped by Module)</h2>
+    <ul>
+      <li>
+        <strong>Identity & Access Module:</strong>
+        <ul>
+          <li>System must support token-based email invitations for school onboarding.</li>
+          <li>System must support role-based access control (Coordinator vs. Read-only).</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Data Mapping Module:</strong>
+        <ul>
+          <li>
+            System must dynamically link independent student signups to the correct institution profile based on
+            selected school codes/names.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Reporting Engine:</strong>
+        <ul>
+          <li>System must calculate and display school averages against regional/national percentiles.</li>
+          <li>System must export data sets securely to CSV and PDF formats.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Request Management Module:</strong>
+        <ul>
+          <li>System must provide a workflow for submitting, tracking, and updating custom exam window requests.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>10. Non-functional / Operational Considerations</h2>
+    <ul>
+      <li>
+        <strong>Data Privacy:</strong> The portal must ensure that read-only users cannot access personally identifiable
+        information beyond what is necessary for academic reporting.
+      </li>
+      <li>
+        <strong>Scalability:</strong> The reporting engine must handle high loads gracefully, especially immediately
+        after results are normalized and published when traffic spikes are expected.
+      </li>
+      <li>
+        <strong>Responsive Design:</strong> While analytics are best viewed on desktop, the dashboard must be fully
+        accessible and readable on mobile web browsers for principals/coordinators on the go.
+      </li>
+      <li>
+        <strong>Data Integrity:</strong> Strict database constraints must be applied so a school cannot view analytics
+        for students enrolled in a different institution.
+      </li>
+    </ul>
+
+    <h2>11. Risks, Blind Spots, and Unresolved Design Questions</h2>
+    <div class="callout">
+      <strong>Risk - Student-to-School Mapping:</strong> Because students sign up directly, they may select the wrong
+      school, misspell the school name, or fail to enter a school code. This will result in inaccurate school
+      analytics.<br />
+      <em>Mitigation idea:</em> Implement a standardized drop-down list or unique school invite codes instead of
+      free-text entry during student signup.
+    </div>
+    <div class="callout">
+      <strong>Blind Spot - AI Proctoring Communication:</strong> Schools may expect to see why a student scored poorly
+      or was disqualified. If AI proctoring flags a student, the school dashboard needs a standardized, legally safe way
+      of indicating "Disqualified due to protocol violation" without exposing raw proctoring data to the school.
+    </div>
+    <div class="callout">
+      <strong>Unresolved Question - Read-only User Limits:</strong> How many read-only reporting users can a School
+      Coordinator invite? (Recommendation: cap at 5 for V1 to reduce support overhead).
+    </div>
+
+    <h2>12. School FAQ by Stage</h2>
+
+    <h4>Stage: Onboarding & Dashboard Access</h4>
+    <ul>
+      <li>
+        <strong>Q:</strong> How do I activate my school's account? <strong>A:</strong> Click the secure link sent to
+        your institutional email, create a password, and log in to the portal.
+      </li>
+      <li>
+        <strong>Q:</strong> Can I add other teachers to view the results? <strong>A:</strong> Yes, the School
+        Coordinator can invite staff members as 'Read-only Reporting Users' from the profile settings.
+      </li>
+    </ul>
+
+    <h4>Stage: Student Participation & Slot Tracking</h4>
+    <ul>
+      <li>
+        <strong>Q:</strong> Why isn't a specific student showing up on my dashboard? <strong>A:</strong> The student may
+        not have completed their direct signup, or they may have registered under an incorrect school name. Please have
+        the student verify their profile.
+      </li>
+      <li>
+        <strong>Q:</strong> Can I change a student's exam slot? <strong>A:</strong> No. Since students register
+        independently, they must manage their own slot rescheduling via the student portal.
+      </li>
+    </ul>
+
+    <h4>Stage: Custom Exam Windows</h4>
+    <ul>
+      <li>
+        <strong>Q:</strong> What is a custom exam window? <strong>A:</strong> It is a dedicated time block requested by
+        the school to allow students to take the exam together in a school computer lab.
+      </li>
+      <li>
+        <strong>Q:</strong> How far in advance must I request a custom window? <strong>A:</strong> Requests must be
+        submitted at least 7 working days prior to the desired date.
+      </li>
+    </ul>
+
+    <h4>Stage: Analytics & Reports</h4>
+    <ul>
+      <li>
+        <strong>Q:</strong> When will I see the students' results? <strong>A:</strong> Results will populate on your
+        dashboard only after the official exam period ends and portal admins have completed the review and normalization
+        process.
+      </li>
+      <li>
+        <strong>Q:</strong> Can I download a list of all participating students and their scores?
+        <strong>A:</strong> Yes, navigate to the Reports Center to download CSV or PDF summaries.
+      </li>
+    </ul>
+
+    <h4>Stage: Sponsored Payments (Future) & Support</h4>
+    <ul>
+      <li>
+        <strong>Q:</strong> Can the school pay for a batch of 50 students? <strong>A:</strong> Bulk invoicing will be
+        available in a future update. Currently, students must complete payments individually.
+      </li>
+      <li>
+        <strong>Q:</strong> How do I contact support if the dashboard isn't updating? <strong>A:</strong> Use the
+        Helpdesk tab to raise a support ticket directly with our administration team.
+      </li>
+    </ul>
+
+    <h2>13. Recommended MVP vs Later Phases</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Feature / Module</th>
+          <th>Phase 1 (MVP)</th>
+          <th>Phase 2 / Phase 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Account Onboarding</strong></td>
+          <td>Invite-only via portal admin email link. Single Coordinator role.</td>
+          <td>Self-serve institutional signup. Multiple custom roles.</td>
+        </tr>
+        <tr>
+          <td><strong>Student Tracking</strong></td>
+          <td>View list of registered students and their scheduled slot times.</td>
+          <td>Automated discrepancy alerts; bulk "claim student" dispute tools.</td>
+        </tr>
+        <tr>
+          <td><strong>Analytics & Reporting</strong></td>
+          <td>Standard CSV export, basic class-wise averages, basic percentiles.</td>
+          <td>Advanced dynamic charting, historical year-over-year comparisons.</td>
+        </tr>
+        <tr>
+          <td><strong>Custom Exam Windows</strong></td>
+          <td>Basic form submission generating an admin ticket.</td>
+          <td>Automated calendar booking and auto-approval workflows.</td>
+        </tr>
+        <tr>
+          <td><strong>Sponsorship / Finance</strong></td>
+          <td><em>Not included.</em> Students pay directly.</td>
+          <td>Wallet system, bulk invoice generation, institutional coupon distribution.</td>
+        </tr>
+      </tbody>
+    </table>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

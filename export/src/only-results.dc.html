@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" rx="20" fill="#16241A"/>
+  <g stroke="#7CC10C" stroke-width="2" fill="none">
+    <line x1="38" y1="42" x2="55" y2="33"/><line x1="55" y1="33" x2="66" y2="47"/>
+    <line x1="38" y1="42" x2="50" y2="56"/><line x1="50" y1="56" x2="66" y2="47"/>
+  </g>
+  <g fill="#7CC10C"><circle cx="38" cy="42" r="3.4"/><circle cx="55" cy="33" r="3.4"/><circle cx="66" cy="47" r="3.4"/><circle cx="50" cy="56" r="3.4"/></g>
+  <path d="M44 64 h12 v4 h-12 z" fill="#DDB20B"/>
+  <polygon fill="#DDB20B" points="50,22 52,28 58,30 52,32 50,38 48,32 42,30 48,28"/>
+</svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#16241A;background:#F5F8EF;-webkit-font-smoothing:antialiased;}
+  input,button,select{font-family:inherit;}
+  ::selection{background:#D6F0A8;}
+  @keyframes bioFade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  @keyframes bioPulse{0%,100%{box-shadow:0 0 0 0 rgba(124,193,12,.5);}50%{box-shadow:0 0 0 7px rgba(124,193,12,0);}}
+  @keyframes bioPop{0%{transform:scale(.6);opacity:0;}60%{transform:scale(1.08);}100%{transform:scale(1);opacity:1;}}
+  @keyframes bioSlide{from{transform:translateX(60px);opacity:0;}to{transform:none;opacity:1;}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F5F8EF;padding-bottom:90px;">
+
+<!-- ============ LANDING ============ -->
+
+
+<!-- ============ REGISTRATION ============ -->
+
+
+<!-- ============ DASHBOARD ============ -->
+
+
+<!-- ============ EXAM ============ -->
+
+
+<!-- ============ RESULTS ============ -->
+<sc-if value="{{ isResults }}" hint-placeholder-val="{{ true }}">
+<div style="max-width:1140px;margin:0 auto;padding:30px 32px;">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+    <img src="assets/logo-lockup.png" alt="" style="height:34px;width:auto;">
+    <button onClick="{{ goDashboard }}" style="border:1px solid #D8E2C8;background:#fff;color:#5C6B5A;font-weight:600;font-size:13px;padding:8px 14px;border-radius:9px;cursor:pointer;">← Back to dashboard</button>
+  </div>
+
+  <!-- hero result -->
+  <div style="background:linear-gradient(135deg,#16241A,#1F3826);border-radius:24px;padding:36px 40px;color:#fff;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;overflow:hidden;position:relative;margin-bottom:22px;">
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(124,193,12,.18);color:#A6E552;font-weight:600;font-size:12.5px;padding:6px 13px;border-radius:99px;margin-bottom:16px;">🎉 Results Published · Innovation Olympiad 2026</div>
+      <h1 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:34px;margin:0 0 8px;line-height:1.1;">Brilliant work, Aarav!</h1>
+      <p style="font-size:15px;color:#9DB496;margin:0 0 24px;max-width:380px;">You're among the top innovators in the country this year.</p>
+      <div style="display:flex;gap:30px;">
+        <div><div style="font-size:13px;color:#9DB496;margin-bottom:4px;">Overall Score</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:36px;color:#7CC10C;">84<span style="font-size:18px;color:#9DB496;">/100</span></div></div>
+        <div><div style="font-size:13px;color:#9DB496;margin-bottom:4px;">Percentile</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:36px;color:#DDB20B;">99.2</div></div>
+        <div><div style="font-size:13px;color:#9DB496;margin-bottom:4px;">National Rank</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:36px;color:#fff;">#28</div></div>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:150px;height:150px;border-radius:50%;background:conic-gradient(#7CC10C 0% 84%,rgba(255,255,255,.12) 84% 100%);display:flex;align-items:center;justify-content:center;margin:0 auto;"><div style="width:118px;height:118px;border-radius:50%;background:#16241A;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:34px;color:#fff;">84</span><span style="font-size:11px;color:#9DB496;letter-spacing:1px;">SCORE</span></div></div>
+      <div style="margin-top:14px;font-size:13px;color:#A6E552;font-weight:600;">Top 1% Nationwide</div>
+    </div>
+  </div>
+
+  <!-- ranking cards -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px;">
+    <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(20,33,14,.04);"><div style="font-size:13px;color:#5C6B5A;margin-bottom:8px;">🇮🇳 National Rank</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:#5AAE0E;">#28</div><div style="font-size:12px;color:#8AA17F;">of 1.8L students</div></div>
+    <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(20,33,14,.04);"><div style="font-size:13px;color:#5C6B5A;margin-bottom:8px;">🏛 State Rank</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:#C98A00;">#6</div><div style="font-size:12px;color:#8AA17F;">Karnataka</div></div>
+    <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(20,33,14,.04);"><div style="font-size:13px;color:#5C6B5A;margin-bottom:8px;">📍 City Rank</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:#5AAE0E;">#3</div><div style="font-size:12px;color:#8AA17F;">Bengaluru</div></div>
+    <div style="background:#fff;border:1px solid #EAEFE0;border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(20,33,14,.04);"><div style="font-size:13px;color:#5C6B5A;margin-bottom:8px;">🏫 School Rank</div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:#C98A00;">#1</div><div style="font-size:12px;color:#8AA17F;">Delhi Public School</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:20px;margin-bottom:22px;">
+    <!-- radar -->
+    <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:26px;box-shadow:0 8px 22px rgba(20,33,14,.04);">
+      <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:4px;">Innovation Profile</div>
+      <div style="font-size:13px;color:#5C6B5A;margin-bottom:10px;">Your strengths across 5 innovation dimensions.</div>
+      <div style="display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:center;">
+        <svg viewBox="0 0 260 250" style="width:100%;height:auto;">
+          <polygon points="{{ ring4 }}" fill="none" stroke="#EEF1E6" stroke-width="1"></polygon>
+          <polygon points="{{ ring3 }}" fill="none" stroke="#EEF1E6" stroke-width="1"></polygon>
+          <polygon points="{{ ring2 }}" fill="none" stroke="#EEF1E6" stroke-width="1"></polygon>
+          <polygon points="{{ ring1 }}" fill="none" stroke="#EEF1E6" stroke-width="1"></polygon>
+          <polygon points="{{ dataPoly }}" fill="rgba(124,193,12,.22)" stroke="#5AAE0E" stroke-width="2.5"></polygon>
+        </svg>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="color:#5C6B5A;">Creativity</span><b style="font-family:'Montserrat',sans-serif;color:#5AAE0E;">88</b></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="color:#5C6B5A;">Problem Solving</span><b style="font-family:'Montserrat',sans-serif;color:#5AAE0E;">82</b></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="color:#5C6B5A;">Critical Thinking</span><b style="font-family:'Montserrat',sans-serif;color:#5AAE0E;">90</b></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="color:#5C6B5A;">Innovation</span><b style="font-family:'Montserrat',sans-serif;color:#5AAE0E;">80</b></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="color:#5C6B5A;">Entrepreneurship</span><b style="font-family:'Montserrat',sans-serif;color:#5AAE0E;">74</b></div>
+        </div>
+      </div>
+    </div>
+    <!-- certificate -->
+    <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:26px;box-shadow:0 8px 22px rgba(20,33,14,.04);display:flex;flex-direction:column;">
+      <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:14px;">Your Certificate</div>
+      <div style="flex:1;border:2px solid #E5D9A0;border-radius:14px;background:linear-gradient(160deg,#FFFDF4,#F7FCEF);padding:22px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <img src="assets/logo-mark.png" alt="" style="height:46px;width:auto;margin-bottom:12px;">
+        <div style="font-size:11px;letter-spacing:2px;color:#9A7A00;font-weight:700;">CERTIFICATE OF MERIT</div>
+        <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:20px;color:#16241A;margin:8px 0 4px;">Aarav Sharma</div>
+        <div style="font-size:12.5px;color:#5C6B5A;">Innovation Olympiad 2026 · Top 1% Nationwide</div>
+        <div style="font-size:11px;color:#9AA694;margin-top:12px;">ID · BIO-2026-56821 · verify.bharatinnovation.in</div>
+      </div>
+      <button style="margin-top:16px;border:none;background:linear-gradient(135deg,#7CC10C,#5AAE0E);color:#fff;font-weight:700;font-size:14px;padding:13px;border-radius:12px;cursor:pointer;">⬇ Download Certificate</button>
+    </div>
+  </div>
+
+  <!-- next opportunities -->
+  <div style="background:#fff;border:1px solid #EAEFE0;border-radius:18px;padding:26px;box-shadow:0 8px 22px rgba(20,33,14,.04);margin-bottom:22px;">
+    <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;margin-bottom:4px;">Your Next Opportunities</div>
+    <div style="font-size:13px;color:#5C6B5A;margin-bottom:18px;">The Olympiad is just the start. Keep building your innovation journey.</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div style="border:1px solid #EAEFE0;border-radius:14px;padding:20px;background:linear-gradient(160deg,#F3FAE9,#fff);"><span style="font-size:24px;">💡</span><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;margin:10px 0 5px;">Innopreneurs Contest</div><div style="font-size:13px;color:#5C6B5A;line-height:1.5;">You've qualified — submit your startup idea.</div></div>
+      <div style="border:1px solid #EAEFE0;border-radius:14px;padding:20px;background:linear-gradient(160deg,#FBF6E4,#fff);"><span style="font-size:24px;">🌐</span><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;margin:10px 0 5px;">Innovation Challenges</div><div style="font-size:13px;color:#5C6B5A;line-height:1.5;">Compete in themed national challenges.</div></div>
+      <div style="border:1px solid #EAEFE0;border-radius:14px;padding:20px;background:linear-gradient(160deg,#F3FAE9,#fff);"><span style="font-size:24px;">🚀</span><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;margin:10px 0 5px;">Entrepreneurship Bootcamp</div><div style="font-size:13px;color:#5C6B5A;line-height:1.5;">3-day bootcamp to launch your venture.</div></div>
+    </div>
+  </div>
+
+  <!-- celebratory band -->
+  <div style="background:linear-gradient(135deg,#DDB20B,#7CC10C);border-radius:20px;padding:30px 36px;text-align:center;color:#16241A;">
+    <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;margin-bottom:6px;">Every idea starts small. Keep innovating, keep inspiring! 🚀</div>
+    <div style="font-size:14px;opacity:.85;">The future is in your ideas.</div>
+  </div>
+</div>
+</sc-if>
+
+<!-- ============ SCHOOL PARTNER PORTAL ============ -->
+
+
+<!-- ============ ADMIN CONSOLE ============ -->
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    screen: 'results',
+    regStep: 0,
+    examQ: 0,
+    answers: {},
+    flagged: {},
+    timeLeft: 45 * 60,
+    showProctor: false,
+  };
+
+  QUESTIONS = [
+    { text: "A city faces severe traffic congestion every morning. Which approach best reflects innovative problem-solving rather than a conventional fix?", tag: "Problem Solving", img: false, options: ["Build more roads everywhere", "Design a dynamic, demand-based smart signal & incentive system", "Ban all private vehicles", "Increase fuel prices sharply"] },
+    { text: "Look at the pattern of connected nodes shown. Which shape logically completes the innovation network?", tag: "Critical Thinking", img: true, options: ["A closed triangle", "A branching hexagonal mesh", "A single straight line", "An isolated dot"] },
+    { text: "A young innovator wants to reduce food waste in school canteens. What is the strongest first step in design thinking?", tag: "Innovation", img: false, options: ["Immediately build an app", "Empathise and observe how students actually waste food", "Fine students who waste food", "Reduce the menu options"] },
+    { text: "Which of these best describes 'entrepreneurial thinking' for a student team?", tag: "Entrepreneurship", img: false, options: ["Avoiding all risks", "Spotting a real need and testing a small solution quickly", "Copying an existing business exactly", "Waiting for perfect conditions"] },
+    { text: "You have ₹500 and 1 week to validate a new product idea. What demonstrates the most creative resourcefulness?", tag: "Creativity", img: false, options: ["Spend it all on advertising", "Build a quick prototype and get 20 people to try it", "Save the money for later", "Write a 50-page business plan"] },
+    { text: "A prototype fails during testing. What mindset best supports innovation?", tag: "Problem Solving", img: false, options: ["Abandon the idea completely", "Treat the failure as data and iterate", "Hide the failure", "Blame the materials"] },
+    { text: "Which combination most strongly signals a scalable innovation?", tag: "Innovation", img: false, options: ["High cost, few users", "Solves a common problem cheaply and repeatably", "Works only once", "Needs constant manual effort"] },
+    { text: "What is the best way to measure if an idea creates real impact?", tag: "Critical Thinking", img: false, options: ["Number of likes online", "A clear before/after change for real users", "How complex it looks", "How much it costs to build"] },
+  ];
+
+  componentDidMount() {
+    this._t = setInterval(() => {
+      if (this.state.screen === 'exam' && this.state.timeLeft > 0) {
+        this.setState(s => ({ timeLeft: s.timeLeft - 1 }));
+      }
+    }, 1000);
+  }
+  componentWillUnmount() { clearInterval(this._t); if (this._pt) clearTimeout(this._pt); }
+
+  go(screen) {
+    this.setState({ screen });
+    if (typeof window !== 'undefined') window.scrollTo(0, 0);
+    if (screen === 'exam') {
+      if (this._pt) clearTimeout(this._pt);
+      this._pt = setTimeout(() => {
+        this.setState({ showProctor: true });
+        setTimeout(() => this.setState({ showProctor: false }), 5200);
+      }, 3500);
+    }
+  }
+
+  fmtTime(s) {
+    const m = Math.floor(s / 60), ss = s % 60;
+    return m + ':' + String(ss).padStart(2, '0');
+  }
+
+  renderVals() {
+    const { screen, regStep, examQ, answers, flagged, timeLeft, showProctor } = this.state;
+    const Q = this.QUESTIONS;
+    const cur = Q[examQ % Q.length];
+
+    // switcher styles
+    const screens = ['landing', 'register', 'dashboard', 'exam', 'results', 'school', 'admin'];
+    const sw = {}, swT = {}, swTL = {};
+    screens.forEach(s => {
+      const active = screen === s;
+      sw[s] = active ? 'linear-gradient(135deg,#7CC10C,#5AAE0E)' : 'transparent';
+      swT[s] = active ? '#fff' : '#9DB496';
+      swTL[s] = active ? '#fff' : '#4A5A48';
+    });
+
+    // registration steps
+    const stepNames = ['Mobile & OTP', 'Profile', 'Eligibility', 'Coupon', 'Payment', 'Slot Booking', 'Admit Card'];
+    const regSteps = stepNames.map((name, i) => {
+      const done = i < regStep, active = i === regStep;
+      return {
+        name, label: done ? '✓' : String(i + 1),
+        bg: done ? '#7CC10C' : active ? '#fff' : '#F2F5EC',
+        fg: done ? '#fff' : active ? '#3F7A0A' : '#9AA694',
+        border: active ? '2px solid #7CC10C' : done ? 'none' : '1px solid #E0E7D6',
+        weight: active ? 700 : 500,
+        tColor: active ? '#16241A' : done ? '#3F7A0A' : '#8AA17F',
+      };
+    });
+    const regProgress = Math.round((regStep / (stepNames.length - 1)) * 100) + '%';
+
+    // exam navigator
+    const nav = Array.from({ length: 50 }, (_, i) => {
+      const isAns = answers[i] != null;
+      const isFlag = flagged[i];
+      const isCur = i === examQ;
+      let bg = '#0E1A12', color = '#9DB496', border = '1px solid #2C5232';
+      if (isFlag) { bg = '#DDB20B'; color = '#16241A'; border = 'none'; }
+      else if (isAns) { bg = '#7CC10C'; color = '#16241A'; border = 'none'; }
+      if (isCur) border = '2px solid #fff';
+      return { num: i + 1, bg, color, border, onClick: () => this.setState({ examQ: i }) };
+    });
+
+    // current options
+    const keys = ['A', 'B', 'C', 'D'];
+    const options = cur.options.map((text, i) => {
+      const sel = answers[examQ] === i;
+      return {
+        key: keys[i], text,
+        bg: sel ? '#F7FCEF' : '#fff',
+        border: sel ? '2px solid #7CC10C' : '1.5px solid #E6EBDE',
+        keyBg: sel ? '#7CC10C' : '#F2F5EC',
+        keyColor: sel ? '#fff' : '#5C6B5A',
+        onPick: () => this.setState(st => ({ answers: { ...st.answers, [examQ]: i } })),
+      };
+    });
+
+    const attempted = Object.keys(answers).length;
+    const flaggedCount = Object.keys(flagged).filter(k => flagged[k]).length;
+    const progress = Math.round((attempted / 50) * 100);
+
+    // radar
+    const skills = [88, 82, 90, 80, 74];
+    const cx = 130, cy = 120, R = 92;
+    const poly = (scale) => skills.map((v, i) => {
+      const ang = -Math.PI / 2 + i * 2 * Math.PI / 5;
+      const r = R * scale;
+      return (cx + r * Math.cos(ang)).toFixed(1) + ',' + (cy + r * Math.sin(ang)).toFixed(1);
+    }).join(' ');
+    const dataPoly = skills.map((v, i) => {
+      const ang = -Math.PI / 2 + i * 2 * Math.PI / 5;
+      const r = R * v / 100;
+      return (cx + r * Math.cos(ang)).toFixed(1) + ',' + (cy + r * Math.sin(ang)).toFixed(1);
+    }).join(' ');
+
+    const lowTime = timeLeft < 5 * 60;
+
+    return {
+      isLanding: screen === 'landing',
+      isRegister: screen === 'register',
+      isDashboard: screen === 'dashboard',
+      isExam: screen === 'exam',
+      isResults: screen === 'results',
+      isSchool: screen === 'school',
+      isAdmin: screen === 'admin',
+
+      goLanding: () => this.go('landing'),
+      goRegister: () => this.go('register'),
+      goDashboard: () => this.go('dashboard'),
+      goExam: () => this.go('exam'),
+      goResults: () => this.go('results'),
+      goSchool: () => this.go('school'),
+      goAdmin: () => this.go('admin'),
+
+      sw, swT, swTL,
+
+      // registration
+      regSteps, regProgress,
+      rs0: regStep === 0, rs1: regStep === 1, rs2: regStep === 2, rs3: regStep === 3,
+      rs4: regStep === 4, rs5: regStep === 5, rs6: regStep === 6,
+      regNextLabel: regStep >= 6 ? 'Go to Dashboard →' : regStep === 3 ? 'Pay ₹374 →' : 'Continue →',
+      regNext: () => {
+        if (regStep >= 6) { this.go('dashboard'); this.setState({ regStep: 0 }); }
+        else this.setState({ regStep: regStep + 1 });
+      },
+      regBack: () => { if (regStep > 0) this.setState({ regStep: regStep - 1 }); else this.go('landing'); },
+
+      // exam
+      nav,
+      qNum: examQ + 1,
+      qText: cur.text,
+      qTag: cur.tag,
+      qHasImage: cur.img,
+      options,
+      timer: this.fmtTime(timeLeft),
+      timerColor: lowTime ? '#F97316' : '#fff',
+      attempted, flaggedCount, progress,
+      progressW: progress + '%',
+      showProctor,
+      examPrev: () => this.setState({ examQ: Math.max(0, examQ - 1) }),
+      examNext: () => this.setState({ examQ: Math.min(49, examQ + 1) }),
+      examFlag: () => this.setState(st => ({ flagged: { ...st.flagged, [examQ]: !st.flagged[examQ] } })),
+      examSubmit: () => this.go('results'),
+
+      // results radar
+      ring1: poly(0.25), ring2: poly(0.5), ring3: poly(0.75), ring4: poly(1),
+      dataPoly,
+    };
+  }
+}
+</script>
+</body>
+</html>

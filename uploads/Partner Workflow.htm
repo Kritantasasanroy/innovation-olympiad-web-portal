@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partner Workflow & Requirements Blueprint</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <style>
+      body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 32px 80px;
+        position: relative;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+        font-size: 11pt;
+        line-height: 1.6;
+        color: #000000;
+        background-color: #ffffff;
+        text-align: justify;
+      }
+      h1 {
+        font-size: 22pt;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 24px;
+        color: #000000;
+      }
+      h2 {
+        font-size: 16pt;
+        font-weight: bold;
+        border-bottom: 1px solid #000000;
+        padding-bottom: 4px;
+        margin-top: 32px;
+        margin-bottom: 16px;
+        color: #000000;
+      }
+      h3 {
+        font-size: 13pt;
+        font-weight: bold;
+        margin-top: 24px;
+        margin-bottom: 12px;
+        color: #000000;
+      }
+      h4 {
+        font-size: 11pt;
+        font-weight: bold;
+        font-style: italic;
+        margin-top: 16px;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      ul,
+      ol {
+        margin-bottom: 16px;
+        padding-left: 24px;
+      }
+      li {
+        margin-bottom: 6px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 24px;
+        font-size: 10pt;
+      }
+      th,
+      td {
+        border: 1px solid #000000;
+        padding: 8px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        font-weight: bold;
+        background-color: #f2f2f2; /* Very light gray for formal contrast */
+      }
+      .callout {
+        border: 1px solid #000000;
+        padding: 12px;
+        margin: 16px 0;
+        font-style: italic;
+      }
+      .audit-note {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Partner Workflow & Requirements Blueprint<br />Online Olympiad / Talent Exam Portal</h1>
+
+    <h2>1. Executive Summary</h2>
+    <p>
+      This document details the functional blueprint for the Partner stakeholder journey within the Online Olympiad /
+      Talent Exam Portal. It provides a comprehensive outline of the end-to-end partner experience, focusing on B2B
+      channel partners and resellers who manage assigned institutions, drive student registrations, and monitor campaign
+      performance. The primary objective of this module is to empower partners with self-serve dashboard tools,
+      transparent attribution, and real-time visibility into conversion metrics and financial payouts, while ensuring
+      operational compliance.
+    </p>
+
+    <h2>2. Scope and Assumptions</h2>
+    <ul>
+      <li>
+        <strong>In Scope:</strong> Partner onboarding, referral link generation, assigned institution mapping,
+        registration/conversion tracking, analytics visibility (scorecards, rank/percentiles), and payout/commission
+        lifecycles.
+      </li>
+      <li>
+        <strong>Out of Scope:</strong> Student examination interface, direct school administrative configurations, and
+        any portal workflows related to student guardians.
+      </li>
+      <li>
+        <strong>Assumptions:</strong>
+        <ul>
+          <li>The core payment model is direct online payment by the student via the portal.</li>
+          <li>Partners operate entirely in English.</li>
+          <li>Communication with partners relies exclusively on automated emails and in-app dashboard alerts.</li>
+          <li>Partners have a dedicated helpdesk for support escalations.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>3. Partner Persona and Business Objectives</h2>
+    <p><strong>Persona:</strong> Channel Partners, Resellers, and Corporate/Institutional Liaisons.</p>
+    <p><strong>Core Objectives:</strong></p>
+    <ul>
+      <li>Onboard seamlessly and receive institutional assignments from the platform admin.</li>
+      <li>Generate and distribute unique referral/campaign links to their assigned schools.</li>
+      <li>Maximize student sign-ups and track paid conversions in real-time.</li>
+      <li>Monitor student performance (analytics, certificates) to demonstrate value to assigned institutions.</li>
+      <li>Ensure accurate calculation and timely settlement of commissions.</li>
+    </ul>
+
+    <h2>4. Partner Lifecycle at a Glance</h2>
+    <ol>
+      <li><strong>Acquisition & Onboarding:</strong> Partner signs up, is vetted, and approved by Portal Admin.</li>
+      <li><strong>Mapping:</strong> Portal Admin assigns specific institutions to the Partner's portfolio.</li>
+      <li>
+        <strong>Campaign Activation:</strong> Partner generates trackable referral links for assigned institutions.
+      </li>
+      <li><strong>Conversion Tracking:</strong> Partner monitors student sign-ups and direct payments in real-time.</li>
+      <li>
+        <strong>Exam & Result Cycle:</strong> Partner views participation rates and aggregate/student performance
+        post-exam.
+      </li>
+      <li>
+        <strong>Settlement:</strong> Partner tracks commission statements, raises disputes if necessary, and marks
+        payouts as received.
+      </li>
+    </ol>
+    <div class="callout">
+      <p><strong>Recommended Partner Status Labels:</strong> Draft, Submitted, Pending Review, Active, Restricted,
+      Suspended, Inactive, Closed.</p>
+      <p><strong>Recommended Commission Statement States:</strong> Draft, Under Review, Approved, Scheduled, Paid,
+      Disputed, Adjusted.</p>
+    </div>
+
+    <h2>5. Detailed End-to-End Partner Workflow by Stage</h2>
+
+    <h3>5.1 Lead / Institution Assignment</h3>
+    <ul>
+      <li><strong>Goal:</strong> Link the partner to their operational territory or specific schools.</li>
+      <li><strong>Trigger:</strong> Partner agreement is signed offline or via standard application.</li>
+      <li><strong>Main Actions:</strong> Admin searches and assigns existing school profiles to the partner ID.</li>
+      <li>
+        <strong>System Behavior:</strong> Creates a mapped relationship in the database. Updates Partner's "Assigned
+        Institutions" widget.
+      </li>
+      <li><strong>Outputs:</strong> Notification to Partner: "New institutions added to your portfolio."</li>
+      <li>
+        <strong>Failure Points:</strong> Duplicate institution mapping (two partners claiming the same school); orphaned
+        schools.
+      </li>
+    </ul>
+
+    <h3>5.2 Partner Onboarding and Approval</h3>
+    <ul>
+      <li><strong>Goal:</strong> Secure and authenticate partner access to the portal.</li>
+      <li><strong>Trigger:</strong> Partner clicks "Register as Partner" on the main portal.</li>
+      <li>
+        <strong>Main Actions:</strong> Submit organization details, tax ID, and banking info. Await admin approval.
+      </li>
+      <li>
+        <strong>System Behavior:</strong> Account in "Pending Approval" state. Admin review triggers "Active" state.
+      </li>
+      <li><strong>Outputs:</strong> Welcome email with login credentials.</li>
+      <li><strong>Failure Points:</strong> Rejection due to missing tax documents; emails bouncing.</li>
+    </ul>
+
+    <h3>5.3 Account Activation and Dashboard Setup</h3>
+    <ul>
+      <li><strong>Goal:</strong> Partner configures internal user roles (Admin, Finance, Account Manager).</li>
+      <li><strong>Trigger:</strong> First successful login.</li>
+      <li><strong>Main Actions:</strong> Complete profile, accept terms, invite sub-users.</li>
+      <li><strong>System Behavior:</strong> Provisions role-based access to the dashboard.</li>
+      <li><strong>Outputs:</strong> Active dashboard interface.</li>
+      <li>
+        <strong>Failure Points:</strong> Inactive partner accounts due to lost passwords; role-based access conflicts.
+      </li>
+    </ul>
+
+    <h3>5.4 Referral / Campaign Setup</h3>
+    <ul>
+      <li><strong>Goal:</strong> Generate unique identifiers to attribute student sign-ups to the partner.</li>
+      <li><strong>Trigger:</strong> Partner selects an assigned institution and clicks "Create Campaign Link."</li>
+      <li><strong>Main Actions:</strong> Input campaign name, select exam category, set expiry date (optional).</li>
+      <li>
+        <strong>System Behavior:</strong> System generates a unique URL embedding the Partner ID and Institution ID.
+      </li>
+      <li><strong>Outputs:</strong> Shareable URL; downloadable QR code.</li>
+      <li>
+        <strong>Failure Points:</strong> Expired referral links being circulated; broken URLs due to formatting errors.
+      </li>
+    </ul>
+
+    <h3>5.5 Institution Mapping and Management</h3>
+    <ul>
+      <li><strong>Goal:</strong> Allow partners to view the health of their assigned schools.</li>
+      <li><strong>Trigger:</strong> Routine dashboard check.</li>
+      <li>
+        <strong>Main Actions:</strong> Filter assigned schools, view contact details, view "total students registered."
+      </li>
+      <li>
+        <strong>System Behavior:</strong> Aggregates student registration data rolling up to the mapped Institution ID.
+      </li>
+      <li><strong>Outputs:</strong> Institution-level summary report.</li>
+      <li><strong>Failure Points:</strong> Institution changes name or merges, causing mapping discrepancies.</li>
+    </ul>
+
+    <h3>5.6 Registration and Conversion Tracking</h3>
+    <ul>
+      <li><strong>Goal:</strong> Track the funnel from click -> signup -> paid registration.</li>
+      <li><strong>Trigger:</strong> Students use the referral link to register and pay directly online.</li>
+      <li><strong>Main Actions:</strong> Partner views "Conversion Funnel" tab.</li>
+      <li>
+        <strong>System Behavior:</strong> Increments lead count and paid conversion count. Calculates pending commission
+        based on contract rate.
+      </li>
+      <li><strong>Outputs:</strong> Real-time conversion metrics widget.</li>
+      <li>
+        <strong>Failure Points:</strong> Disputed attribution (student used a different link); student refund requests
+        canceling a previously recorded conversion.
+      </li>
+    </ul>
+
+    <h3>5.7 Exam Cycle Monitoring</h3>
+    <ul>
+      <li><strong>Goal:</strong> Monitor exam participation for referred students.</li>
+      <li><strong>Trigger:</strong> Exam day commences.</li>
+      <li><strong>Main Actions:</strong> View live participation rates (Registered vs. Appeared).</li>
+      <li><strong>System Behavior:</strong> Pulls attendance flags from the core exam engine.</li>
+      <li><strong>Outputs:</strong> Attendance percentage per assigned institution.</li>
+      <li><strong>Failure Points:</strong> Technical dropouts skewing attendance metrics.</li>
+    </ul>
+
+    <h3>5.8 Result and Performance Visibility</h3>
+    <ul>
+      <li><strong>Goal:</strong> Provide partners with proof of value (scorecards, ranks).</li>
+      <li><strong>Trigger:</strong> Portal admin publishes normalized results.</li>
+      <li>
+        <strong>Main Actions:</strong> Partner downloads detailed analytics, percentiles, and aggregate certificates for
+        their schools.
+      </li>
+      <li>
+        <strong>System Behavior:</strong> Generates restricted read-only views of student scorecards and school-level
+        benchmarking.
+      </li>
+      <li><strong>Outputs:</strong> Exportable performance reports (PDF/CSV).</li>
+      <li>
+        <strong>Failure Points:</strong> Privacy constraints (student opting out of data sharing) causing reporting
+        gaps.
+      </li>
+    </ul>
+
+    <h3>5.9 Payout and Commission Workflow</h3>
+    <ul>
+      <li><strong>Goal:</strong> Transparent financial settlement.</li>
+      <li><strong>Trigger:</strong> End of month / End of exam cycle.</li>
+      <li><strong>Main Actions:</strong> Partner views auto-generated commission statement.</li>
+      <li>
+        <strong>System Behavior:</strong> System tallies (Total Conversions - Refunds) * Commission Rate, freezes the
+        statement period, and moves the statement through Draft -> Under Review -> Approved -> Scheduled -> Paid. If a
+        mismatch is reported, the statement can move to Disputed or Adjusted with a visible audit trail.
+      </li>
+      <li><strong>Outputs:</strong> Downloadable GST/Tax compliant commission statement, invoice reference, and payout status.</li>
+      <li><strong>Failure Points:</strong> Payout mismatches due to mid-cycle refunds; blocked bank transfers; disputed attribution affecting final payable.</li>
+    </ul>
+
+    <h3>5.10 Support and Issue Escalation</h3>
+    <ul>
+      <li><strong>Goal:</strong> Resolve partner queries quickly via a dedicated helpdesk.</li>
+      <li>
+        <strong>Trigger:</strong> Partner encounters a dashboard issue, payout dispute, or institution mapping error.
+      </li>
+      <li><strong>Main Actions:</strong> Partner clicks "Raise Helpdesk Ticket".</li>
+      <li><strong>System Behavior:</strong> Routes ticket to Tier-2 Partner Operations queue.</li>
+      <li><strong>Outputs:</strong> Ticket ID, SLA tracking notification.</li>
+      <li>
+        <strong>Failure Points:</strong> Helpdesk flooded with student-level tech issues incorrectly raised by the
+        partner.
+      </li>
+    </ul>
+
+    <h2>6. Dashboard UX Requirements</h2>
+    <p>
+      The partner dashboard must be clean, data-driven, and focused on institutional management and financial tracking.
+    </p>
+    <ul>
+      <li>
+        <strong>Navigation Modules:</strong> Home (Overview), Campaigns & Links, Assigned Institutions, Student Roster,
+        Analytics & Results, Finance & Payouts, Helpdesk.
+      </li>
+      <li>
+        <strong>Key Screens:</strong>
+        <ul>
+          <li>
+            <em>Dashboard Home:</em> High-level metrics (Assigned Institutions, Total clicks, Total Signups, Paid
+            Conversions, Revenue Generated, Pending Payout).
+          </li>
+          <li>
+            <em>Institution Detail View:</em> Drill down into a specific school's performance, registration pipeline,
+            slot status, and result summary.
+          </li>
+          <li>
+            <em>Campaign Detail View:</em> Link-level attribution, expiry date, conversion rate, and last activity.
+          </li>
+          <li>
+            <em>Finance & Statements:</em> Statement lifecycle, deductions, dispute actions, and downloadable PDFs/CSVs.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Widgets/Cards:</strong> Quick-copy link card, upcoming exam dates countdown, recent payout status,
+        active disputes, institution health score, and top-performing campaign.
+      </li>
+      <li>
+        <strong>Filters/Search:</strong> Global search by Institution Name or Student ID. Date range filters for
+        financial reporting.
+      </li>
+      <li>
+        <strong>Alerts/Notifications:</strong> Top-right bell icon for mapped institution changes, result publishing,
+        and payment settlements.
+      </li>
+      <li>
+        <strong>Exports/Downloads:</strong> Universal "Export to CSV" for tables, PDF download for commission statements
+        and aggregate school performance reports.
+      </li>
+    </ul>
+
+    <h2>7. Functional Requirements Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Module</th>
+          <th>Requirement</th>
+          <th>Priority</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Authentication</td>
+          <td>Secure login with password recovery and session timeout</td>
+          <td>High</td>
+          <td>Standard security protocols apply</td>
+        </tr>
+        <tr>
+          <td>Campaign Management</td>
+          <td>Generate unique URL combining Partner ID and Institution ID</td>
+          <td>High</td>
+          <td>Must track clicks vs. conversions</td>
+        </tr>
+        <tr>
+          <td>Institution Mapping</td>
+          <td>Display assigned institutions with real-time registration counts</td>
+          <td>High</td>
+          <td>Read-only mapping; managed by Admin</td>
+        </tr>
+        <tr>
+          <td>Conversion Tracking</td>
+          <td>Log every successful direct payment attributed to partner link</td>
+          <td>High</td>
+          <td>Must account for payment failures</td>
+        </tr>
+        <tr>
+          <td>Financial Ledger</td>
+          <td>Auto-calculate commissions minus processed refunds</td>
+          <td>High</td>
+          <td>Lock calculations at month-end</td>
+        </tr>
+        <tr>
+          <td>Result Analytics</td>
+          <td>View detailed analytics (rank/percentile) for assigned students</td>
+          <td>Medium</td>
+          <td>Subject to data privacy consent</td>
+        </tr>
+        <tr>
+          <td>Helpdesk Ticketing</td>
+          <td>In-app ticket creation specific to partner operational issues</td>
+          <td>Medium</td>
+          <td>Dedicated partner queue</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>8. Roles and Permissions for Partner Users</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Description</th>
+          <th>Permissions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Partner Admin</td>
+          <td>Primary contract holder</td>
+          <td>Full access. Can invite users, manage banking details, create links, view all data.</td>
+        </tr>
+        <tr>
+          <td>Account Manager</td>
+          <td>Operational staff managing specific schools</td>
+          <td>Can create campaign links, view registration data, download analytics. Cannot view financial payouts.</td>
+        </tr>
+        <tr>
+          <td>Finance / Read-Only</td>
+          <td>Accounting staff</td>
+          <td>
+            Can view and download commission statements and conversion totals. Cannot create links or manage
+            institutions.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>9. Operational Ownership Snapshot</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Workflow Area</th>
+          <th>Partner</th>
+          <th>Portal Admin / Ops</th>
+          <th>Finance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Partner onboarding approval</td>
+          <td>Submit details</td>
+          <td>Review and approve/reject</td>
+          <td>Review tax/bank completeness if needed</td>
+        </tr>
+        <tr>
+          <td>Institution assignment</td>
+          <td>Request mapping changes</td>
+          <td>Create and update mappings</td>
+          <td>Not involved</td>
+        </tr>
+        <tr>
+          <td>Campaign link creation</td>
+          <td>Create and distribute links</td>
+          <td>Define rules and templates</td>
+          <td>Not involved</td>
+        </tr>
+        <tr>
+          <td>Attribution disputes</td>
+          <td>Raise dispute with evidence</td>
+          <td>Investigate audit trail</td>
+          <td>Apply adjustment if required</td>
+        </tr>
+        <tr>
+          <td>Commission settlement</td>
+          <td>Review statements</td>
+          <td>Freeze payable conversions</td>
+          <td>Release payout and record settlement</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>10. Data and Reporting Requirements</h2>
+    <p>Reports must be generated with timestamp accuracy and downloadable in CSV format.</p>
+    <ul>
+      <li>
+        <strong>Institution Registration Report:</strong> List of assigned schools, total invited, total registered,
+        conversion %.
+      </li>
+      <li>
+        <strong>Student Attribution Log:</strong> Student ID, associated Partner Link, Date of Registration, Payment
+        Status (Success/Refunded).
+      </li>
+      <li>
+        <strong>Commission Lifecycle Statement:</strong> Gross attributed revenue, applicable commission rate, deducted
+        refunds, net payable, payout status.
+      </li>
+      <li>
+        <strong>Exam Performance Export:</strong> Institution Name, Grade, Student ID, Scorecard link, Rank/Percentile.
+      </li>
+    </ul>
+
+    <h2>11. Notifications and Communication Events</h2>
+    <p>Triggered via Email and Dashboard In-App Alerts:</p>
+    <ul>
+      <li><em>Account Approved:</em> Sent upon Admin approval of partner application.</li>
+      <li><em>New Institution Assigned:</em> Sent when Admin adds a school to the partner's portfolio.</li>
+      <li><em>First Conversion Alert:</em> Sent when the first student successfully registers via a new link.</li>
+      <li><em>Results Published:</em> Notification that scorecards and analytics are ready for download.</li>
+      <li>
+        <em>Commission Statement Generated:</em> Monthly or post-cycle alert that financials are ready for review.
+      </li>
+    </ul>
+
+    <h2>12. Exceptions, Risks, and Blind Spots</h2>
+    <p>Operational risks specific to the partner workflow that require mitigation:</p>
+    <ul>
+      <li>
+        <strong>Duplicate Mapping / Disputed Attribution:</strong> If a student clicks Partner A's link but later
+        registers via Partner B's link, the system must follow a strict "last-click" or "first-click" attribution rule
+        (TBD by business).
+      </li>
+      <li>
+        <strong>Refunds Affecting Commissions:</strong> If a student requests a refund after the commission statement is
+        generated, the system must process a "clawback" or negative balance on the subsequent statement.
+      </li>
+      <li>
+        <strong>Expired Links:</strong> Partners utilizing links for exams where the registration window has closed. The
+        link must redirect to a graceful "Registration Closed" landing page.
+      </li>
+      <li>
+        <strong>Data Privacy:</strong> Partners viewing detailed analytics of students. Ensure Terms & Conditions
+        explicitly grant this right during student registration.
+      </li>
+    </ul>
+
+    <div class="callout">
+      <p class="audit-note">Audit Trail Recommendation:</p>
+      <p>
+        It is strictly recommended that the system maintains an immutable audit log for all partner attribution events
+        (link creation, student click, payment timestamp, refund trigger) and payout state changes (Pending ->
+        Calculated -> Settled). This is critical for resolving financial disputes with partners.
+      </p>
+    </div>
+
+    <h2>13. Recommended MVP vs Phase 2 Features</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Feature Category</th>
+          <th>MVP (Launch)</th>
+          <th>Phase 2 (Scaling)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Onboarding</td>
+          <td>Admin creates partner accounts manually</td>
+          <td>Self-serve partner registration with auto-verification</td>
+        </tr>
+        <tr>
+          <td>Link Generation</td>
+          <td>Basic URL with Partner ID & Institution ID</td>
+          <td>Custom vanity URLs and QR code generator</td>
+        </tr>
+        <tr>
+          <td>Dashboards</td>
+          <td>Global dashboard metrics (Registrations, Revenue)</td>
+          <td>Institution-level drill-down dashboards</td>
+        </tr>
+        <tr>
+          <td>Payouts</td>
+          <td>Manual CSV export of conversions for offline payout</td>
+          <td>Automated commission ledger and invoice generation</td>
+        </tr>
+        <tr>
+          <td>User Roles</td>
+          <td>Single Partner Admin login</td>
+          <td>Granular roles (Admin, Finance, Account Manager)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>14. Partner FAQs by Stage</h2>
+
+    <h4>Stage: Onboarding & Account Setup</h4>
+    <ul>
+      <li>
+        <em>How do I reset my password if I lose access?</em> (Use the "Forgot Password" link on the login page; an
+        email will be sent).
+      </li>
+      <li>
+        <em>How do I update my organization's banking details?</em> (Navigate to Profile Settings > Financials. Changes
+        require Admin approval).
+      </li>
+    </ul>
+
+    <h4>Stage: Campaign Links & Institution Management</h4>
+    <ul>
+      <li>
+        <em>An institution is missing from my dashboard. How do I add them?</em> (Partners cannot add institutions
+        directly. Raise a ticket with the helpdesk to request mapping).
+      </li>
+      <li>
+        <em>Does my referral link expire?</em> (Links remain active until the global registration deadline for the
+        specific Olympiad exam).
+      </li>
+    </ul>
+
+    <h4>Stage: Conversion Tracking</h4>
+    <ul>
+      <li>
+        <em>A student registered but is not showing on my dashboard?</em> (Conversions only reflect after a successful
+        direct online payment. Pending payments do not show).
+      </li>
+      <li>
+        <em>How often is the conversion dashboard updated?</em> (Registration and conversion data is updated in
+        real-time).
+      </li>
+    </ul>
+
+    <h4>Stage: Payouts & Commissions</h4>
+    <ul>
+      <li>
+        <em>Why is my commission lower than my total conversions?</em> (If students requested refunds before the cutoff,
+        those are deducted from your gross conversions).
+      </li>
+      <li>
+        <em>When can I download my commission statement?</em> (Statements are generated automatically 5 business days
+        after the exam window closes).
+      </li>
+    </ul>
+
+    <h4>Stage: Support</h4>
+    <ul>
+      <li>
+        <em>Who do I contact if there is a discrepancy in my payout?</em> (Use the "Raise Helpdesk Ticket" module in
+        your dashboard, categorized under 'Payout Dispute').
+      </li>
+    </ul>
+
+    <h2>15. Open Decisions / Product Questions</h2>
+    <ul>
+      <li>
+        <strong>Attribution Model:</strong> Will the platform utilize First-Click or Last-Click attribution if a student
+        interacts with multiple partner links?
+      </li>
+      <li>
+        <strong>Clawback Policy:</strong> How exactly will the system handle mid-cycle refunds from students? Does it
+        deduct immediately from the partner's active balance or wait for the next billing cycle?
+      </li>
+      <li>
+        <strong>Institution Ownership:</strong> Can multiple partners be assigned to the same institution for different
+        exams, or is it an exclusive relationship?
+      </li>
+    </ul>
+
+    <hr style="margin-top: 40px; border-top: 1px solid #000000" />
+    <h3>How to Use This Document</h3>
+    <p>
+      <strong>For Product Managers:</strong> Use Section 7 and 12 to draft epics and user stories for the sprint
+      backlog.<br />
+      <strong>For Operations Teams:</strong> Reference Section 11 to prepare SOPs for dispute resolution and manual
+      overrides.<br />
+      <strong>For UX/UI Designers:</strong> Utilize Section 6 to design wireframes ensuring all required filters,
+      widgets, and data tables are accommodated cleanly without feature bloat.
+    </p>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/Bharat Innovation Olympiad.dc.html" }
+  ]
+}
